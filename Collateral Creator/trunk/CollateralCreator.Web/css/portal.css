@@ -1,0 +1,352 @@
+﻿body {
+}
+/* Standard colours */
+/* Xerox Office Group (XOG) Blue: #008cc9 */
+/* Xerox Generic Orange: #E67600 */
+/* Xerox Group Services (XGS) Purple: #AB1984 */
+/* Xerox Print Services Group (PSG) Green: #AB1984 */
+
+/* --------------------------------- reset.css -------------------------------- */
+:link,:visited { text-decoration:none }
+ul,ol { list-style:none }
+h1,h2,h3,h4,h5,h6,pre,code,kbd { font-size:1em; }
+dl,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input { margin:0; padding:0 }
+a img,:link img,:visited img { border:none }
+address,abbr { font-style:normal }
+:focus { outline: 0; }
+
+/* --------------------------------- clearfix.css -------------------------------- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+/* --------------------------------- helpers.css -------------------------------- */
+.float-left { float:left; }
+.float-right { float:right;	}
+.quarter { width: 24%; }
+.third { width: 33%; }
+.half { width: 50%; }
+.twothird { width: 66%; }
+.threequarter { width: 74%; }
+.short-width { width:640px; }
+.full-width { width:740px; }
+.red {color: #f00;}
+.gray {color: #666;}
+.black {color: #000;}
+.hide { display:none; }
+.hidden { display:none; }
+.align-left { text-align:left; }
+.align-right { text-align:right; }
+
+/* --------------------------------- style.css --------------------------------- */
+body 
+{
+    font-size: 70%;
+}
+
+h1, h2, h3, h4, h5, h6, p, table {
+  font-weight: normal;
+  color: #333333;
+}
+
+h1 {
+  font-family: Xerox Sans, Arial, Helvetica, sans-serif; 
+}
+
+h2, h3, h4, h5, h6, p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 170%;
+  margin: 0 0 5px;
+}
+
+h2 {
+    font-size: 150%;
+    line-height: 130%;
+    font-weight:bold;
+    padding: 10px 0;
+}
+
+h3 {
+  font-size: 140%;
+  font-weight:bold;
+  border-bottom: 1px solid #dcdcdc;
+  margin: 1.5em 0 1em;
+  padding: 0 0 0.5em;
+}
+
+h4 {
+  font-size: 130%;
+   font-weight:bold;
+}
+
+h5 {
+  font-size: 120%;
+}
+
+h6 {
+  font-size: 110%;
+}
+
+ul, quote, code, fieldset {
+  margin: .5em 0;
+}
+
+p {
+  margin: 0 0 1.2em;
+  padding: 0;
+  color: #666;
+}
+
+a:link, a:visited {
+  color: #008cc9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #008cc9;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #008cc9;
+  text-decoration: none;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 1px;
+  background: #707272;
+}
+
+ul {
+  margin: 0.5em 0 1em;
+  padding: 0 0 0 1em;
+  list-style-type:square;
+}
+
+ol {
+  margin: 0.75em 0 1.25em;
+  padding: 0;
+}
+
+
+/* --------------------------------- controls.css -------------------------------- */
+
+input.textbox, textarea.textbox
+{
+    border: solid 1px #ccc;	
+	padding:2px;
+	font-size:1.1em;
+}
+
+input.selected, textarea.selected
+{
+	border: solid 1px #666;
+	padding:2px;
+}
+input.hover, textarea.hover
+{
+    border: solid 1px #666;	
+	padding:2px;
+	font-size:1.1em;
+}
+
+select {
+	color: #666;
+}
+
+/* --------------------------------- global.css -------------------------------- */
+
+.content
+{
+    background:#fff;
+    width:740px;
+    margin: 0 auto;
+    text-align:left;
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+	content: "";
+}
+
+blockquote, 
+q {
+	quotes: "" "";
+}
+
+/* headings */
+
+
+/* so the page doesn't load all janky */		
+
+#load_bg {
+	background: #fff;
+	margin: 0 auto;	
+	overflow-x: hidden; 
+	overflow-y: hidden; 
+}
+
+pre {
+	font-family: "courier new", courier, monospace;
+
+}
+
+body + pre + p {
+	background: #fff;
+	color: #000;
+	width: 760px;
+	padding: 20px;
+	text-align: left;
+	font-size: 10pt;
+}
+
+/* background styles  */
+
+body { 
+	background:url(../images/portal/backgrounds/gradient_bg.jpg) repeat-x #3d3d3d;
+	margin: 20px 0 20px 0;
+	font-family: arial, helvetica, sans-serif;
+}
+
+.background { 
+	background:url(../images/portal/backgrounds/bg_drop.png) repeat-y center;
+	margin: 0px auto;
+}
+
+.bottom_cap { background: url(../images/portal/backgrounds/bottom_cap_drop.png) no-repeat center;
+	height: 46px;
+	margin: 0px auto;
+}
+
+.top_cap { 
+	background:url(../images/portal/backgrounds/top_cap_drop.png) no-repeat bottom center;
+	height: 28px;
+	margin: 0px auto;
+}
+
+#title  {
+    position:relative;
+    height: 42px;
+}
+
+#title img {
+    position:absolute;
+    left:0;
+}
+
+#title span {
+    font-family: Xerox Sans, Arial;
+    font-size: 200%;
+    line-height: 42px;
+    padding-left: 170px;
+    color: #999; 
+}
+
+#navlinks  {
+    text-align:right;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #999;
+}
+
+#navlinks ul {
+    list-style-type: none;
+}
+
+#navlinks ul a {
+    color: #999;
+}
+
+#navlinks li {
+    display: inline;
+    padding-right: 3px;
+}
+
+#navlinks li.last {
+    display: inline;
+    padding-right: 0;
+}
+
+#footer {
+    
+}
+
+#footer p {
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+
+ul.gray_bar {
+    background:url("../images/portal/menus/footer_740x31.gif") no-repeat scroll 0 0 transparent;
+    clear:both;
+    font-family:arial,helvetica,sans-serif;
+    font-size:11px;
+    height:26px;
+    margin:0;
+    padding:9px 5px 0;
+    width:730px;
+    list-style-type:none;
+}
+
+ul.gray_bar {
+    background:url("../images/portal/menus/footer_740x31.gif") no-repeat scroll 0 0 transparent;
+    clear:both;
+    font-family:arial,helvetica,sans-serif;
+    font-size:11px;
+    height:26px;
+    margin:0;
+    padding:9px 5px 0;
+    width:730px;
+}
+
+ul.gray_bar li a:link, 
+ul.gray_bar li a:visited, 
+ul.gray_bar li a:active {
+    color:#666666 !important;
+}
+
+p.copyright {
+    clear:both;
+    color:#999;
+    display:block;
+    font-size:90%;
+}
+
+div.indentlink {
+    background:url("../images/portal/components/carat-pointer-txt_11px.gif") no-repeat scroll 0 4px transparent;
+    font-size:11px;
+    padding:0 0 0 12px;
+}
+div.indentlink2 {
+    background: none;
+    font-size:11px;
+    padding:0;
+}
+
+

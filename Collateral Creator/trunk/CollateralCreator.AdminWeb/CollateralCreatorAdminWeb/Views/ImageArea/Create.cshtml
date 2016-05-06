@@ -1,0 +1,63 @@
+﻿@model CollateralCreatorAdminWeb.Models.ImageArea
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "ImageArea", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ImageArea</legend>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AreaID, "Custom Area")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AreaID", "Select AreaID")
+            @Html.ValidationMessageFor(model => model.AreaID)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Image)
+        </div>
+        <div class="editor-field"> 
+            <input type="file" name="partnerLogo" id="partnerLogo" />           
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Height)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Height)
+            @Html.ValidationMessageFor(model => model.Height)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Width)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Width)
+            @Html.ValidationMessageFor(model => model.Width)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerBranded)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerBranded)
+            @Html.ValidationMessageFor(model => model.PartnerBranded)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>

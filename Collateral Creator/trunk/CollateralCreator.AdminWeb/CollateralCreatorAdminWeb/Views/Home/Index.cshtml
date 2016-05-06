@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Xerox Collateral Creator Admin Start Page";
+}
+
+<h1>Collateral Creator admin site</h1><br />
+
+@section SignOut{
+     <div style="margin-left:800px;font:bolder;font-size:large;">
+         @HttpContext.Current.User.Identity.Name @Html.ActionLink("Sign out", "LogOff", "Account")
+     </div>
+}
+
+<h2>Create New Collateral</h2>
+
+ <ul style="">
+         <li>@Html.ActionLink("Create template", "Create", "Template")</li>
+ </ul>
+
+<h2>Edit Collateral</h2>
+
+ <h2>NARS and SC2 specific edit links</h2>
+
+    <ul style="">
+         <li>@Html.ActionLink("Templates", "Index", "Template")</li>
+    </ul>
+    <ul>
+         <li>@Html.ActionLink("Pages", "Index", "Page")</li>
+    </ul>
+    <ul>
+         <li>@Html.ActionLink("Customizable areas", "Index", "CustomArea")</li>
+    </ul>
+    <ul>
+         <li>@Html.ActionLink("Text areas", "Index", "TextArea")</li>
+    </ul>
+    <ul>
+         <li>@Html.ActionLink("Images areas", "Index", "ImageArea")</li>
+    </ul>    
+    <ul>
+         <li>@Html.ActionLink("Fonts", "Index", "Font")</li>
+    </ul>
+    <ul>
+         <li>@Html.ActionLink("FontUsage", "Index", "FontUsage")</li>
+    </ul>
+     <br />
+    <h2>SC2 specific links</h2>
+    <ul>
+         <li>@Html.ActionLink("SmartCentre-Collateral", "Index", "ExternalCollateral")</li>
+    </ul>
+    <ul>
+         <li><a href="~/XctUploadTool/Main.aspx">Collateral upload</a></li>
+     </ul>
+
+
+<h2>Product Admin</h2>
+
+@Html.ActionLink("Product Admin", "ProductAdmin", "Home")
+ 

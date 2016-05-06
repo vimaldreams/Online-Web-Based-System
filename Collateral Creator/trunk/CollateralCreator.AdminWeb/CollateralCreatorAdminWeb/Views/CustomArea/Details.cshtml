@@ -1,0 +1,71 @@
+﻿@model CollateralCreatorAdminWeb.Models.CustomizableArea
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CustomizableArea</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AreaID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AreaID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Page.PageID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Page.PageID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.XPos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.XPos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YPos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YPos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rotation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rotation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

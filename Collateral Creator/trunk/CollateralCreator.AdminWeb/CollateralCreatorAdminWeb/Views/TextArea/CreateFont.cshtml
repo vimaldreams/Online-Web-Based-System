@@ -1,0 +1,96 @@
+﻿@model CollateralCreatorAdminWeb.Models.Font
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Font</legend>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FontTypeID, "FontType")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FontTypeID", "Select FontType")
+            @Html.ValidationMessageFor(model => model.FontTypeID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Size)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Size)
+            @Html.ValidationMessageFor(model => model.Size)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bold)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bold)
+            @Html.ValidationMessageFor(model => model.Bold)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Italic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Italic)
+            @Html.ValidationMessageFor(model => model.Italic)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Underline)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Underline)
+            @Html.ValidationMessageFor(model => model.Underline)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Strikethrough)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Strikethrough)
+            @Html.ValidationMessageFor(model => model.Strikethrough)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.Color)*@
+             @Html.DropDownList("ColourCodes", "Select Colour")
+            @Html.ValidationMessageFor(model => model.Color)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+          @Html.DropDownListFor(model => model.Name, new SelectList(new string[] {"XeroxSans-Bold",
+                                                                                    "HelveticaNeue",
+                                                                                    "HelveticaNeue-Bold",
+                                                                                    "XeroxSans-Light",
+                                                                                    "HelveticaNeue-Light",
+                                                                                    "Arial-Bold",
+                                                                                    "ArialMT",
+                                                                                    "Arial",
+                                                                                    "XeroxSans"}), "Select FontName")
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>

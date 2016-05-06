@@ -1,0 +1,57 @@
+﻿@model CollateralCreatorAdminWeb.Models.FontUsage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FontUsage</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Font.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Font.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TemplateID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemplateID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PartnerBranded)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartnerBranded)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DocumentID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DocumentID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PageID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TextAreaID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TextAreaID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

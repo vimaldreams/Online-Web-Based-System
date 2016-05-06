@@ -1,0 +1,358 @@
+﻿@model CollateralCreatorAdminWeb.ViewModels.CreateTemplateViewModel
+
+@{
+    ViewBag.Title = "Create new template";
+}
+
+@section AddToHead{
+
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    <script>
+        $().ready(function () {
+            $("#CustomAreasSelect").change(function () {
+                var numberOfAreas = this.value;
+                switch (numberOfAreas) {
+                    case '1':
+                        DisplayArea('CustomArea1');
+                      
+                        break;
+                    case '2':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                      
+                        break;
+                    case '3':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                       
+                        break;
+                    case '4':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        break;
+                    case '5':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        break;
+                    case '6':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        break;
+                    case '7':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        break;
+                    case '8':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        break;
+                    case '9':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        break;
+                    case '10':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        DisplayArea('CustomArea10');
+                        break;
+                    case '11':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        DisplayArea('CustomArea10');
+                        DisplayArea('CustomArea11');
+                        break;
+                    case '12':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        DisplayArea('CustomArea10');
+                        DisplayArea('CustomArea11');
+                        DisplayArea('CustomArea12');
+                        break;
+                    case '13':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        DisplayArea('CustomArea10');
+                        DisplayArea('CustomArea11');
+                        DisplayArea('CustomArea12');
+                        DisplayArea('CustomArea13');
+                        break;
+                    case '14':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        DisplayArea('CustomArea10');
+                        DisplayArea('CustomArea11');
+                        DisplayArea('CustomArea12');
+                        DisplayArea('CustomArea13');
+                        DisplayArea('CustomArea14');
+                        break;
+                    case '15':
+                        DisplayArea('CustomArea1');
+                        DisplayArea('CustomArea2');
+                        DisplayArea('CustomArea3');
+                        DisplayArea('CustomArea4');
+                        DisplayArea('CustomArea5');
+                        DisplayArea('CustomArea6');
+                        DisplayArea('CustomArea7');
+                        DisplayArea('CustomArea8');
+                        DisplayArea('CustomArea9');
+                        DisplayArea('CustomArea10');
+                        DisplayArea('CustomArea11');
+                        DisplayArea('CustomArea12');
+                        DisplayArea('CustomArea13');
+                        DisplayArea('CustomArea14');
+                        DisplayArea('CustomArea15');
+                        break;
+                }
+
+            });
+        });
+
+        function DisplayArea(areaName) {
+            var area = document.getElementById(areaName);
+            area.style.display = 'block';
+        }
+
+        function HideArea(areaName) {
+            var area = document.getElementById(areaName);
+            area.style.display = 'none';
+        }
+    </script>
+}
+
+<h2>Create new template</h2>
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <h2>Template details</h2>
+    
+    <div class="editor-label">
+        Template name
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Template.Name, new { style = "Width:400px; height:28px" })
+        @Html.ValidationMessageFor(model => model.Template.Name)
+    </div>       
+    <br />
+    <div class="editor-label">
+        Detail
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Template.Detail, new { style = "Width:400px; height:30px" })
+        @Html.ValidationMessageFor(model => model.Template.Detail)
+    </div>
+    <br />
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Template.Description)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Template.Description, new { style = "Width:400px; height:30px" })
+        @Html.ValidationMessageFor(model => model.Template.Description)
+    </div>
+    <br />
+    <div class="editor-label">
+        Language 
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Template.LanguageID, new SelectList(Model.Languages as System.Collections.IEnumerable, "LanguageID", "LanguageName"), "Please select")
+        @Html.ValidationMessageFor(model => model.Template.LanguageID)
+    </div>
+    <br />
+
+    <div class="editor-label">
+        Paper size
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Template.PaperSize, new SelectList(Model.PaperSizes as System.Collections.IEnumerable), "Please select")
+        @Html.ValidationMessageFor(model => model.Template.PaperSize)
+    </div>
+    <br />
+        
+    <div class="editor-label">
+        Page size
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Template.PageSize, new SelectList(Model.PageSize as System.Collections.IEnumerable), "Please select")
+        @Html.ValidationMessageFor(model => model.Template.PageSize)
+    </div>
+
+    <hr />
+    <h2>Page details</h2>
+    <div class="editor-label">
+        Number of pages?
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.DefinedPageDetail.NumberOfPages, new { style = "Width:100px; height:17px" })
+        @Html.ValidationMessageFor(model => model.DefinedPageDetail.NumberOfPages)
+    </div>       
+    <br />
+    <div class="editor-label">
+        Partner branded
+    </div>
+    <div class="editor-field">
+        @Html.RadioButtonFor(model => model.DefinedPageDetail.PartnerBranded, true, new { id = "PartnerBranded_true" })
+        <label for="PartnerBranded_true">Yes</label>
+        @Html.RadioButtonFor(model => model.DefinedPageDetail.PartnerBranded, false, new { id = "PartnerBranded_false" })
+        <label for="PartnerBranded_false">No</label>
+        @Html.ValidationMessageFor(model => model.DefinedPageDetail.PartnerBranded)
+    </div>       
+        
+        
+    <div class="editor-label">
+        Height
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.DefinedPageDetail.Height, new { style = "Width:50px; height:17px" })
+        @Html.ValidationMessageFor(model => model.DefinedPageDetail.Height)
+    </div>       
+        
+    <div class="editor-label">
+        Width
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.DefinedPageDetail.Width, new { style = "Width:50px; height:17px" })
+        @Html.ValidationMessageFor(model => model.DefinedPageDetail.Width)
+    </div>       
+    <div class="editor-label">
+        Rotation
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.DefinedPageDetail.Rotation, new { style = "Width:50px; height:17px" })
+        @Html.ValidationMessageFor(model => model.DefinedPageDetail.Rotation)
+    </div>   
+    
+    <hr />
+    <h2>Custom areas</h2>
+    <div class="editor-label">
+        <label for="CustomAreasSelect">How may customizable areas do you required?</label>
+        <select id="CustomAreasSelect">
+            <option value="-1">Please select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    
+    <div id="CustomArea1" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail1)
+    </div>  
+    <div id="CustomArea2" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail2)
+    </div>
+    <div id="CustomArea3" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail3)
+    </div>
+     <div id="CustomArea4" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail4)
+    </div>
+    <div id="CustomArea5" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail5)
+    </div>
+    <div id="CustomArea6" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail6)
+    </div>
+    <div id="CustomArea7" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail7)
+    </div>
+     <div id="CustomArea8" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail8)
+    </div>
+    <div id="CustomArea9" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail9)
+    </div>
+     <div id="CustomArea10" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail10)
+    </div>
+    <div id="CustomArea11" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail11)
+    </div>
+     <div id="CustomArea12" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail12)
+    </div>
+     <div id="CustomArea13" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail13)
+    </div>
+     <div id="CustomArea14" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail14)
+    </div>
+      <div id="CustomArea15" style="display: none">
+        @Html.Partial("CustomArea", Model.CustomAreaDetail15)
+    </div>
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+
+}
+
+
+
+

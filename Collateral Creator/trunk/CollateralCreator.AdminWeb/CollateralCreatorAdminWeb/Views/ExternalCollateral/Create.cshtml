@@ -1,0 +1,47 @@
+﻿@model CollateralCreatorAdminWeb.Models.ExternalCollateral
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ExternalCollateral</legend>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExCollateralID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExCollateralID)
+            @Html.ValidationMessageFor(model => model.ExCollateralID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LanguageCode, "Language")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.LanguageCode, new SelectList(ViewBag.Languages as System.Collections.IEnumerable, "Value", "Text"), "Please select")
+            @Html.ValidationMessageFor(model => model.LanguageCode)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemplateID, "Template")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.TemplateID, new SelectList(ViewBag.Templates as System.Collections.IEnumerable, "Value", "Text"), "Please select")
+            @Html.ValidationMessageFor(model => model.TemplateID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>

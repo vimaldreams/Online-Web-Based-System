@@ -1,0 +1,58 @@
+﻿@model CollateralCreatorAdminWeb.Models.FontUsage
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FontUsage</legend>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FontID, "Font")
+        </div>
+        <div class="editor-field">
+            @* @Html.DropDownList("FontID", String.Empty)*@
+            @Html.TextBoxFor(model => model.FontID, new {@Value = ViewBag.FontName, @readonly = "readonly"})
+            @Html.ValidationMessageFor(model => model.FontID)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemplateID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TemplateID)
+            @Html.ValidationMessageFor(model => model.TemplateID)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerBranded)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerBranded)
+            @Html.ValidationMessageFor(model => model.PartnerBranded)
+        </div>      
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TextAreaID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TextAreaID)
+            @Html.ValidationMessageFor(model => model.TextAreaID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>

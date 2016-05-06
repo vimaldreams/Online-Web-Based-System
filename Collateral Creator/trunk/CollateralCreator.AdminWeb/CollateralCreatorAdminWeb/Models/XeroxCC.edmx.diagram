@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="153eaa0d59fe45a1bbaaeba741d0d19c" Name="Diagram1">
+        <EntityTypeShape EntityType="XeroxCCModel.Country" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.CustomizableArea" Width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Document" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.DocumentCarrier" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.DocumentState" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.DocumentStateHistory" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.DownloadLog" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.ExternalCollateral" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Font" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.FontType" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.FontUsage" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.GeneralEnglishText" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.GeneralForeignText" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.ImageArea" Width="1.5" PointX="12" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.LanguageCountry" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Language" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.MenuTree" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.MenuTreeRecursive" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Page" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Product_Family" Width="1.5" PointX="13.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Product_MenuTree" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.SmartCentreLog" Width="1.5" PointX="7.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.sysdiagram" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.Template" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.TemplateButton" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.TemplatePartnerBranded" Width="1.5" PointX="5.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.TextArea" Width="1.5" PointX="12" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.TranslationGroup" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.TranslationIDNameSpace" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeroxCCModel.TranslationsInTranslationGroup" Width="1.5" PointX="9.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="XeroxCCModel.FK_CustomizableArea_PageID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_ImageArea_AreaID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_TextArea_AreaID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Document_DocumentID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Document_DocumentState_DocumentID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Document_DocumentState_DocumentStateID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Document_TemplateID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_DocumentStateHistory_DocumentID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_DocumentStateHistory_DocumentStateID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Page_DocumentID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_ExternalCollateral_Template" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Font_FontTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_FontUsage_FontID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_MenuTreeRecursive_NodeID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_MenuTreeRecursive_ParentNodeID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Page_TemplateID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_TemplatePartnerBranded_TemplateID" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.MenuTreeTemplate" ManuallyRouted="false" />
+        <AssociationConnector Association="XeroxCCModel.FK_Product_MenuTree_MenuTree" />
+        <AssociationConnector Association="XeroxCCModel.FK_Template_Languages" />
+        <EntityTypeShape EntityType="XeroxCCModel.Menu" Width="1.5" PointX="7.0146028171361436" PointY="26.647672978531418" />
+        <EntityTypeShape EntityType="XeroxCCModel.MenuNodeData" Width="1.5" PointX="9.875" PointY="5.625" />
+        <EntityTypeShape EntityType="XeroxCCModel.User" Width="1.5" PointX="0.63789206772944518" PointY="26.652411041153787" />
+        <AssociationConnector Association="XeroxCCModel.FK_MenuNodeData_Languages" />
+        <AssociationConnector Association="XeroxCCModel.FK_MenuText_Languages" />
+        <AssociationConnector Association="XeroxCCModel.FK_MenuText_Menu" />
+        <AssociationConnector Association="XeroxCCModel.FK_MenuNodeData_Template" />
+        <EntityTypeShape EntityType="XeroxCCModel.UserType" Width="1.5" PointX="11.901191767259125" PointY="26.982021105933011" />
+        <AssociationConnector Association="XeroxCCModel.FK_Users_UserType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

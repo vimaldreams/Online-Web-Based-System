@@ -1,0 +1,36 @@
+﻿@model CollateralCreatorAdminWeb.Models.ExternalCollateral
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ExternalCollateral</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExCollateralID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExCollateralID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LanguageCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LanguageCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Template.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Template.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

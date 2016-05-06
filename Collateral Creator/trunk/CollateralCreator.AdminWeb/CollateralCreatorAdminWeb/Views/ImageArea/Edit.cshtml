@@ -1,0 +1,84 @@
+﻿@model CollateralCreatorAdminWeb.Models.ImageArea
+
+@using CollateralCreatorAdminWeb.Helpers;
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "ImageArea", new { searchString = ViewBag.currentFilter }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+       
+        <legend>ImageArea</legend>
+
+        @Html.HiddenFor(model => model.ImageAreaID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AreaID, "CustomizableArea")
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.Image)
+            @Html.HiddenFor(model => model.AreaID)
+            @*@Html.DropDownListFor(model => model.AreaID, new SelectList(ViewBag.AreaID as System.Collections.IEnumerable, "Value", "Text"), new { @disabled = "disabled",style = "Width:250px;"})*@
+            @Html.TextBoxFor(model => model.AreaID, new {@Value = ViewBag.CustomAreaName, @readonly = "readonly", style = "Width:50%"  })
+            @Html.ValidationMessageFor(model => model.AreaID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Image)
+        </div>
+        <div class="editor-field">
+            <img alt = "model => model.CustomizableArea.Name" src="@Url.Action("Display", "ImageArea", new {id =  ViewBag.ImageAreaID })" style = "Width:50px; height:30px" />
+            <div>
+            Upload Image
+            <input type="file" name="partnerLogo" id="partnerLogo" />
+            </div>
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Height)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Height)
+            @Html.ValidationMessageFor(model => model.Height)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Width)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Width)
+            @Html.ValidationMessageFor(model => model.Width)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerBranded)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerBranded)
+            @Html.ValidationMessageFor(model => model.PartnerBranded)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+       
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function () {
+        $("#AreaID > option").attr("disabled", "true");
+    });
+
+</script>

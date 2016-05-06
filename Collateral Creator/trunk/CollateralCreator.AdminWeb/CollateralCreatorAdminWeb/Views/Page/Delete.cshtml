@@ -1,0 +1,68 @@
+﻿@model CollateralCreatorAdminWeb.Models.Page
+
+@{
+    ViewBag.Title = "Page delete";
+}
+
+<h2>Page delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Page</legend>
+
+    <div class="display-label">
+        Page number
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageNumber)
+    </div>
+    <br />
+    <div class="display-label">
+         Template name
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Template.Name)
+    </div>
+    <br />
+    <div class="display-label">
+        Template ID
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemplateID)
+    </div>
+    <br />
+    <div class="display-label">
+         Partner branded
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Document.ChannelPartnerLoginID)
+    </div>
+     <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+     <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+     <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rotation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rotation)
+    </div>
+</fieldset>
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+    </p>
+}

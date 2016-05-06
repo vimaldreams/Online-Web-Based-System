@@ -1,0 +1,120 @@
+﻿@model CollateralCreatorAdminWeb.Models.Template
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Template</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LanguageID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LanguageID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDeleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDeleted)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RecycledPaper)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RecycledPaper)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Duplex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Duplex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PaperOption)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PaperOption)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PaperSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PaperSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CollorCorrection)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CollorCorrection)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrintMode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrintMode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateCreated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateCreated)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateModified)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateModified)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PageSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Detail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Detail)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TemplateID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

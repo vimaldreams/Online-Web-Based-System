@@ -1,0 +1,119 @@
+﻿@model PagedList.IPagedList<CollateralCreatorAdminWeb.Models.Page>
+@*Please note that you need reference the Page list IPagelist here*@
+@{
+    ViewBag.Title = "Pages";
+}
+
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Grid.css")" rel="stylesheet" type="text/css" />
+   
+}
+<h2>Pages</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { searchString = ViewBag.currentFilter }) | @Html.ActionLink("Home", "Index", "Home")
+</p>
+@using (Html.BeginForm())
+{
+    <p>Find by template name: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)  
+                <input type="submit" value="Search" class="button"/>
+    </p>
+}
+<table>
+    <tr>
+        <th>Create</th>
+        <th>
+            TemplateName
+        </th>
+        <th>
+            PageNumber
+        </th>        
+         <th>
+            PageID
+        </th>
+        <th>
+           PartnerBranded
+        </th>
+        <th>
+           Height
+        </th>
+        <th>
+            Width
+        </th>
+        <th>
+           Rotation
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>           
+           @Html.ActionLink("CustomArea", "CreateCustomArea", new { pageID = item.PageID, searchString = ViewBag.CurrentFilter })      
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Template.Name)*@
+            @Html.ActionLink(item.Template.Name, "Index", "CustomArea", new { pageID = item.PageID, templateID = item.TemplateID, currentFilter = ViewBag.CurrentFilter }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageNumber)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.PageID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartnerBranded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rotation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PageID, searchString = ViewBag.currentFilter  }) |
+          
+            @Html.ActionLink("Delete", "Delete", new { id=item.PageID, searchString = ViewBag.currentFilter  })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount &nbsp;
+     
+@if (Model.HasPreviousPage)
+{
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("First page ", "Index", new { page = 1 })
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Previous ", "Index", new { page = Model.PageNumber - 1 })
+}
+else
+{
+    @Html.Raw("&nbsp;");
+    @: First page
+    @Html.Raw("&nbsp;");
+    @: Previous 
+}
+     
+@if (Model.HasNextPage)
+{
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Next ", "Index", new { page = Model.PageNumber + 1 })
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Last page ", "Index", new { page = Model.PageCount })
+}
+else
+{
+    @Html.Raw("&nbsp;");
+    @: Next 
+    @Html.Raw("&nbsp;")
+    @: Last page 
+}
+

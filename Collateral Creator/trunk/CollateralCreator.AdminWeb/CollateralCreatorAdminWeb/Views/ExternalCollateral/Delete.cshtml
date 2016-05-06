@@ -1,0 +1,40 @@
+﻿@model CollateralCreatorAdminWeb.Models.ExternalCollateral
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ExternalCollateral</legend>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExCollateralID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExCollateralID)
+    </div>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LanguageCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LanguageCode)
+    </div>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Template.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Template.Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+    </p>
+}

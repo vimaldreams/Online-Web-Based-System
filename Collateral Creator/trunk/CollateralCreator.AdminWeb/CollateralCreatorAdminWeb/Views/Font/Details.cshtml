@@ -1,0 +1,71 @@
+﻿@model CollateralCreatorAdminWeb.Models.Font
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Font</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FontType.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FontType.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Size)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Size)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bold)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bold)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Italic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Italic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Underline)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Underline)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Strikethrough)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Strikethrough)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Color)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Color)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FontID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

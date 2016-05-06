@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>Xerox Collateral Creator Tool</title>
+	</head>
+<body>
+	<form action="../loginform.aspx" method="post">
+	<!-- 
+	credentials are userid#timestamp#token 
+	token is calculated from user id and timestamp
+	under SAP, user id will be a large number
+	for now, it's the numeric part of the login id
+	-->
+	<input type="hidden" name="credentials" value="9999900001#2010-02-24T15:25:45Z#8387225770335"></input>
+	<!-- under SAP, login_id will be something like 'ajackson', for now it's the eu123456 number -->
+
+	<input type="hidden" name="login_id" value="9999900001"></input>
+	<input type="hidden" name="first_name" value="Test Admin"></input> 
+	<input type="hidden" name="last_name" value="User"></input>
+	<input type="hidden" name="email" value="admin@signals.co.uk"></input>
+	<input type="hidden" name="language" value="en"></input>
+	<input type="hidden" name="principal" value="Y"></input>
+	
+	<!-- under SAP, location_id will be a big number, for now it's the numeric URN  -->
+	<input type="hidden" name="location_id" value="249310"></input>
+	<input type="hidden" name="location_name" value="Signals Ltd"></input>
+
+	<!-- under SAP, company_id will be a big number, for now it's the numeric URN  -->
+	<input type="hidden" name="company_id" value="249310"></input>
+	<!--<input type="hidden" name="company_branding" value="Transactional"></input>-->
+	<input type="hidden" name="company_branding" value="Xerox"></input>
+	<input type="hidden" name="company_country" value="gb"></input>
+	<input type="hidden" name="dr_user" value="DIRRESP"></input>
+    
+    <!-- NARS Specific backpack -->
+<!--	<input type="hidden" name="FeatureSetRegion" value="NARS"></input>-->
+           
+	<!-- when in production, there will be javascript to submit this form without user intervention -->	
+	<input type="SUBMIT" Value="Connect to Xerox Collateral Creator Admin"></input>
+	</form>
+</body>
+
+</html>

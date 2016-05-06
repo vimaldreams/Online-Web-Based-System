@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+    <siteMapNode url="~/Home.aspx" title="Home" description="Collateral Tool's Home Page"> 
+      
+       <siteMapNode url="~/RecentActivity.aspx" title="Recent Activity"  description="Collateral Creator Recent Activity page" >           
+          <siteMapNode url="~/Edit.aspx?type=1" title="Edit Customized Document"  description="Collateral Creator Edit Document page">
+            <siteMapNode url="~/OrderDocument.aspx?type=1" title="Delivery Information"  description="Collateral Creator Order Document page">
+              <siteMapNode url="~/OrderSummary.aspx?type=1" title="Review Order"  description="Collateral Creator Order Summary page" >
+                <siteMapNode url="~/BuiltDocument.aspx?type=1" title="Order Complete"  description="Collateral Creator Built Document page" />
+              </siteMapNode>
+            </siteMapNode>
+          </siteMapNode>
+       </siteMapNode>
+    
+      <siteMapNode url="~/Edit.aspx" title="Edit Customized Document"  description="Collateral Creator Edit Document page">
+        <siteMapNode url="~/OrderDocument.aspx" title="Delivery Information"  description="Collateral Creator Order Document page">
+          <siteMapNode url="~/OrderSummary.aspx" title="Review Order"  description="Collateral Creator Order Summary page" >
+            <siteMapNode url="~/BuiltDocument.aspx" title="Order Complete"  description="Collateral Creator Built Document page" />
+          </siteMapNode>
+        </siteMapNode>
+      </siteMapNode>
+      
+   </siteMapNode>
+  </siteMap>

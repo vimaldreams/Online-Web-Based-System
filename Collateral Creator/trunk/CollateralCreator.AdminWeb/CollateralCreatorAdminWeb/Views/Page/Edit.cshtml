@@ -1,0 +1,90 @@
+﻿@model CollateralCreatorAdminWeb.Models.Page
+
+@{
+    ViewBag.Title = "Page edit";
+}
+
+@section AddToHead{
+
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+}
+<h2>Page edit</h2>
+
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Page</legend>
+
+        @Html.HiddenFor(model => model.PageID)
+         @Html.HiddenFor(model => model.TemplateID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PageNumber, "Page number")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PageNumber)
+            @Html.ValidationMessageFor(model => model.PageNumber)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemplateID, "Template")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.TemplateID, new SelectList(ViewBag.TemplateID as System.Collections.IEnumerable, "Value", "Text"), Model.Template.Name)
+           
+            @Html.ValidationMessageFor(model => model.TemplateID)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerBranded, "Partner branded")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerBranded)
+            @Html.ValidationMessageFor(model => model.PartnerBranded)
+        </div>
+        @* <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentID, "Document")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DocumentID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DocumentID)
+        </div>*@
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Height)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Height)
+            @Html.ValidationMessageFor(model => model.Height)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Width)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Width)
+            @Html.ValidationMessageFor(model => model.Width)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Rotation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rotation)
+            @Html.ValidationMessageFor(model => model.Rotation)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>
+

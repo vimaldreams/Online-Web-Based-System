@@ -1,0 +1,124 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal.master.cs" Inherits="CollateralCreator.Web.Templates.Portal" %>
+<%@ Import Namespace="System.Globalization" %>
+<%@ Register TagPrefix="Xerox" TagName="Header" Src="~/Templates/PortalHeader.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1" runat="server">
+    
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+        <asp:Literal ID="SiteTitle" runat="server" Text=" - Impact Marketplace" />
+    </title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+    <asp:ContentPlaceHolder id="Metatags" runat="server">
+    <meta name="keywords" content="Xerox,IMPACT Marketplace" />
+    <meta name="description" content="Xerox IMPACT Marketplace" />
+    </asp:ContentPlaceHolder>
+    
+    <!-- Disable caching -->
+    <meta http-equiv="Cache-Control" content="private" />
+	<meta http-equiv="Expires" content="-1" />
+    
+     <!-- Enable IE8 Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+      <!-- Favourite Icon -->
+    <link rel="icon" href="<%=VirtualPathUtility.ToAbsolute("~/favicon.ico")%>" type="image/x-icon" />
+    <link rel="shortcut icon" href="<%=VirtualPathUtility.ToAbsolute("~/favicon.ico")%>" type="image/x-icon" />
+
+    <!-- Stylesheet Includes -->  
+    <link rel="stylesheet" type="text/css" href="<%=VirtualPathUtility.ToAbsolute("~/css/corp_740px_bundle.embed.css")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=VirtualPathUtility.ToAbsolute("~/css/site.css")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>" />
+    
+    <!-- Custom CSS -->
+    <asp:ContentPlaceHolder id="Stylesheets" runat="server" />    
+    <link href="<%=VirtualPathUtility.ToAbsolute("~/css/jquery-1.8-ui.css")%>" rel="stylesheet" type="text/css"/> 
+    <link rel="stylesheet" type="text/css" href="<%=VirtualPathUtility.ToAbsolute("~/js/jquery/1.8/1.8.6/themes/smoothness/jquery-ui.css")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>" />    
+    <link rel="stylesheet" type="text/css" href="<%=VirtualPathUtility.ToAbsolute("~/js/fgmenu/fg.menu.css")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>" />    
+</head>
+
+<body class="xrx_pg xrx_language_en-us xrx_region_us xrx_locale_en_US xrx_ltr ">
+    <%-- <asp:ContentPlaceHolder id="TopNavContainer" runat="server" />--%>
+    <form id="form1" runat="server"> 
+
+        <div id="xrx_bnr_hdr" class="xrx_bnr_partner xrx_bnr_partner_nonav">
+            <div id="xrx_bnr_hdr_position">
+                <a id="xrx_bnr_hdr_lnk_logo" href="http://www.xerox.com/" name="&lid=hdr-logo-home"><span>Xerox.com</span></a> 
+                   <%-- <span class="title" id="xrx_bnr_partner_title">IMPACT Marketplace - Collateral Creator Tool</span>  --%>
+                    <asp:Literal ID="litHeaderText" runat="server"></asp:Literal>
+                 <div class="portalheader">
+                    <Xerox:Header ID="PortalHeader" runat="server"/>
+                 </div>   
+            </div>  
+                    
+        </div>
+                             
+        <div id="xrx_pg_legacy_pagewidth">
+	        <div class="xrx_pg_legacy_clearfix" id="xrx_pg_legacy_wrapper">
+		        <div id="xrx_pg_legacy_twocols" class="full-width"> 
+			        <div id="xrx_pg_legacy_maincol">			            
+				        <div id="xrx_pg_legacy_wrapper">					                                       
+                            <asp:ContentPlaceHolder id="MainContent" runat="server" />                            
+				        </div>
+			        </div>
+		        </div> 		  
+	        </div>
+        </div>
+
+        <asp:ContentPlaceHolder id="BottomNavContainer" runat="server">           
+
+        <!-- DO NOT DELETE THE FOLLOWING COMMENT -->
+        <!-- 0.0.0.0:FP:61301D1E9D12AF3D11C020401ED4B4298EB683A97351C2 -->
+            
+	    <div id="xrx_bnr_ftr">
+	  	    <div id="xrx_bnr_ftr_inner">
+	            <ul class="xrx_bnr_third_party_ftr_nav">
+                    <li class="xrx_bnr_first"><a name="&amp;lid=cell-" href="#"></a></li>
+                </ul>
+	            <p class="xrx_bnr_third_party_ftr_copyright">	            
+			        &copy; 1999-<%=DateTime.Now.Year.ToString(CultureInfo.InvariantCulture)%> XEROX CORPORATION. All rights reserved.	
+	            </p>
+	        </div>
+		</div> 
+
+        </asp:ContentPlaceHolder>    
+        
+         <%-- structure for Ajax Loader --%>
+        <div class="ajaxloader" style="display: none;">
+            <div> 
+                <strong>We are preparing your report, please wait...</strong>
+                <br/>  <br/> 
+                <img src="<%=VirtualPathUtility.ToAbsolute("~/images/navigation/loadingAnimation.gif")%>" alt="loadingimage" style="display:block; margin:auto;" />
+           </div>
+        </div>      
+
+	</form>	
+    <!-- Common Javascript -->  
+    <script type="text/javascript" src="<%=VirtualPathUtility.ToAbsolute("~/js/jquery/1.4.3/jquery-1.4.3.min.js")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>
+    <script type="text/javascript" src="<%=VirtualPathUtility.ToAbsolute("~/js/jquery/1.8/jquery-ui-full.min.js")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>
+    <script type="text/javascript" src="<%=VirtualPathUtility.ToAbsolute("~/js/fgmenu/fg.menu.js")%>?v=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>     
+    <script type="text/javascript" src="<%=VirtualPathUtility.ToAbsolute("~/js/jquery/jquery.query-1.2.js")%>?v=3"></script> 
+   
+           
+    <script type="text/javascript">
+        var sRootPath = '<%=VirtualPathUtility.ToAbsolute("~/")%>';
+
+        //jquery to load the top link fg-menu dropdown
+        jQuery(document).ready(function () {
+            $('#hierarchy').menu({
+                content: $('#hierarchy').next().html(),
+                crumbDefaultText: ' '
+            });
+
+        });
+    </script>
+
+    <asp:ContentPlaceHolder id="Javascript" runat="server" />
+    <asp:Literal ID="litState" runat="server" />
+</body>
+</html>
+

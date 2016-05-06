@@ -1,0 +1,48 @@
+﻿@model CollateralCreatorAdminWeb.Models.FontUsage
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>FontUsage</legend>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Font.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Font.Name)
+    </div>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TemplateID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemplateID)
+    </div>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PartnerBranded)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartnerBranded)
+    </div>
+    <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TextAreaID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TextAreaID)
+    </div>
+</fieldset>
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+    </p>
+}

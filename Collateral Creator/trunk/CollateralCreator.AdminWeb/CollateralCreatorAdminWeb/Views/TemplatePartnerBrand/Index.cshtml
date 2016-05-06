@@ -1,0 +1,89 @@
+﻿@model PagedList.IPagedList<CollateralCreatorAdminWeb.Models.TemplatePartnerBranded>
+
+@{
+    ViewBag.Title = "Template-PartnerBrand";
+}
+
+
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Grid.css")" rel="stylesheet" type="text/css" />   
+}
+
+<h2>Template-PartnerBrand</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { searchString = ViewBag.currentFilter }) | @Html.ActionLink("Home", "Index", "Home")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>Find by template name: @Html.TextBox("searchString", ViewBag.CurrentFilter as string) 
+                <input type="submit" value="Search" class="button"/>
+    </p>
+}
+
+<table>
+    <tr>
+        <th>
+            TemplateName
+        </th>
+        <th>
+            PartnerBranded
+        </th>
+        <th>
+           PartNumber
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Template.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartnerBranded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.TemplateID, brand=item.PartnerBranded, searchString = ViewBag.currentFilter  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.TemplateID, brand=item.PartnerBranded, searchString = ViewBag.currentFilter  })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount &nbsp;
+     
+@if (Model.HasPreviousPage)
+{
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("First page ", "Index", new { page = 1 })
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Previous ", "Index", new { page = Model.PageNumber - 1 })
+}
+else
+{
+    @Html.Raw("&nbsp;");
+    @: First page
+    @Html.Raw("&nbsp;");
+    @: Previous 
+}
+     
+@if (Model.HasNextPage)
+{
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Next ", "Index", new { page = Model.PageNumber + 1 })
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Last page ", "Index", new { page = Model.PageCount })
+}
+else
+{
+    @Html.Raw("&nbsp;");
+    @: Next 
+    @Html.Raw("&nbsp;")
+    @: Last page 
+}

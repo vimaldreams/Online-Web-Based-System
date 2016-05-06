@@ -1,0 +1,147 @@
+﻿@model PagedList.IPagedList<CollateralCreatorAdminWeb.Models.CustomizableArea>
+
+@using CollateralCreatorAdminWeb.Helpers;
+
+@{
+    ViewBag.Title = "Custom Area";
+}
+
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Grid.css")" rel="stylesheet" type="text/css" />   
+}
+
+<h2>Custom Area</h2>
+
+<p>
+   @* @Html.ActionLink("Create New", "Create", new { searchString = ViewBag.currentFilter }) |*@ 
+   @Html.ActionLink("Home", "Index", "Home")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>Find by template name: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)  
+                <input type="submit" value="Search" class="button"/>
+    </p>
+}
+
+<table>
+    <tr>
+        <th>Create</th>
+        <th>
+            TemplateName
+        </th>
+        <th>
+            AreaID
+        </th>
+        <th>
+            PageID
+        </th>
+        <th>
+            XPos
+        </th>
+        <th>
+           YPos
+        </th>
+        <th>
+           Height
+        </th>
+        <th>
+           Width
+        </th>
+        <th>
+           Rotation
+        </th>
+        <th>
+            AreaName
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>        
+            @if (item.Name.ToLower().Contains("logo") || item.Name.ToLower().Contains("cirque du soleil sompetition"))
+            {   
+                @Html.ActionLink("ImageArea", "CreateImageArea", new { areaID = item.AreaID, searchString = ViewBag.CurrentFilter })      
+            }
+            else
+            {
+             @Html.ActionLink("TextArea", "CreateTextArea", new { areaID = item.AreaID, searchString = ViewBag.CurrentFilter })      
+            }
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Page.Template.Name)*@
+            @if(item.Name.Contains("Logo"))
+            {
+                @Html.ActionLink(item.Page.Template.Name, "Index", "ImageArea", new {areaID = item.AreaID,  pageID = item.PageID, templateID = item.Page.TemplateID, currentFilter = ViewBag.CurrentFilter }, null)
+            }
+            else
+            {
+                @Html.ActionLink(item.Page.Template.Name, "Index", "TextArea", new {areaID = item.AreaID,  pageID = item.PageID, templateID = item.Page.TemplateID, currentFilter = ViewBag.CurrentFilter }, null)
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page.PageID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XPos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YPos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rotation)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Name)*@
+             @Html.Truncate(item.Name, 30)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.AreaID, searchString = ViewBag.currentFilter } ) |           
+            @Html.ActionLink("Delete", "Delete", new {  id=item.AreaID, searchString = ViewBag.currentFilter })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount &nbsp;
+     
+@if (Model.HasPreviousPage)
+{
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("First page ", "Index", new { page = 1 })
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Previous ", "Index", new { page = Model.PageNumber - 1 })
+}
+else
+{
+    @Html.Raw("&nbsp;");
+    @: First page
+    @Html.Raw("&nbsp;");
+    @: Previous 
+}
+     
+@if (Model.HasNextPage)
+{
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Next ", "Index", new { page = Model.PageNumber + 1 })
+    @Html.Raw("&nbsp;");
+    @Html.ActionLink("Last page ", "Index", new { page = Model.PageCount })
+}
+else
+{
+    @Html.Raw("&nbsp;");
+    @: Next 
+    @Html.Raw("&nbsp;")
+    @: Last page 
+}

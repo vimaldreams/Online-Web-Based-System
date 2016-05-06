@@ -1,0 +1,64 @@
+﻿@model CollateralCreatorAdminWeb.Models.TextArea
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TextArea</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CustomizableArea.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CustomizableArea.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullyEditable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullyEditable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CharsPerLine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CharsPerLine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lines)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Lines)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Align)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Align)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LineSpacing)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LineSpacing)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TextAreaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

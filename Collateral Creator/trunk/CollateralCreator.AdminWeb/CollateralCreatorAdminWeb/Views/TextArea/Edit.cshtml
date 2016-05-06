@@ -1,0 +1,85 @@
+﻿@model CollateralCreatorAdminWeb.Models.TextArea
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TextArea</legend>
+
+        @Html.HiddenFor(model => model.TextAreaID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AreaID, "CustomizableArea")
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.AreaID)
+            @*@Html.DropDownList("AreaID", String.Empty)*@
+            @*@Html.DropDownListFor(model => model.AreaID, new SelectList(ViewBag.TextAreaID as System.Collections.IEnumerable, "Value", "Text"), new { @disabled = "disabled",style = "Width:250px;" })*@
+            @Html.TextBoxFor(model => model.AreaID, new {@Value = ViewBag.CustomAreaName, @readonly = "readonly", style = "Width:50%"  })
+            @Html.ValidationMessageFor(model => model.AreaID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Text, new { style = "Width:500px; height:100px" })
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullyEditable)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullyEditable)
+            @Html.ValidationMessageFor(model => model.FullyEditable)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CharsPerLine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CharsPerLine)
+            @Html.ValidationMessageFor(model => model.CharsPerLine)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Lines)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Lines)
+            @Html.ValidationMessageFor(model => model.Lines)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Align)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Align)
+            @Html.ValidationMessageFor(model => model.Align)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LineSpacing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LineSpacing)
+            @Html.ValidationMessageFor(model => model.LineSpacing)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>

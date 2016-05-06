@@ -1,0 +1,48 @@
+﻿@model CollateralCreatorAdminWeb.Models.TemplatePartnerBranded
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TemplatePartnerBranded</legend>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemplateID, "Template")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TemplateID", String.Empty)
+            @Html.ValidationMessageFor(model => model.TemplateID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerBranded)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerBranded)
+            @Html.ValidationMessageFor(model => model.PartnerBranded)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartNumber)
+            @Html.ValidationMessageFor(model => model.PartNumber)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>

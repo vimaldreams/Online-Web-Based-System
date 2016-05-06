@@ -1,0 +1,157 @@
+﻿@using CollateralCreatorAdminWeb.Helpers;
+@model CollateralCreatorAdminWeb.Models.RadioViewModel
+
+@{
+    ViewBag.Title = "MenuTree-TemplateBrand";
+}
+
+<h2>MenuTree-Template Matrix</h2>
+<p>
+        @Html.ActionLink("Home", "Index", "Home")
+    </p>
+<br />
+  
+<div class="leftList">
+    <h5> Select MenuTree Nodes : </h5> 
+    @Html.ListBox("Nodes", ViewBag.Nodes as MultiSelectList, new { @class = "multiselectlist" })          
+</div>
+
+<div class="rightList2">  
+    <h5> Select Templates : </h5>           
+    @Html.ListBox("Templates", ViewBag.Templates as MultiSelectList, new { @class = "multiselectlist" } )
+</div>
+
+<br /><br />
+<input id="Save" type="button" value=" Submit " name='button' class="button" style="margin-left:250px;"/>
+
+<br /><br />
+
+<h2>Template Brand</h2>
+<br />
+
+@using (Html.BeginForm("TemplateBrandAdmin", "MenuTreeTemplateBrand", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table id="tbtemplatebrand">
+        <tr>
+            <th>Template</th>
+            <th></th>
+            <th>Brand</th>
+            <th></th>
+            <th>PartNumber</th>
+        </tr>
+        <tr id="trtemplatebrand">
+            <td>
+                @Html.DropDownList("TemplateNames", "Please Select")
+            </td>
+            <td></td>
+            <td>
+               @* <input type="radio" id="xeroxbrand" value="xeroxbrand" name="brand" checked="checked"/>Xerox Brand
+                <br />
+                <input type="radio" id="partnerbrand" name="brand" value="partnerbrand"/>Partner Brand*@
+                @Html.RadioButtonFor(model => model.Brand, "false", new { id = 0 }) Xerox Brand
+                @Html.RadioButtonFor(model => model.Brand, "true", new { id = 1 }) Partner Brand
+                @Html.ValidationMessageFor(model => model.Brand)
+            </td>
+            <td></td>
+            <td>
+               @*<input id="partnumber" type="text" class="textbox"/>*@
+                @Html.TextBox("partNumber", string.Empty) 
+            </td>
+        </tr>       
+        <tr>
+            <td>PDF File Upload :<input type="file" name="templateFile" id="templateFile" /></td> 
+        </tr>
+        <tr>
+            <td>Thumbnail Image Upload :<input type="file" name="thumbnailFile" id="thumbnailFile" /></td>             
+        </tr>
+    </table>
+    
+    <br /><br />
+    <input id="Insert" type="submit" value=" Submit " name='button' class="button" style="margin-left:250px;"/>
+}
+
+<script type="text/javascript">
+   
+    jQuery(document).ready(function () {       
+
+        $("#Save").click(function () {
+
+            var menuTreeNodes = new String();
+            var templateIDs = new String();
+
+            if ($("#Nodes >option:selected").length > 0 && $("#Templates >option:selected").length > 0) {
+
+                $("#Nodes > option:selected").each(function () {
+                    menuTreeNodes = menuTreeNodes + $(this).val() + ',';
+                });
+                menuTreeNodes = menuTreeNodes.substring(0, menuTreeNodes.length - 1);
+
+                $("#Templates > option:selected").each(function () {
+                    templateIDs = templateIDs + $(this).val() + ',';
+                });
+                templateIDs = templateIDs.substring(0, templateIDs.length - 1);
+                
+                jQuery.ajax({
+                    type: "POST",
+                    url: sRootPath + "MenuTreeTemplateBrand/MenuTreeTemplateAdmin",
+                    data: JSON.stringify({ menuTreeNodes: menuTreeNodes, templates: templateIDs }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+
+                        alert(response.message);
+                        window.location.href = sRootPath + "MenuTreeTemplateBrand/MenuTreeTemplateAdmin";
+                    }
+                });
+            }
+            else {
+                alert("Please select the MenuTree and Template Matrix.");
+            }
+        });
+
+        var selectedtemplateid;
+        var selectedtemplatename = '';
+
+        $("#TemplateNames").change(function () {
+            selectedtemplateid = $('#TemplateNames > option:selected').val();
+            selectedtemplatename = $('#TemplateNames > option:selected').text();
+        });
+
+        $("#Insert1").click(function () {
+            
+            var partnumber = $('#partnumber').val();
+
+            var isXeroxChecked = $('#xeroxbrand').is(':checked');
+            var isPartnerChecked = $('#partnerbrand').is(':checked');
+
+            if (selectedtemplatename != "Please Select" && selectedtemplatename != "" && partnumber != "" && (isXeroxChecked || isPartnerChecked)) {
+
+                var brandvalue;
+                if (isXeroxChecked) {
+                    brandvalue = false;
+                }
+                else if (isPartnerChecked) {
+                    brandvalue = true;
+                }
+
+                jQuery.ajax({
+                    type: "POST",
+                    url: sRootPath + "MenuTreeTemplateBrand/TemplateBrandAdmin",
+                    data: JSON.stringify({ templateID: selectedtemplateid, brand: brandvalue, partNumber: partnumber }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+
+                        alert(response.message);
+                        window.location.href = sRootPath + "MenuTreeTemplateBrand/MenuTreeTemplateAdmin";
+                    }
+                });
+            }
+            else {
+                alert("Please select templatename, brand & partnumber.");
+            }
+        });
+
+    });
+
+</script>

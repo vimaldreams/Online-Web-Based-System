@@ -1,0 +1,105 @@
+﻿@using CollateralCreatorAdminWeb.Extensions
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Collateral Creator Admin</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        
+        <!-- Stylesheet Includes -->  
+        <link href="@Url.Content("~/Content/corp_740px_bundle.embed.css")" rel="stylesheet" type="text/css" />  
+        <link href="@Url.Content("~/Content/site.css")" rel="stylesheet" type="text/css" />
+                
+        @Scripts.Render("~/bundles/modernizr")   
+    
+         <!-- Script Includes -->  
+        <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script type="text/javascript">
+            var sRootPath = '@VirtualPathUtility.ToAbsolute("~/")';
+        </script>
+
+       @if (IsSectionDefined("AddToHead"))
+       {
+           @RenderSection("AddToHead", required: false)
+       }
+    </head>
+    <body>
+        <header>
+            <div id="xrx_bnr_hdr" class="xrx_bnr_partner xrx_bnr_partner_nonav">
+                <div id="xrx_bnr_hdr_position">
+                    <a id="xrx_bnr_hdr_lnk_logo" href="http://www.xerox.com/" name="&lid=hdr-logo-home"><span>Xerox.com</span></a> 
+                    <span class="title" id="xrx_bnr_partner_title">Collateral Creator Admin for NARS and SC2 programmes</span>                       
+                    <div class="portalheader">    
+                        @if (IsSectionDefined("SignOut")){ 
+                            @RenderSection("SignOut", required: true)     
+                        }              
+                    </div>
+                </div>            
+            </div>
+        </header>
+
+       <div id="xrx_pg_legacy_pagewidth">
+	        <div class="xrx_pg_legacy_clearfix" id="xrx_pg_legacy_wrapper">
+		        <div id="xrx_pg_legacy_twocols" class="full-width"> 
+			        <div id="xrx_pg_legacy_maincol" style="width:1000px !important;">			            
+				        <div id="xrx_pg_legacy_wrapper">                            
+                            @RenderSection("featured", required: false)
+                            <section class="content-wrapper main-content clear-fix">
+                                <div id="notification">
+                                 <!-- Notification loop -->
+                                @foreach(var notification in Html.Notifications().Current.Where(n => n.NotificationStatus == CollateralCreatorAdminWeb.Service.NotificationStatus.Error))
+                                {
+                                        <div class="notification notificationerror">
+                                            <h3 style="padding-left:25px; color:red">
+                                                @notification.Message
+                                            </h3>
+                                        </div> 
+                                }
+
+                               @foreach (var notification in Html.Notifications().Current.Where(n => n.NotificationStatus == CollateralCreatorAdminWeb.Service.NotificationStatus.Warning))
+                                {
+                                        <div class="notification notificationwarning">
+                                            <h3 style="padding-left:25px">
+                                                @notification.Message
+                                            </h3>
+                                        </div> 
+                                }
+         
+                                @foreach (var notification in Html.Notifications().Current.Where(n => n.NotificationStatus == CollateralCreatorAdminWeb.Service.NotificationStatus.Success))
+                                {
+                                        <div class="notification notificationsuccess">
+                                             <h3 style="padding-left:25px">
+                                                @notification.Message
+                                            </h3>
+                                        </div> 
+                                }
+         
+                                <!--End of Notification loop -->
+                                </div><br /><br /><br />
+                                @RenderBody()
+                            </section>
+                        </div>
+			        </div>
+		        </div> 		  
+	        </div>
+        </div>
+
+        <footer>
+             <div id="xrx_bnr_ftr">
+	  	        <div id="xrx_bnr_ftr_inner">
+	                <ul class="xrx_bnr_third_party_ftr_nav">
+                        <li class="xrx_bnr_first"><a name="&amp;lid=cell-" href="#"></a></li>
+                    </ul>
+	                <p class="xrx_bnr_third_party_ftr_copyright">	            
+			            &copy; 1999-@DateTime.Now.Year.ToString(System.Globalization.CultureInfo.InvariantCulture) XEROX CORPORATION. All rights reserved.	
+	                </p>
+	            </div>
+		      </div> 
+        </footer>
+        @*@Scripts.Render("~/Scripts/jquery-1.7.1.js")
+        @Scripts.Render("~/Scripts/jquery-1.7.1.min.js")*@
+        @*@RenderSection("scripts", required: true)*@
+    </body>
+</html>

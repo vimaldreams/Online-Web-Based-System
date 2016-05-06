@@ -1,0 +1,128 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{E3ED4904-C5CE-4BC2-AECE-94940C4E7B20}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\xcc_CustomizableArea_DownloadImage.sql = SQL\xcc_CustomizableArea_DownloadImage.sql
+		SQL\xcc_CustomizableArea_GetImageArea.sql = SQL\xcc_CustomizableArea_GetImageArea.sql
+		SQL\xcc_CustomizableArea_GetTextArea.sql = SQL\xcc_CustomizableArea_GetTextArea.sql
+		SQL\xcc_CustomizableArea_UploadImage.sql = SQL\xcc_CustomizableArea_UploadImage.sql
+		SQL\xcc_Document_ChangeStatusByID.sql = SQL\xcc_Document_ChangeStatusByID.sql
+		SQL\xcc_Document_Clone.sql = SQL\xcc_Document_Clone.sql
+		SQL\xcc_Document_CreateFromLanguageTemplate.sql = SQL\xcc_Document_CreateFromLanguageTemplate.sql
+		SQL\xcc_Document_CreateFromTemplate.sql = SQL\xcc_Document_CreateFromTemplate.sql
+		SQL\xcc_Document_CreateHistory.sql = SQL\xcc_Document_CreateHistory.sql
+		SQL\xcc_Document_DeleteByID.sql = SQL\xcc_Document_DeleteByID.sql
+		SQL\xcc_Document_DownloadImage.sql = SQL\xcc_Document_DownloadImage.sql
+		SQL\xcc_Document_DownloadLog.sql = SQL\xcc_Document_DownloadLog.sql
+		SQL\xcc_Document_GetAdminDocuments.sql = SQL\xcc_Document_GetAdminDocuments.sql
+		SQL\xcc_Document_GetArchiveAdminDocuments.sql = SQL\xcc_Document_GetArchiveAdminDocuments.sql
+		SQL\xcc_Document_GetByID.sql = SQL\xcc_Document_GetByID.sql
+		SQL\xcc_Document_GetByIDs.sql = SQL\xcc_Document_GetByIDs.sql
+		SQL\xcc_Document_GetFonts.sql = SQL\xcc_Document_GetFonts.sql
+		SQL\xcc_Document_GetFromTemplate.sql = SQL\xcc_Document_GetFromTemplate.sql
+		SQL\xcc_Document_GetLatest.sql = SQL\xcc_Document_GetLatest.sql
+		SQL\xcc_Document_GetPages.sql = SQL\xcc_Document_GetPages.sql
+		SQL\xcc_Document_GetTemplateInfo.sql = SQL\xcc_Document_GetTemplateInfo.sql
+		SQL\xcc_Document_GetTemplateName.sql = SQL\xcc_Document_GetTemplateName.sql
+		SQL\xcc_Document_UpdateAddress.sql = SQL\xcc_Document_UpdateAddress.sql
+		SQL\xcc_Document_UpdateAddressContactDetails.sql = SQL\xcc_Document_UpdateAddressContactDetails.sql
+		SQL\xcc_Document_UpdateDocumentName.sql = SQL\xcc_Document_UpdateDocumentName.sql
+		SQL\xcc_Document_UpdateImageArea.sql = SQL\xcc_Document_UpdateImageArea.sql
+		SQL\xcc_Document_UpdateTextArea.sql = SQL\xcc_Document_UpdateTextArea.sql
+		SQL\xcc_DocumentAdmin_UpdateBatchStatus.sql = SQL\xcc_DocumentAdmin_UpdateBatchStatus.sql
+		SQL\xcc_DocumentAdmin_UpdateStatusByID.sql = SQL\xcc_DocumentAdmin_UpdateStatusByID.sql
+		SQL\xcc_DocumentHistory_GetLatest.sql = SQL\xcc_DocumentHistory_GetLatest.sql
+		SQL\xcc_MenuTree_GetData.sql = SQL\xcc_MenuTree_GetData.sql
+		SQL\xcc_MenuTree_GetTreeNodes.sql = SQL\xcc_MenuTree_GetTreeNodes.sql
+		SQL\xcc_MenuTree_ProductCodes.sql = SQL\xcc_MenuTree_ProductCodes.sql
+		SQL\xcc_Page_GetCustomizableAreas.sql = SQL\xcc_Page_GetCustomizableAreas.sql
+		SQL\xcc_Page_GetFonts.sql = SQL\xcc_Page_GetFonts.sql
+		SQL\xcc_SmartCentre_QueryStringLog.sql = SQL\xcc_SmartCentre_QueryStringLog.sql
+		SQL\xcc_Template_CreateUpdateTemplateButton.sql = SQL\xcc_Template_CreateUpdateTemplateButton.sql
+		SQL\xcc_Template_GetByID.sql = SQL\xcc_Template_GetByID.sql
+		SQL\xcc_Template_GetPages.sql = SQL\xcc_Template_GetPages.sql
+		SQL\xcc_Template_GetTemplateButton.sql = SQL\xcc_Template_GetTemplateButton.sql
+		SQL\xcc_Template_TreeNode.sql = SQL\xcc_Template_TreeNode.sql
+		SQL\xcc_TextArea_GetFonts.sql = SQL\xcc_TextArea_GetFonts.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{9290BE52-F4F8-4E91-A810-4668ABDC7A48}"
+	ProjectSection(SolutionItems) = preProject
+		libs\830740.lic = libs\830740.lic
+		libs\itextsharp.dll = libs\itextsharp.dll
+		libs\PagedList.dll = libs\PagedList.dll
+		libs\Signals.Translations.dll = libs\Signals.Translations.dll
+		libs\SqlHelper.dll = libs\SqlHelper.dll
+		libs\UrlRewritingNet.UrlRewriter.dll = libs\UrlRewritingNet.UrlRewriter.dll
+		libs\Xerox.Portal.Models.dll = libs\Xerox.Portal.Models.dll
+		libs\Xerox.Portal.Mvc.dll = libs\Xerox.Portal.Mvc.dll
+		libs\Xerox.SSOComponents.Data.dll = libs\Xerox.SSOComponents.Data.dll
+		libs\Xerox.SSOComponents.Data.SqlServer.dll = libs\Xerox.SSOComponents.Data.SqlServer.dll
+		libs\Xerox.SSOComponents.dll = libs\Xerox.SSOComponents.dll
+		libs\Xerox.SSOComponents.Models.dll = libs\Xerox.SSOComponents.Models.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollateralCreator.Web", "CollateralCreator.Web\CollateralCreator.Web.csproj", "{224ACF75-03C0-4721-BE8A-CFA272EF7ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollateralCreator.SQLProvider", "CollateralCreator.SQLProvider\CollateralCreator.SQLProvider.csproj", "{59F11FC7-2DD3-4BDE-B8A4-06BC821139B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollateralCreator.Business", "ColateralCreator.Business\CollateralCreator.Business.csproj", "{141E0847-392A-49E6-8756-B68C5BEAAD32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollateralCreator.Data", "CollateralCreator.Data\CollateralCreator.Data.csproj", "{FAE9A875-0BB2-4B84-859F-E718E3D462F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollateralCreatorAdminWeb", "CollateralCreator.AdminWeb\CollateralCreatorAdminWeb\CollateralCreatorAdminWeb.csproj", "{3F9396E1-C322-47FE-8A21-011F6B5A652C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://sig-db:8080/tfs/xerox
+		SccLocalPath0 = CollateralCreator
+		SccProjectFilePathRelativizedFromConnection0 = ..\\
+		SccProjectUniqueName1 = CollateralCreator.Web\\CollateralCreator.Web.csproj
+		SccProjectName1 = CollateralCreator.Web
+		SccLocalPath1 = CollateralCreator.Web
+		SccProjectUniqueName2 = CollateralCreator.SQLProvider\\CollateralCreator.SQLProvider.csproj
+		SccProjectName2 = CollateralCreator.SQLProvider
+		SccLocalPath2 = CollateralCreator.SQLProvider
+		SccProjectUniqueName3 = CollateralCreator.Data\\CollateralCreator.Data.csproj
+		SccProjectName3 = CollateralCreator.Data
+		SccLocalPath3 = CollateralCreator.Data
+		SccProjectUniqueName4 = ColateralCreator.Business\\CollateralCreator.Business.csproj
+		SccProjectName4 = ColateralCreator.Business
+		SccLocalPath4 = ColateralCreator.Business
+		SccProjectUniqueName5 = CollateralCreator.AdminWeb\\CollateralCreatorAdminWeb\\CollateralCreatorAdminWeb.csproj
+		SccProjectName5 = CollateralCreator.AdminWeb/CollateralCreatorAdminWeb
+		SccLocalPath5 = CollateralCreator.AdminWeb\\CollateralCreatorAdminWeb
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{224ACF75-03C0-4721-BE8A-CFA272EF7ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224ACF75-03C0-4721-BE8A-CFA272EF7ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224ACF75-03C0-4721-BE8A-CFA272EF7ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224ACF75-03C0-4721-BE8A-CFA272EF7ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F11FC7-2DD3-4BDE-B8A4-06BC821139B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F11FC7-2DD3-4BDE-B8A4-06BC821139B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F11FC7-2DD3-4BDE-B8A4-06BC821139B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F11FC7-2DD3-4BDE-B8A4-06BC821139B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141E0847-392A-49E6-8756-B68C5BEAAD32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141E0847-392A-49E6-8756-B68C5BEAAD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141E0847-392A-49E6-8756-B68C5BEAAD32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE9A875-0BB2-4B84-859F-E718E3D462F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE9A875-0BB2-4B84-859F-E718E3D462F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE9A875-0BB2-4B84-859F-E718E3D462F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE9A875-0BB2-4B84-859F-E718E3D462F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9396E1-C322-47FE-8A21-011F6B5A652C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9396E1-C322-47FE-8A21-011F6B5A652C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9396E1-C322-47FE-8A21-011F6B5A652C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9396E1-C322-47FE-8A21-011F6B5A652C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9396E1-C322-47FE-8A21-011F6B5A652C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

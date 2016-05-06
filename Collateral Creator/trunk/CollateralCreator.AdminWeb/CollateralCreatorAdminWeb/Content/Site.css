@@ -1,0 +1,1037 @@
+﻿body {
+}
+
+.toolLogo {
+    margin: 325px 0px 325px 350px;
+}
+
+/*Styling for TopNav Links*/
+.tbmyprofile {
+    border-collapse: collapse;
+}     
+.tbmyprofile tr.trheader td {
+    padding-bottom: 2em;
+}
+.tbmyprofile tr td {
+    padding-left: 5em;
+    padding-right: 5em;    
+}
+.profiletxtbox {
+    width: 200px;
+    height: 18px;
+    border: .1px solid lightgrey;
+}
+.btnprofile {
+    margin-left: 475px;
+}
+
+.tutorials li {
+    list-style: none;
+}
+
+/*Styling for Common UI Elements*/
+
+.underline {text-decoration: underline;}
+
+.NoDetails {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #008CC9;
+}
+ .NoDetails label, .NoDetails i {
+     color: #008CC9;
+     font-size: bold;
+ }
+
+.NoDetails a :hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.processingimage {
+    margin-left: 400px;
+}
+.QuantityError {
+    color: red;
+}
+.QuantityError ul li {
+    color: red;
+}
+.trackingnumber {
+    font-size: 12px;
+    font: xx-large;
+}
+.profilelogo {
+    width: 150px; 
+    height:60px;
+    border: 1px solid #666666;
+}
+
+a#fgmenulink {
+    color: #666666;
+}
+
+.address_dialogbox .dialogsavebutton, .custom_dialogbox .dialogsavebutton{
+    margin-left: 250px;
+}
+
+.logo_dialogbox .dialogsavebutton {
+    margin-left: 140px;
+}
+
+.ui-dialog-titlebar {
+    background-color: white;    
+}
+
+h2, strong { color: #333333;}
+
+label, span { color: #666666; }
+
+#mastercontent {
+    width: 930px;
+    height: auto;   
+    /*border: 1px solid gray; */
+}
+
+.sitemap {
+    margin-bottom: 15px;    
+}
+
+textarea { 
+    resize: none; 
+}
+
+.dialogtextbox {
+     width: 250px;
+}
+
+.logotextboxstyle {
+     width: 300px;
+     height: 20px;
+     border: 1px solid gray;    
+}
+
+a:link, a:visited {
+    color: #008CC9;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #008CC9;
+    text-decoration: underline !important;
+}
+
+div.divhover:hover {
+    color: #008CC9;
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+img {
+    border: none;
+}
+
+.breadcrumlink:hover {
+    color: #008CC9;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a.breadcrumlink {
+    color: grey;
+}
+
+.currentbreadcrumlink {
+    color: grey;
+}
+
+.errormsg {
+    color: red;
+}
+a.lnkrecentactivity span, a.lnkcreatecollateral span, a label, a span{
+    color: #008CC9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button, .editpagebutton, .buttonstyle, .backhomebutton, .dialogclosebutton{ color: #666666;}
+
+.dialogclosebutton:hover{ color: blue;text-decoration: underline;}
+
+a.ui-dialog-titlebar-close{
+        display: none;
+}
+
+.userpanel {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.loading {
+     margin-left: 75px;
+}
+
+.divajaxloader {
+     margin-top: 200px;
+}
+
+/*Styling for left tree view panel*/
+.lnkrecentactivity {
+     margin-left: -200px;
+}
+
+.selectedprodText {
+    margin-top: 0px;
+    text-decoration: none;
+}
+
+#maincontent {
+     width: 680px;
+}
+
+#leftPanel {
+    float: left;
+    width: 200px;
+}
+
+.treeview {
+    margin: 20px 20px 20px 0px;
+    border: 1px solid grey;
+    width: 175px;
+    height: auto;
+    border-radius: .4em .4em .4em .4em;
+    background-color: #f9f9f9;
+}
+
+.selectlabel {
+    padding: 5px 0px 0px 10px;
+    height: 30px;
+    border-radius: .4em .4em .4em .4em;
+    background-color: #ebebeb;
+}
+.selectlabel span {
+    color: #666666;
+}
+
+#productoptions{ margin-left: 10px;}
+
+.product-category { margin-top: 5px;margin-bottom: 5px; }
+
+.product-category span { padding-left: 5px;}
+
+#productoptions{ margin-top: 5px;}
+
+#productoptions .category img {	margin: 0 2px 0 0;}
+
+.categorybox { display:none; padding: 0 0 0 31px;}
+
+.subcategorybox { display:none; padding: 0 0 0 31px;}
+
+.item { margin-left: -12px;}
+
+.subcategory .subitem{ margin-left: 0px;}
+
+.itemtext{ color: #666666;}
+
+.producttext{ color: #666666;}
+
+.producttext:hover, .itemtext:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.enableitemtext {
+    color: deepskyblue;
+}
+
+/*Styling for right template view details*/
+
+#rightPanel {
+    width: 900px;
+}
+
+.templateview {
+    margin-top: -12px;  
+}
+.templatesection {
+    overflow: auto;
+    height: 600px;
+}
+.templateview h3 {
+    border-bottom-color: white;
+}
+
+.imgtemplate {
+    float: left;
+    width: 120px;
+    height: 150px;
+    border: 1px solid gray;
+}
+.maintemplateform{}
+
+.templateform {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ebebeb;
+}
+
+.divimgtemplate {
+    width: 130px;
+}
+
+.tempcontentsection {
+    width: 500px;
+    height: 150px;
+    margin-left: 130px;
+}
+
+.cntrlbuttons {
+    /*margin: 10px 2px 2px 200px;     */
+    margin-left: 300px;
+}
+
+#btnedit{ width: 60px;}
+
+.templatebutton {
+    margin-left: 20px;
+    border: 1px solid grey;
+    border-radius: .2em .2em .2em .2em;
+}
+
+.disabletemplatedownloadbutton, .disabletemplateorderbutton {
+    margin-left: 20px;
+    border: 1px solid grey;
+    border-radius: .2em .2em .2em .2em;
+    display: none;
+}
+
+.templatepara {
+    margin-top: 5px;
+}
+
+.radiobutton {
+    margin-top: 5px;   
+    margin-bottom: 5px;
+}
+
+p #rdbtn_xeroxbrand, p #rdbtn_partnerbrand {margin-right: 5px;}
+
+#headercontent {
+     margin-bottom: 20px;
+}
+
+.txtcustomizeareastyle {
+    width: 450px;
+    height: 70px;
+    background-color: white;
+    color: #666666;
+    border: 1px solid gray;
+    resize: none;
+    font-size: 12px
+}
+
+.paperoption {
+    width: 900px;
+}
+
+/*Styling for bottom update details*/
+
+.updateDetails .updateContact {
+    float: left;
+    width: 400px;
+    height: 180px;   
+    margin-bottom: 20px;
+}
+
+.updateDetails .updateLogo {
+    margin-left: 500px;
+    width: 400px;
+}
+
+.txtcontactstyle {
+    width: 464px;
+    height: 70px;
+    border: 1px solid gray;
+    margin-bottom: 15px;
+}
+.txthomecontactstyle {
+    width: 350px;
+    height: 70px;
+    border: 1px solid gray;
+    margin-bottom: 15px;
+}
+.customlabels {
+    width: 350px;
+    height: 80px;
+    overflow: scroll;
+    border: 1px solid gray;
+    margin-bottom: 15px;
+}
+.fileuploadlogo {
+    width: 200px;
+    border: 1px solid gray;   
+}
+.button {
+    width: 90px;
+    margin-left: 125px;
+}
+.imageArea {
+    margin-left: 100px;
+}
+.LogoImageDiv {
+    height: 100px;
+    width: 350px;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: -10px;
+    border: 1px solid gray;   
+}
+
+.LogoImageDiv img {  
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 110px;
+    height: 50px;
+}
+
+/*Styling for Order Document form*/
+.orderForm {
+    border-collapse: collapse;
+}
+
+.orderForm tr td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+tr.fieldformat td{
+    padding-left: 4em;
+}
+
+tr.fieldformat td.labelformat {
+    float:right;
+}
+
+tr.fieldformat td.textformat {
+   
+}
+
+.textboxstyle {
+    width: 210px;
+    border: 1px solid gray;    
+}
+
+.buttonstyle {
+    width: 90px;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+/*Styling for Pop-Up Dialog contact table*/
+
+.tbContactDetails, .tbDetails, .tbCustomDetails {
+    border-collapse: collapse;
+}
+
+.tbContactDetails tr td, .tbDetails tr td, .tbCustomDetails tr td {
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-left: .5em;
+    padding-bottom: .5em; 
+}
+
+/*Styling for Recent Activity Page*/
+
+#leftContent {
+    width: 500px;
+    float: left;
+}
+.recentactivity {
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+.printhouseactivity {
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+#rightContent {
+     width: 400px;     
+     margin-left: 520px;
+}
+
+.recentupdateDetails .updateContact{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.recentupdateDetails .updateLogo {
+     margin-bottom: 20px;
+}
+
+.lnkcreatecollateral {
+    
+}
+/*.recentdocumentsection {
+    height: auto;
+}*/
+
+.norecentdocumentlabel, .noprinthouselabel {
+    margin-left: 20px;
+}
+
+.tbmentiondocument {
+    border-collapse: collapse;
+    margin-left: 10px;
+    width: auto;
+    height: auto;
+}
+
+.tbprintdocument {
+    border-collapse: collapse;
+    margin-left: 10px;
+    width: auto;
+    height: auto;
+}
+.tddocumentname {
+    width: 250px;
+    height: auto;
+}
+.tdprintdocumentname {
+    width: 350px;
+    height: auto;
+}
+.tdprintdocumentview {
+    float: right;
+}
+
+.trdocumentaction {
+    width: 200px;
+}
+
+.tbprintdocument tr.trprinthistory td {
+    padding: 0 0 0 1.5em;
+}
+
+.tbmentiondocument tr.trdocumentaction td {
+    padding: .4em 0 .5em 0;
+}
+
+.tbprintdocument tr.tbprintdocument td {
+    padding: .4em 0 .4em 0;
+}
+
+.view-more-link {
+    margin-left: 325px;
+    margin-top: 20px;   
+}
+
+.pview-more-link {
+    margin-left: 325px;
+    margin-top: 20px;   
+}
+
+.view-more-link div {
+    padding-left: 15px;
+    margin-top: -12px;
+}
+
+.pview-more-link div {
+    padding-left: 15px;
+    margin-top: -12px;
+}
+
+.dateheader{
+    font-size: 10px;
+    font: x-large;
+    margin-left: -10px;
+}
+
+/*Styling for Edit Page*/
+
+#editContent {
+    float: left;
+    height: auto;
+    margin-top: -10px;
+}
+
+#previewContent{
+    /*float: right;*/
+    margin-left: 580px;
+    margin-top: -45px;
+}
+
+.phonetextboxstyle {
+    width: 450px; 
+    height: 50px;
+    border: 1px solid gray;
+}
+
+.customizeimages {
+    border: 1px solid gray;
+    background-color: white;
+    overflow: auto;
+    height: auto; 
+    width: 450px;
+}
+.pagelogo {
+    height: auto; 
+    width: 225px;
+}
+
+.leftpagelogo {
+    padding-left: 10px;
+    float: left;   
+}
+
+.rightpagelogo {
+    padding-left: 150px;
+}
+.Logoimage {
+    margin-left: 20px;    
+    margin-bottom: 20px;
+    width: 110px;
+    height: 50px;
+}
+
+.Logolabel {
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#previewWindow {
+    border: 1px solid gray;
+    overflow: hidden;
+    height: 500px;
+    width: 340px;   
+    position: relative;
+}
+
+.editpagebutton {
+    width: 130px;
+    height:25px;
+}
+
+.previewbuttons {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.previewbuttons input{}
+
+.orderbuttons {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.orderbuttons input{}
+
+.mainmenubutton {
+    margin-top: 20px;
+    margin-left: 90px;
+}
+
+.editpreview {
+    width: 340px;
+    overflow: auto;
+}
+
+.framepdfpreview {
+    width: 340px;
+    overflow: hidden;
+    height: 500px;
+}
+
+.newlineup {
+    background-color: white; 
+    margin-top: -15px;
+}
+
+.divsavingtext {
+    height: 15px;
+    padding: 0px 0px 0px 150px;
+}
+
+.savingtext, .savingtext1, .savingtext2, .savingtext3, .savingtext4 {
+    color: #008CC9;
+}
+
+#lblCoverAddress, .lblCoverAddress {
+    color:grey;
+    font-size: 14px;
+}
+
+.linecharrestriction {
+     
+}
+
+.currentdocumentname {
+    width: 330px;
+    height:20px;
+    text-align: left;
+    padding-left: 10px;
+}
+/*Styling for Pop-Up Dialog*/
+
+
+/*Styling for Home page Preview Window*/
+
+.dialogPreviewBox {
+}
+
+.framepdfdocument {
+    height: 700px; 
+    width:600px;
+    margin-left: -12px;
+    overflow: auto;
+}
+
+.dialogclosebutton {
+    margin-left: 515px;
+}
+
+.dialogPreviewBottom {
+    position: absolute;
+    color: #666666;
+}
+
+/*Styling for Order Page Preview Document*/
+
+.leftorderform {
+    width: 540px;
+    float: left;
+}
+
+.rightpreviewdocument {
+    width: 200px;
+    margin-top: 100px;
+    margin-left: 600px;
+}
+
+.previewdocument {    
+    border: 1px solid gray;
+    border-radius: .4em .4em .4em .4em;  
+    width: 190px;
+    height: 360px;
+    background-color: #f9f9f9;
+}
+
+.userdocument {
+    border: 1px solid gray;
+    margin: 15px 15px 15px 15px;    
+}
+
+.imgdocument {
+    width: 150px;
+    height: 210px;
+}
+
+.divproofbutton input{
+    width: 140px;
+    margin-left: 29px;
+}
+
+.divproofdesc {
+    margin: 10px 10px 10px 10px;
+}
+
+.previeworderbutton input {
+    width: 140px;
+    margin: 20px 10px 0px 30px;
+}
+
+.imgbuiltdocument {
+    border: 1px solid gray;
+}
+
+.backhomebutton {
+    width: 250px;
+    height: 30px;
+    margin-left: 230px;
+}
+
+/*Styling for Order Summary form*/
+
+.ordersummaryForm {
+    border-collapse: collapse;
+}       
+.ordersummaryForm tr td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.headerText {
+    font-size: 12px;
+}
+.Logosummaryimage {
+     border: 2px solid gray;       
+     width: 110px;
+     height: 50px;
+     border-radius: .4em .4em .4em .4em;  
+}
+
+.tdprintoption {
+    padding-left: 150px;
+}
+
+/*.ordersummaryForm tr.tdprinttext td > 2 {
+    margin-left: -50px;
+}*/
+
+.ordersummaryForm tr.tdprinttext {
+    padding-left: 20px;    
+}
+
+/*.ordersummaryForm tr.tdprinttext td {
+    margin-left: 50px;
+}*/
+
+.tdsummarytext {
+    padding-left: 25px;
+}
+
+/*Contact Us page*/
+
+.textbox-width {
+    width: 350px;
+}
+
+/*Styling for Admin Area*/
+
+#adminmastercontent {
+    /*width: 930px;*/
+    height: 700px;
+    margin-left: -150px;
+}
+
+/*.admindata {
+    width: 930px;
+    height: auto;
+    overflow: auto;
+}*/
+
+.documentitem {
+    height: 40px;
+}
+.lblstatus {
+    padding-left: 40px;
+}
+.grdview_header {
+    height: 70px;
+    border: solid 1px grey;
+}
+
+.grdview_pager td {
+    padding-left: 4px; 
+    padding-right: 4px;
+    padding-top: 1px; 
+    padding-bottom: 2px;
+    font: bold;
+}
+
+.btndownload {
+    margin-left: 1000px; /*750*/
+}
+.btnarchivedownload {
+    margin-left: 800px; /*550*/
+    margin-bottom: 5px;
+}
+.admintool {
+    margin-top: -35px;
+}
+
+.errortext {
+    color: black;
+    font:xx-large;
+    font-size: 14px;
+}
+
+.summarypage {
+    border-collapse: collapse;
+}       
+.summarypage tr td {
+    padding-left: 5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+.summaryclose {
+    padding-left: 46em; 
+}
+
+.summarypage tr td label {
+    font-size: 14px;
+}
+
+/**********************Brand styling**********************/
+
+.button, .dialogsavebutton, .dialogbutton {
+    background-color: rgb(126, 191, 230) ;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr='#7ebfe6', EndColorStr='#2895d5');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr='#7ebfe6', EndColorStr='#2895d5')";
+    background: -o-linear-gradient(center top, rgb(126, 191, 230), rgb(40, 149, 213));
+    background: -moz-linear-gradient(center top, rgb(126, 191, 230), rgb(40, 149, 213));
+    background: -webkit-gradient(linear, center top, center bottom, from(#7ebfe6), to(#2895d5));
+    background: -webkit-linear-gradient(#7ebfe6, #2895d5);
+    background: -ms-linear-gradient(center top, rgb(126, 191, 230), rgb(40, 149, 213));
+    border: 1px solid #1b6686;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+ }
+ 
+ .blue {
+    background-color: rgb(126, 191, 230);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr='#7ebfe6', EndColorStr='#2895d5');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr='#7ebfe6', EndColorStr='#2895d5')";
+    background: -o-linear-gradient(center top, rgb(126, 191, 230), rgb(40, 149, 213));
+    background: -moz-linear-gradient(center top, rgb(126, 191, 230), rgb(40, 149, 213));
+    background: -webkit-gradient(linear, center top, center bottom, from(#7ebfe6), to(#2895d5));
+    background: -webkit-linear-gradient(#7ebfe6, #2895d5);
+    background: -ms-linear-gradient(center top, rgb(126, 191, 230), rgb(40, 149, 213));
+    border-color: #1b6686;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+ }
+
+.orange {
+    background-color: rgb(240, 173, 102);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr='#f0ad66', EndColorStr='#e67600');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr='#f0ad66', EndColorStr='#e67600')";
+    background: -o-linear-gradient(center top, rgb(240, 173, 102), rgb(230, 118, 0));
+    background: -moz-linear-gradient(center top, rgb(240, 173, 102), rgb(230, 118, 0));
+    background: -webkit-gradient(linear, center top, center bottom, from(#f0ad66), to(#e67600));
+    background: -webkit-linear-gradient(#f0ad66, #e67600);
+    background: -ms-linear-gradient(center top, rgb(240, 173, 102), rgb(230, 118, 0));
+    border-color: #df781f;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+input[name="fileToUpload"] {
+    border: 1px solid #1b6686;
+    border-radius: 2px;
+    color: black;
+    cursor: pointer; 
+}
+
+.editpagebutton, .changeTemplatelogo, .buttonstyle, .backhomebutton, .buttondownload, .btnsubmit {
+    border: 1px solid #1b6686;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer; 
+}
+
+.changeTemplatelogo {
+    margin-top: -12px;
+    margin-left: 373px;
+}
+
+#btnOrderPrints {
+    border: 2px solid #df781f;
+}
+
+#editContent {
+    height: auto;
+}
+
+.divtextarea {
+    height: 120px;
+}
+
+.savingtext1, .savingtext2, .savingtext3, .savingtext4 {
+    height: 10px;
+    margin-left: 450px;
+}
+
+.textareanote {
+    padding-left: 250px; 
+}
+
+.imageareanote {
+    padding-left: 190px; 
+}
+
+
+/***********************************Product Admin CSS***********************/
+div.notification{
+    display:block;
+    position:relative;
+    float:left;
+    width:60%;
+    border:1px solid #ebebeb;
+    margin-bottom:5px;
+    -webkit-box-shadow: 0 2px 4px #999999;   
+	-moz-box-shadow: 0 2px 4px #999999;   
+	box-shadow: 0 2px 4px #999999;  
+	padding:2px;
+}
+.notificationerror {
+    color:red !important;
+    background: #FFFFFF url(Images/buttons/alert-icon.gif) ;
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.notificationwarning {
+    color:#000000 !important;
+    background: #FFFFFF url(Images/buttons/alert-icon.gif) ;
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.notificationsuccess {
+    color:#000000 !important;
+    background: #FFFFFF url(Images/buttons/apply2.png) ;
+	background-position:left;
+	background-repeat:no-repeat;
+}
+
+.boxPanel {
+    width: 1000px;
+    height:150px;
+}
+
+.leftList {
+    float:left;
+}
+
+.rightList {
+    margin-left:400px;
+    margin-top:-135px;
+}
+
+.rightList2 {
+     margin-left:350px;
+}
+
+.midList {
+    }
+
+.multiselectlist {
+    width:300px;   
+    height:200px;
+}
+
+.topbutton {
+    margin-top:75px;
+    width:50px; height:25px;
+    margin-left:25px;
+}
+
+.bottombutton {
+     margin-left:25px;
+     width:50px; height:25px;
+}
+
+.textbox {
+    width: 250px;
+    height: 20px;
+}
+
+.text-label {
+    color: #cdcdcd;
+    font-weight: bold;
+}

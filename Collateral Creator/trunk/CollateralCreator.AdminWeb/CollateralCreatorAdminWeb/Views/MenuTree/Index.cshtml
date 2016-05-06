@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "MenuTreeAdmin";
+}
+
+<h2>MenuTree Admin</h2>
+            
+<p>
+    @Html.ActionLink("Home", "Index", "Home")
+</p>
+
+<br />
+    
+@using (Html.BeginForm())
+{
+    <table id="tbmenutree">
+        <tr>
+            <td>
+                <h4>Language :  &nbsp;&nbsp;&nbsp; @Html.DropDownList("Languages", "---Please Select---")</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Parent Name : <input type="text" value="" title="E.g : MenuTreeConnectKey"  id="parentNode" class="textbox"/></h4>
+            </td>
+        </tr>
+        <tr id="trmenutree">
+            <td>
+                <h4>Child Name1 : <input type="text" value="" title="E.g : MenuTreeConnectKeyBrochure"  id="childNode1" class="textbox"/></h4>
+            </td>           
+        </tr>
+        <tr>
+             <td>
+                <a id="addChildRow"><img src="~/Content/Images/icons/plus.gif" alt="addChild"/> Add Child</a>
+            </td>
+        </tr>
+        <tr id="trchildmenutree" style="display:none;">           
+        </tr>
+    </table>
+    
+    <br />
+    
+    <p><input type="button" id="saveMenuTree" value="Submit" class="button"/></p>
+}
+
+<script type="text/javascript">
+   
+    var counter = 1 ;
+    var childNodes = new String();
+
+    jQuery(document).ready(function () {
+
+        $("#saveMenuTree").click(function () {
+           
+            var languageID = $('#Languages > option:selected').val();
+            var parentNode = $('#parentNode').val();
+            var i;
+            for (i = 1; i < 5; i++) {
+                if ($('#childNode' + i).val() != '' && $('#childNode' + i).val() != undefined) {
+                    childNodes = childNodes + $('#childNode' + i).val() + ',';
+                }
+            }
+
+            childNodes = childNodes.substring(0, childNodes.length - 1);
+
+            jQuery.ajax({
+                type: "POST",
+                url: sRootPath + "MenuTree/Index",
+                data: JSON.stringify({ languageID : languageID, parentNode: parentNode, childNodes: childNodes }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    alert(response.message);
+                    window.location.href = sRootPath + "MenuTree/Index";
+                }
+            });            
+        });
+
+        $('a#addChildRow').click(function () {
+            counter++;
+           
+            if (counter == 2) {
+                var column1 = "<td><h4>Child Name" + counter + " : <input type=\"text\" value=\"\" title=\"E.g : MenuTreeConnectKeyDM\"  id=\"childNode" + counter + "\" class=\"textbox\"/></h4></td>";
+            }
+            else if (counter == 3) {
+                var column1 = "<td><h4>Child Name" + counter + " : <input type=\"text\" value=\"\" title=\"E.g : MenuTreeConnectKeyFlyer\"  id=\"childNode" + counter + "\" class=\"textbox\"/></h4></td>";
+            }
+            else {
+                var column1 = "<td><h4>Child Name" + counter + " : <input type=\"text\" id=\"childNode" + counter + "\" class=\"textbox\"/></h4></td>";
+            }
+
+            var column2 = "<td><img id=\"deleteChildRow\" src=\"/Content/Images/icons/minus.gif\" onclick=\"javascript:deleteChildNode('trchildmenutree" + counter + "');\" alt=\"addChild\"/></td>";
+
+            jQuery('#tbmenutree').show();
+            jQuery('#tbmenutree').append("<tr id=\"trchildmenutree" + counter + "\">" + column1 + column2 + "</tr>");            
+           
+        });
+
+    });
+
+    function deleteChildNode(tableid) {
+     
+        jQuery('#tbmenutree').find("tr[id=\"" + tableid + "\"]").remove();
+    }
+
+    $('input[type="text"]').each(function () {
+
+        this.value = $(this).attr('title');
+        $(this).addClass('text-label');
+
+        $(this).focus(function () {
+            if (this.value == $(this).attr('title')) {
+                this.value = '';
+                $(this).removeClass('text-label');
+            }
+        });
+
+        $(this).blur(function () {
+            if (this.value == '') {
+                this.value = $(this).attr('title');
+                $(this).addClass('text-label');
+            }
+        });
+    });
+
+
+</script>

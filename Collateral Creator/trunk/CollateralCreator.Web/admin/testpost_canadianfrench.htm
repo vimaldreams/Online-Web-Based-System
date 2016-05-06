@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>Xerox Collateral Creator Tool</title>
+	</head>
+<body>
+	 <form id="autoform" name="autoform" action="../loginform.aspx" method="post">
+        <!-- 
+	    credentials are userid#timestamp#token 
+	    token is calculated from user id and timestamp
+	    under SAP, user id will be a large number
+	    for now, it's the numeric part of the login id
+	    -->
+	     <input type="hidden" name="credentials" value="SIGNALS#2010-03-23T11:37:53Z#8391647864841"></input>
+	    <!-- under SAP, login_id will be something like 'ajackson', for now it's the eu123456 number -->
+
+	    <input type="hidden" name="login_id" value="SIGNALS"></input>
+	    <input type="hidden" name="first_name" value="Amber"></input>
+	    <input type="hidden" name="last_name" value="Michaud"></input>
+	    <input type="hidden" name="email" value="Amber.Michaud@company.com"></input>
+	    <input type="hidden" name="language" value="fr-ca"></input>
+        <!--<input type="hidden" name="language" value="de-DE"></input>-->
+	    <input type="hidden" name="principal" value="Y"></input>
+    	
+	    <!-- under SAP, location_id will be a big number, for now it's the numeric URN  -->
+	    <input type="hidden" name="location_id" value="2002578583"></input>
+	    <input type="hidden" name="location_name" value="Xerox"></input>
+
+	    <!-- under SAP, company_id will be a big number, for now it's the numeric URN  -->
+	    <input type="hidden" name="company_id" value="2002578583"></input>
+	    <!--<input type="hidden" name="company_branding" value="Transactional"></input>-->
+	    <input type="hidden" name="company_branding" value="ALLIANCE PARTNER"></input>
+	    <input type="hidden" name="company_country" value="Canada"></input>
+    
+	     <!-- Address details Specific backpack -->  
+	     <input type="hidden" name="res_address1" value="BroadGates"></input>
+	     <input type="hidden" name="res_address2" value="MarketPlace"></input>
+	     <input type="hidden" name="res_city" value="Henley-on-Thames"></input>
+	     <input type="hidden" name="res_state" value="Oxfordshire"></input>
+	     <input type="hidden" name="res_country" value="UnitedKingdom"></input>
+         <input type="hidden" name="res_postal_zip" value="RG9 2AA"></input>
+         
+	     <!-- NARS Specific backpack -->
+        <input type="hidden" name="FeatureSetRegion" value="NARS"></input>
+		<input type="hidden" name="ReportingRegion" value="1"></input>
+		<input type="hidden" name="productsabletosell" value=""></input>
+        <input type="hidden" name="price_view" value="Y"></input>
+
+	<!-- when in production, there will be javascript to submit this form without user intervention -->	
+	<input type="SUBMIT" Value="Connect to Xerox Collateral Creator Tool"></INPUT>
+	</form>
+</body>
+
+</html>

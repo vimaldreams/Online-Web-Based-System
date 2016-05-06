@@ -1,0 +1,55 @@
+﻿@model CollateralCreatorAdminWeb.Models.LogOnModel
+
+@{
+    ViewBag.Title = "Sign In - Xerox Collateral Creator Admin";
+}
+
+<h1>Xerox Collateral Creator Admin System</h1>
+
+@Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+
+@using (Html.BeginForm()) {
+    <div style="width:500px; display:block">
+        <fieldset>
+            <legend>Sign In</legend>
+            <br />
+             <div class="clearfix">
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.UserName)<span style="color:red">*</span>
+                         <br /> 
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "textbox", id="txtusername" })
+                         @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                    <br />
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Password) <span style="color:red">*</span>
+                        <br />
+                      @Html.PasswordFor(m => m.Password,  new { @class = "textbox", id="txtpassword" })
+                         @Html.ValidationMessageFor(m => m.Password)
+                    </div>                   
+                 </div>
+
+                <div class="rule">&nbsp;</div>
+
+                <div class="editor-buttons clearfix">                    
+                      <button class="positive" type="submit" >Login</button>
+
+                      <button id="reset" class="regular" type="button" >Reset</button>
+                </div>
+        </fieldset>
+    </div>
+}
+
+<script type="text/javascript">
+
+    //Start of jquery script block
+    $().ready(function () {
+
+        $('#reset').click(function () {
+            document.getElementById("txtusername").value = '';
+            document.getElementById("txtpassword").value = '';
+   
+        });
+    });
+</script>   
+

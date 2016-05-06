@@ -1,0 +1,2164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XeroxCCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="XeroxCCModelStoreContainer">
+          <EntitySet Name="Countries" EntityType="XeroxCCModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomizableArea" EntityType="XeroxCCModel.Store.CustomizableArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Document" EntityType="XeroxCCModel.Store.Document" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentCarrier" EntityType="XeroxCCModel.Store.DocumentCarrier" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentState" EntityType="XeroxCCModel.Store.DocumentState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentStateHistory" EntityType="XeroxCCModel.Store.DocumentStateHistory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DownloadLog" EntityType="XeroxCCModel.Store.DownloadLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExternalCollateral" EntityType="XeroxCCModel.Store.ExternalCollateral" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Font" EntityType="XeroxCCModel.Store.Font" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FontType" EntityType="XeroxCCModel.Store.FontType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FontUsage" EntityType="XeroxCCModel.Store.FontUsage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GeneralEnglishText" EntityType="XeroxCCModel.Store.GeneralEnglishText" store:Type="Tables" store:Schema="dbo" store:Name="GeneralEnglishText">
+            <DefiningQuery>SELECT 
+      [GeneralEnglishText].[TranslationID] AS [TranslationID], 
+      [GeneralEnglishText].[Comment] AS [Comment], 
+      [GeneralEnglishText].[EnglishText] AS [EnglishText]
+      FROM [dbo].[GeneralEnglishText] AS [GeneralEnglishText]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GeneralForeignText" EntityType="XeroxCCModel.Store.GeneralForeignText" store:Type="Tables" store:Schema="dbo" store:Name="GeneralForeignText">
+            <DefiningQuery>SELECT 
+      [GeneralForeignText].[TranslationID] AS [TranslationID], 
+      [GeneralForeignText].[LanguageID] AS [LanguageID], 
+      [GeneralForeignText].[ForeignText] AS [ForeignText]
+      FROM [dbo].[GeneralForeignText] AS [GeneralForeignText]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ImageArea" EntityType="XeroxCCModel.Store.ImageArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LanguageCountry" EntityType="XeroxCCModel.Store.LanguageCountry" store:Type="Tables" store:Schema="dbo" store:Name="LanguageCountry">
+            <DefiningQuery>SELECT 
+      [LanguageCountry].[LanguageID] AS [LanguageID], 
+      [LanguageCountry].[CountryID] AS [CountryID], 
+      [LanguageCountry].[Locale] AS [Locale], 
+      [LanguageCountry].[LocaleID] AS [LocaleID]
+      FROM [dbo].[LanguageCountry] AS [LanguageCountry]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Languages" EntityType="XeroxCCModel.Store.Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Menu" EntityType="XeroxCCModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuNodeData" EntityType="XeroxCCModel.Store.MenuNodeData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuTree" EntityType="XeroxCCModel.Store.MenuTree" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuTreeRecursive" EntityType="XeroxCCModel.Store.MenuTreeRecursive" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuTreeTemplate" EntityType="XeroxCCModel.Store.MenuTreeTemplate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Page" EntityType="XeroxCCModel.Store.Page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product_Family" EntityType="XeroxCCModel.Store.Product_Family" store:Type="Tables" store:Schema="dbo" store:Name="Product_Family">
+            <DefiningQuery>SELECT 
+      [Product_Family].[ProductCode] AS [ProductCode], 
+      [Product_Family].[FamilyCode] AS [FamilyCode], 
+      [Product_Family].[ProductName] AS [ProductName]
+      FROM [dbo].[Product_Family] AS [Product_Family]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Product_MenuTree" EntityType="XeroxCCModel.Store.Product_MenuTree" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SmartCentreLog" EntityType="XeroxCCModel.Store.SmartCentreLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="XeroxCCModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Template" EntityType="XeroxCCModel.Store.Template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TemplateButton" EntityType="XeroxCCModel.Store.TemplateButton" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TemplatePartnerBranded" EntityType="XeroxCCModel.Store.TemplatePartnerBranded" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TextArea" EntityType="XeroxCCModel.Store.TextArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TranslationGroups" EntityType="XeroxCCModel.Store.TranslationGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TranslationIDNameSpace" EntityType="XeroxCCModel.Store.TranslationIDNameSpace" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TranslationsInTranslationGroup" EntityType="XeroxCCModel.Store.TranslationsInTranslationGroup" store:Type="Tables" store:Schema="dbo" store:Name="TranslationsInTranslationGroup">
+            <DefiningQuery>SELECT 
+      [TranslationsInTranslationGroup].[TranslationGroupID] AS [TranslationGroupID], 
+      [TranslationsInTranslationGroup].[TranslationID] AS [TranslationID]
+      FROM [dbo].[TranslationsInTranslationGroup] AS [TranslationsInTranslationGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="XeroxCCModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserType" EntityType="XeroxCCModel.Store.UserType" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CustomizableArea_PageID" Association="XeroxCCModel.Store.FK_CustomizableArea_PageID">
+            <End Role="Page" EntitySet="Page" />
+            <End Role="CustomizableArea" EntitySet="CustomizableArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentID" Association="XeroxCCModel.Store.FK_Document_DocumentID">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="Document1" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentState_DocumentID" Association="XeroxCCModel.Store.FK_Document_DocumentState_DocumentID">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="Document1" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentState_DocumentStateID" Association="XeroxCCModel.Store.FK_Document_DocumentState_DocumentStateID">
+            <End Role="DocumentState" EntitySet="DocumentState" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_TemplateID" Association="XeroxCCModel.Store.FK_Document_TemplateID">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentStateHistory_DocumentID" Association="XeroxCCModel.Store.FK_DocumentStateHistory_DocumentID">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="Document1" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentStateHistory_DocumentStateID" Association="XeroxCCModel.Store.FK_DocumentStateHistory_DocumentStateID">
+            <End Role="DocumentState" EntitySet="DocumentState" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExternalCollateral_Template" Association="XeroxCCModel.Store.FK_ExternalCollateral_Template">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="ExternalCollateral" EntitySet="ExternalCollateral" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Font_FontTypeID" Association="XeroxCCModel.Store.FK_Font_FontTypeID">
+            <End Role="FontType" EntitySet="FontType" />
+            <End Role="Font" EntitySet="Font" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FontUsage_FontID" Association="XeroxCCModel.Store.FK_FontUsage_FontID">
+            <End Role="Font" EntitySet="Font" />
+            <End Role="FontUsage" EntitySet="FontUsage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageArea_AreaID" Association="XeroxCCModel.Store.FK_ImageArea_AreaID">
+            <End Role="CustomizableArea" EntitySet="CustomizableArea" />
+            <End Role="ImageArea" EntitySet="ImageArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuNodeData_Languages" Association="XeroxCCModel.Store.FK_MenuNodeData_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuNodeData_Template" Association="XeroxCCModel.Store.FK_MenuNodeData_Template">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuText_Languages" Association="XeroxCCModel.Store.FK_MenuText_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuText_Menu" Association="XeroxCCModel.Store.FK_MenuText_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuTreeRecursive_NodeID" Association="XeroxCCModel.Store.FK_MenuTreeRecursive_NodeID">
+            <End Role="MenuTree" EntitySet="MenuTree" />
+            <End Role="MenuTreeRecursive" EntitySet="MenuTreeRecursive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuTreeRecursive_ParentNodeID" Association="XeroxCCModel.Store.FK_MenuTreeRecursive_ParentNodeID">
+            <End Role="MenuTree" EntitySet="MenuTree" />
+            <End Role="MenuTreeRecursive" EntitySet="MenuTreeRecursive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuTreeTemplate_NodeID" Association="XeroxCCModel.Store.FK_MenuTreeTemplate_NodeID">
+            <End Role="MenuTree" EntitySet="MenuTree" />
+            <End Role="MenuTreeTemplate" EntitySet="MenuTreeTemplate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuTreeTemplate_TemplateID" Association="XeroxCCModel.Store.FK_MenuTreeTemplate_TemplateID">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="MenuTreeTemplate" EntitySet="MenuTreeTemplate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_DocumentID" Association="XeroxCCModel.Store.FK_Page_DocumentID">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="Page" EntitySet="Page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_TemplateID" Association="XeroxCCModel.Store.FK_Page_TemplateID">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="Page" EntitySet="Page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TemplatePartnerBranded_TemplateID" Association="XeroxCCModel.Store.FK_TemplatePartnerBranded_TemplateID">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="TemplatePartnerBranded" EntitySet="TemplatePartnerBranded" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TextArea_AreaID" Association="XeroxCCModel.Store.FK_TextArea_AreaID">
+            <End Role="CustomizableArea" EntitySet="CustomizableArea" />
+            <End Role="TextArea" EntitySet="TextArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserType" Association="XeroxCCModel.Store.FK_Users_UserType">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" />
+          <Property Name="Country" Type="varchar" MaxLength="255" />
+          <Property Name="ISOCountryCode" Type="char" MaxLength="2" />
+          <Property Name="HideInCampaignManager" Type="bit" />
+          <Property Name="Region" Type="int" Nullable="false" />
+          <Property Name="GeographicRegion" Type="int" />
+          <Property Name="TimeZoneOffset" Type="float" />
+        </EntityType>
+        <EntityType Name="CustomizableArea">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PageID" Type="int" Nullable="false" />
+          <Property Name="XPos" Type="float" Nullable="false" />
+          <Property Name="YPos" Type="float" Nullable="false" />
+          <Property Name="Height" Type="float" Nullable="false" />
+          <Property Name="Width" Type="float" Nullable="false" />
+          <Property Name="Rotation" Type="float" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+          </Key>
+          <Property Name="DocumentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateID" Type="int" Nullable="false" />
+          <Property Name="PartnerBranded" Type="bit" Nullable="false" />
+          <Property Name="ChannelPartnerID" Type="int" />
+          <Property Name="ChannelPartnerLoginID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChannelPartnerEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DocumentStateID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="RecycledPaper" Type="bit" />
+          <Property Name="Duplex" Type="bit" />
+          <Property Name="PaperOption" Type="nvarchar" MaxLength="255" />
+          <Property Name="PaperSize" Type="nvarchar" MaxLength="255" />
+          <Property Name="CollorCorrection" Type="nvarchar" MaxLength="255" />
+          <Property Name="PrintMode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Attention" Type="nvarchar" MaxLength="255" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddressLine1" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="PageSize" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TrackingNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="PartNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="Carrier" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="ChannelPartnerPhone" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+          <Property Name="CompanyID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DocumentCarrier">
+          <Key>
+            <PropertyRef Name="DocumentCarrierID" />
+          </Key>
+          <Property Name="DocumentCarrierID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrackingUrl" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DocumentState">
+          <Key>
+            <PropertyRef Name="DocumentStateID" />
+          </Key>
+          <Property Name="DocumentStateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DocumentStateHistory">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="DocumentStateID" />
+          </Key>
+          <Property Name="DocumentID" Type="int" Nullable="false" />
+          <Property Name="DocumentStateID" Type="int" Nullable="false" />
+          <Property Name="datestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DownloadLog">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="datestamp" />
+          </Key>
+          <Property Name="DocumentID" Type="int" Nullable="false" />
+          <Property Name="datestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExternalCollateral">
+          <Key>
+            <PropertyRef Name="ExCollateralID" />
+          </Key>
+          <Property Name="ExCollateralID" Type="int" Nullable="false" />
+          <Property Name="LanguageCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="TemplateID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Font">
+          <Key>
+            <PropertyRef Name="FontID" />
+          </Key>
+          <Property Name="FontID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FontTypeID" Type="int" Nullable="false" />
+          <Property Name="Size" Type="float" Nullable="false" />
+          <Property Name="Bold" Type="bit" Nullable="false" />
+          <Property Name="Italic" Type="bit" Nullable="false" />
+          <Property Name="Underline" Type="bit" Nullable="false" />
+          <Property Name="Strikethrough" Type="bit" Nullable="false" />
+          <Property Name="Color" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FontType">
+          <Key>
+            <PropertyRef Name="FontTypeID" />
+          </Key>
+          <Property Name="FontTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FontUsage">
+          <Key>
+            <PropertyRef Name="FontID" />
+          </Key>
+          <Property Name="FontID" Type="int" Nullable="false" />
+          <Property Name="TemplateID" Type="int" />
+          <Property Name="PartnerBranded" Type="bit" />
+          <Property Name="DocumentID" Type="int" />
+          <Property Name="PageID" Type="int" />
+          <Property Name="TextAreaID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'XeroxCollateralToolLive.dbo.GeneralEnglishText' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="GeneralEnglishText">
+          <Key>
+            <PropertyRef Name="TranslationID" />
+          </Key>
+          <Property Name="TranslationID" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="60" />
+          <Property Name="EnglishText" Type="varchar" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'XeroxCollateralToolLive.dbo.GeneralForeignText' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="GeneralForeignText">
+          <Key>
+            <PropertyRef Name="TranslationID" />
+            <PropertyRef Name="LanguageID" />
+            <PropertyRef Name="ForeignText" />
+          </Key>
+          <Property Name="TranslationID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="ForeignText" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageArea">
+          <Key>
+            <PropertyRef Name="ImageAreaID" />
+          </Key>
+          <Property Name="ImageAreaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="int" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Height" Type="float" Nullable="false" />
+          <Property Name="Width" Type="float" Nullable="false" />
+          <Property Name="PartnerBranded" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'XeroxCollateralToolLive.dbo.LanguageCountry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="LanguageCountry">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="CountryID" Type="int" Nullable="false" />
+          <Property Name="Locale" Type="nvarchar" MaxLength="255" />
+          <Property Name="LocaleID" Type="int" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="LanguageCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="LanguageName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Region" Type="int" />
+          <Property Name="FamilyCodePage" Type="int" />
+          <Property Name="InUse" Type="bit" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="NodeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentNodeID" Type="int" Nullable="false" />
+          <Property Name="NodeName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="IsRoot" Type="bit" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuNodeData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NodeID" Type="int" Nullable="false" />
+          <Property Name="MenuText" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="TemplateID" Type="int" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuTree">
+          <Key>
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="NodeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentNodeID" Type="int" />
+          <Property Name="TranslationKey" Type="varchar" MaxLength="255" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" />
+        </EntityType>
+        <EntityType Name="MenuTreeRecursive">
+          <Key>
+            <PropertyRef Name="ParentNodeID" />
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="ParentNodeID" Type="int" Nullable="false" />
+          <Property Name="NodeID" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuTreeTemplate">
+          <Key>
+            <PropertyRef Name="NodeID" />
+            <PropertyRef Name="TemplateID" />
+          </Key>
+          <Property Name="NodeID" Type="int" Nullable="false" />
+          <Property Name="TemplateID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="PageID" />
+          </Key>
+          <Property Name="PageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PageNumber" Type="int" Nullable="false" />
+          <Property Name="TemplateID" Type="int" />
+          <Property Name="PartnerBranded" Type="bit" />
+          <Property Name="DocumentID" Type="int" />
+          <Property Name="Height" Type="float" Nullable="false" />
+          <Property Name="Width" Type="float" Nullable="false" />
+          <Property Name="Rotation" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'XeroxCollateralToolLive.dbo.Product_Family' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Product_Family">
+          <Key>
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="FamilyCode" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductCode" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="FamilyCode" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Product_MenuTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NodeID" Type="int" Nullable="false" />
+          <Property Name="FamilyCode" Type="varchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="SmartCentreLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QueryString" Type="ntext" Nullable="false" />
+          <Property Name="DateStamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="TemplateID" />
+          </Key>
+          <Property Name="TemplateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="RecycledPaper" Type="bit" />
+          <Property Name="Duplex" Type="bit" />
+          <Property Name="PaperOption" Type="nvarchar" MaxLength="255" />
+          <Property Name="PaperSize" Type="nvarchar" MaxLength="255" />
+          <Property Name="CollorCorrection" Type="nvarchar" MaxLength="255" />
+          <Property Name="PrintMode" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="PageSize" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Detail" Type="ntext" />
+        </EntityType>
+        <EntityType Name="TemplateButton">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateID" Type="int" />
+          <Property Name="ChannelPartnerLoginID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCustomized" Type="datetime" />
+          <Property Name="IsCustomized" Type="bit" />
+          <Property Name="IsPartnerBrand" Type="bit" />
+          <Property Name="NodeID" Type="int" />
+        </EntityType>
+        <EntityType Name="TemplatePartnerBranded">
+          <Key>
+            <PropertyRef Name="TemplateID" />
+            <PropertyRef Name="PartnerBranded" />
+          </Key>
+          <Property Name="TemplateID" Type="int" Nullable="false" />
+          <Property Name="PartnerBranded" Type="bit" Nullable="false" />
+          <Property Name="PartNumber" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TextArea">
+          <Key>
+            <PropertyRef Name="TextAreaID" />
+          </Key>
+          <Property Name="TextAreaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="int" Nullable="false" />
+          <Property Name="Text" Type="ntext" Nullable="false" />
+          <Property Name="FullyEditable" Type="bit" Nullable="false" />
+          <Property Name="CharsPerLine" Type="int" Nullable="false" />
+          <Property Name="Lines" Type="int" Nullable="false" />
+          <Property Name="Align" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LineSpacing" Type="float" />
+        </EntityType>
+        <EntityType Name="TranslationGroups">
+          <Key>
+            <PropertyRef Name="TranslationGroupID" />
+          </Key>
+          <Property Name="TranslationGroupID" Type="int" Nullable="false" />
+          <Property Name="TranslationName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TranslationIDNameSpace">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RangeName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StartID" Type="int" Nullable="false" />
+          <Property Name="EndID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'XeroxCollateralToolLive.dbo.TranslationsInTranslationGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TranslationsInTranslationGroup">
+          <Key>
+            <PropertyRef Name="TranslationGroupID" />
+            <PropertyRef Name="TranslationID" />
+          </Key>
+          <Property Name="TranslationGroupID" Type="int" Nullable="false" />
+          <Property Name="TranslationID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Locked" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="UserType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CustomizableArea_PageID">
+          <End Role="Page" Type="XeroxCCModel.Store.Page" Multiplicity="1" />
+          <End Role="CustomizableArea" Type="XeroxCCModel.Store.CustomizableArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page">
+              <PropertyRef Name="PageID" />
+            </Principal>
+            <Dependent Role="CustomizableArea">
+              <PropertyRef Name="PageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="1" />
+          <End Role="Document1" Type="XeroxCCModel.Store.Document" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Document1">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentState_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="1" />
+          <End Role="Document1" Type="XeroxCCModel.Store.Document" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Document1">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentState_DocumentStateID">
+          <End Role="DocumentState" Type="XeroxCCModel.Store.DocumentState" Multiplicity="1" />
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentState">
+              <PropertyRef Name="DocumentStateID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Store.Template" Multiplicity="1" />
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentStateHistory_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="1" />
+          <End Role="Document1" Type="XeroxCCModel.Store.Document" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Document1">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentStateHistory_DocumentStateID">
+          <End Role="DocumentState" Type="XeroxCCModel.Store.DocumentState" Multiplicity="1" />
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentState">
+              <PropertyRef Name="DocumentStateID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExternalCollateral_Template">
+          <End Role="Template" Type="XeroxCCModel.Store.Template" Multiplicity="1" />
+          <End Role="ExternalCollateral" Type="XeroxCCModel.Store.ExternalCollateral" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="ExternalCollateral">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Font_FontTypeID">
+          <End Role="FontType" Type="XeroxCCModel.Store.FontType" Multiplicity="1" />
+          <End Role="Font" Type="XeroxCCModel.Store.Font" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FontType">
+              <PropertyRef Name="FontTypeID" />
+            </Principal>
+            <Dependent Role="Font">
+              <PropertyRef Name="FontTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FontUsage_FontID">
+          <End Role="Font" Type="XeroxCCModel.Store.Font" Multiplicity="1" />
+          <End Role="FontUsage" Type="XeroxCCModel.Store.FontUsage" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Font">
+              <PropertyRef Name="FontID" />
+            </Principal>
+            <Dependent Role="FontUsage">
+              <PropertyRef Name="FontID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageArea_AreaID">
+          <End Role="CustomizableArea" Type="XeroxCCModel.Store.CustomizableArea" Multiplicity="1" />
+          <End Role="ImageArea" Type="XeroxCCModel.Store.ImageArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomizableArea">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="ImageArea">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuNodeData_Languages">
+          <End Role="Languages" Type="XeroxCCModel.Store.Languages" Multiplicity="1" />
+          <End Role="MenuNodeData" Type="XeroxCCModel.Store.MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuNodeData_Template">
+          <End Role="Template" Type="XeroxCCModel.Store.Template" Multiplicity="0..1" />
+          <End Role="MenuNodeData" Type="XeroxCCModel.Store.MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuText_Languages">
+          <End Role="Languages" Type="XeroxCCModel.Store.Languages" Multiplicity="1" />
+          <End Role="MenuNodeData" Type="XeroxCCModel.Store.MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuText_Menu">
+          <End Role="Menu" Type="XeroxCCModel.Store.Menu" Multiplicity="1" />
+          <End Role="MenuNodeData" Type="XeroxCCModel.Store.MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="NodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuTreeRecursive_NodeID">
+          <End Role="MenuTree" Type="XeroxCCModel.Store.MenuTree" Multiplicity="1" />
+          <End Role="MenuTreeRecursive" Type="XeroxCCModel.Store.MenuTreeRecursive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuTreeRecursive">
+              <PropertyRef Name="NodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuTreeRecursive_ParentNodeID">
+          <End Role="MenuTree" Type="XeroxCCModel.Store.MenuTree" Multiplicity="1" />
+          <End Role="MenuTreeRecursive" Type="XeroxCCModel.Store.MenuTreeRecursive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuTreeRecursive">
+              <PropertyRef Name="ParentNodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuTreeTemplate_NodeID">
+          <End Role="MenuTree" Type="XeroxCCModel.Store.MenuTree" Multiplicity="1" />
+          <End Role="MenuTreeTemplate" Type="XeroxCCModel.Store.MenuTreeTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuTreeTemplate">
+              <PropertyRef Name="NodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuTreeTemplate_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Store.Template" Multiplicity="1" />
+          <End Role="MenuTreeTemplate" Type="XeroxCCModel.Store.MenuTreeTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="MenuTreeTemplate">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Store.Document" Multiplicity="0..1" />
+          <End Role="Page" Type="XeroxCCModel.Store.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Store.Template" Multiplicity="0..1" />
+          <End Role="Page" Type="XeroxCCModel.Store.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TemplatePartnerBranded_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Store.Template" Multiplicity="1" />
+          <End Role="TemplatePartnerBranded" Type="XeroxCCModel.Store.TemplatePartnerBranded" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="TemplatePartnerBranded">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TextArea_AreaID">
+          <End Role="CustomizableArea" Type="XeroxCCModel.Store.CustomizableArea" Multiplicity="1" />
+          <End Role="TextArea" Type="XeroxCCModel.Store.TextArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomizableArea">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="TextArea">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserType">
+          <End Role="UserType" Type="XeroxCCModel.Store.UserType" Multiplicity="1" />
+          <End Role="Users" Type="XeroxCCModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XeroxCCModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="XeroxCCToolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Countries" EntityType="XeroxCCModel.Country" />
+          <EntitySet Name="CustomizableAreas" EntityType="XeroxCCModel.CustomizableArea" />
+          <EntitySet Name="Documents" EntityType="XeroxCCModel.Document" />
+          <EntitySet Name="DocumentCarriers" EntityType="XeroxCCModel.DocumentCarrier" />
+          <EntitySet Name="DocumentStates" EntityType="XeroxCCModel.DocumentState" />
+          <EntitySet Name="DocumentStateHistories" EntityType="XeroxCCModel.DocumentStateHistory" />
+          <EntitySet Name="DownloadLogs" EntityType="XeroxCCModel.DownloadLog" />
+          <EntitySet Name="ExternalCollaterals" EntityType="XeroxCCModel.ExternalCollateral" />
+          <EntitySet Name="Fonts" EntityType="XeroxCCModel.Font" />
+          <EntitySet Name="FontTypes" EntityType="XeroxCCModel.FontType" />
+          <EntitySet Name="FontUsages" EntityType="XeroxCCModel.FontUsage" />
+          <EntitySet Name="GeneralEnglishTexts" EntityType="XeroxCCModel.GeneralEnglishText" />
+          <EntitySet Name="GeneralForeignTexts" EntityType="XeroxCCModel.GeneralForeignText" />
+          <EntitySet Name="ImageAreas" EntityType="XeroxCCModel.ImageArea" />
+          <EntitySet Name="LanguageCountries" EntityType="XeroxCCModel.LanguageCountry" />
+          <EntitySet Name="Languages" EntityType="XeroxCCModel.Language" />
+          <EntitySet Name="MenuTrees" EntityType="XeroxCCModel.MenuTree" />
+          <EntitySet Name="MenuTreeRecursives" EntityType="XeroxCCModel.MenuTreeRecursive" />
+          <EntitySet Name="Pages" EntityType="XeroxCCModel.Page" />
+          <EntitySet Name="Product_Family" EntityType="XeroxCCModel.Product_Family" />
+          <EntitySet Name="Product_MenuTree" EntityType="XeroxCCModel.Product_MenuTree" />
+          <EntitySet Name="SmartCentreLogs" EntityType="XeroxCCModel.SmartCentreLog" />
+          <EntitySet Name="sysdiagrams" EntityType="XeroxCCModel.sysdiagram" />
+          <EntitySet Name="Templates" EntityType="XeroxCCModel.Template" />
+          <EntitySet Name="TemplateButtons" EntityType="XeroxCCModel.TemplateButton" />
+          <EntitySet Name="TemplatePartnerBrandeds" EntityType="XeroxCCModel.TemplatePartnerBranded" />
+          <EntitySet Name="TextAreas" EntityType="XeroxCCModel.TextArea" />
+          <EntitySet Name="TranslationGroups" EntityType="XeroxCCModel.TranslationGroup" />
+          <EntitySet Name="TranslationIDNameSpaces" EntityType="XeroxCCModel.TranslationIDNameSpace" />
+          <EntitySet Name="TranslationsInTranslationGroups" EntityType="XeroxCCModel.TranslationsInTranslationGroup" />
+          <AssociationSet Name="FK_CustomizableArea_PageID" Association="XeroxCCModel.FK_CustomizableArea_PageID">
+            <End Role="Page" EntitySet="Pages" />
+            <End Role="CustomizableArea" EntitySet="CustomizableAreas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageArea_AreaID" Association="XeroxCCModel.FK_ImageArea_AreaID">
+            <End Role="CustomizableArea" EntitySet="CustomizableAreas" />
+            <End Role="ImageArea" EntitySet="ImageAreas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TextArea_AreaID" Association="XeroxCCModel.FK_TextArea_AreaID">
+            <End Role="CustomizableArea" EntitySet="CustomizableAreas" />
+            <End Role="TextArea" EntitySet="TextAreas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentID" Association="XeroxCCModel.FK_Document_DocumentID">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Document1" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentState_DocumentID" Association="XeroxCCModel.FK_Document_DocumentState_DocumentID">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Document1" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentState_DocumentStateID" Association="XeroxCCModel.FK_Document_DocumentState_DocumentStateID">
+            <End Role="DocumentState" EntitySet="DocumentStates" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_TemplateID" Association="XeroxCCModel.FK_Document_TemplateID">
+            <End Role="Template" EntitySet="Templates" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentStateHistory_DocumentID" Association="XeroxCCModel.FK_DocumentStateHistory_DocumentID">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Document1" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentStateHistory_DocumentStateID" Association="XeroxCCModel.FK_DocumentStateHistory_DocumentStateID">
+            <End Role="DocumentState" EntitySet="DocumentStates" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_DocumentID" Association="XeroxCCModel.FK_Page_DocumentID">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Page" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExternalCollateral_Template" Association="XeroxCCModel.FK_ExternalCollateral_Template">
+            <End Role="Template" EntitySet="Templates" />
+            <End Role="ExternalCollateral" EntitySet="ExternalCollaterals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Font_FontTypeID" Association="XeroxCCModel.FK_Font_FontTypeID">
+            <End Role="FontType" EntitySet="FontTypes" />
+            <End Role="Font" EntitySet="Fonts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FontUsage_FontID" Association="XeroxCCModel.FK_FontUsage_FontID">
+            <End Role="Font" EntitySet="Fonts" />
+            <End Role="FontUsage" EntitySet="FontUsages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuTreeRecursive_NodeID" Association="XeroxCCModel.FK_MenuTreeRecursive_NodeID">
+            <End Role="MenuTree" EntitySet="MenuTrees" />
+            <End Role="MenuTreeRecursive" EntitySet="MenuTreeRecursives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuTreeRecursive_ParentNodeID" Association="XeroxCCModel.FK_MenuTreeRecursive_ParentNodeID">
+            <End Role="MenuTree" EntitySet="MenuTrees" />
+            <End Role="MenuTreeRecursive" EntitySet="MenuTreeRecursives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_TemplateID" Association="XeroxCCModel.FK_Page_TemplateID">
+            <End Role="Template" EntitySet="Templates" />
+            <End Role="Page" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TemplatePartnerBranded_TemplateID" Association="XeroxCCModel.FK_TemplatePartnerBranded_TemplateID">
+            <End Role="Template" EntitySet="Templates" />
+            <End Role="TemplatePartnerBranded" EntitySet="TemplatePartnerBrandeds" />
+          </AssociationSet>
+          <AssociationSet Name="MenuTreeTemplate" Association="XeroxCCModel.MenuTreeTemplate">
+            <End Role="MenuTree" EntitySet="MenuTrees" />
+            <End Role="Template" EntitySet="Templates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_MenuTree_MenuTree" Association="XeroxCCModel.FK_Product_MenuTree_MenuTree">
+            <End Role="MenuTree" EntitySet="MenuTrees" />
+            <End Role="Product_MenuTree" EntitySet="Product_MenuTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Template_Languages" Association="XeroxCCModel.FK_Template_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Template" EntitySet="Templates" />
+          </AssociationSet>
+          <EntitySet Name="Menus" EntityType="XeroxCCModel.Menu" />
+          <EntitySet Name="MenuNodeDatas" EntityType="XeroxCCModel.MenuNodeData" />
+          <EntitySet Name="Users" EntityType="XeroxCCModel.User" />
+          <AssociationSet Name="FK_MenuNodeData_Languages" Association="XeroxCCModel.FK_MenuNodeData_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuText_Languages" Association="XeroxCCModel.FK_MenuText_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuText_Menu" Association="XeroxCCModel.FK_MenuText_Menu">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuNodeData_Template" Association="XeroxCCModel.FK_MenuNodeData_Template">
+            <End Role="Template" EntitySet="Templates" />
+            <End Role="MenuNodeData" EntitySet="MenuNodeDatas" />
+          </AssociationSet>
+          <EntitySet Name="UserTypes" EntityType="XeroxCCModel.UserType" />
+          <AssociationSet Name="FK_Users_UserType" Association="XeroxCCModel.FK_Users_UserType">
+            <End Role="UserType" EntitySet="UserTypes" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" />
+          <Property Name="Country1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ISOCountryCode" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="HideInCampaignManager" Type="Boolean" />
+          <Property Name="Region" Type="Int32" Nullable="false" />
+          <Property Name="GeographicRegion" Type="Int32" />
+          <Property Name="TimeZoneOffset" Type="Double" />
+        </EntityType>
+        <EntityType Name="CustomizableArea">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageID" Type="Int32" Nullable="false" />
+          <Property Name="XPos" Type="Double" Nullable="false" />
+          <Property Name="YPos" Type="Double" Nullable="false" />
+          <Property Name="Height" Type="Double" Nullable="false" />
+          <Property Name="Width" Type="Double" Nullable="false" />
+          <Property Name="Rotation" Type="Double" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Page" Relationship="XeroxCCModel.FK_CustomizableArea_PageID" FromRole="CustomizableArea" ToRole="Page" />
+          <NavigationProperty Name="ImageAreas" Relationship="XeroxCCModel.FK_ImageArea_AreaID" FromRole="CustomizableArea" ToRole="ImageArea" />
+          <NavigationProperty Name="TextAreas" Relationship="XeroxCCModel.FK_TextArea_AreaID" FromRole="CustomizableArea" ToRole="TextArea" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+          </Key>
+          <Property Name="DocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateID" Type="Int32" Nullable="false" />
+          <Property Name="PartnerBranded" Type="Boolean" Nullable="false" />
+          <Property Name="ChannelPartnerID" Type="Int32" />
+          <Property Name="ChannelPartnerLoginID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ChannelPartnerEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DocumentStateID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="RecycledPaper" Type="Boolean" />
+          <Property Name="Duplex" Type="Boolean" />
+          <Property Name="PaperOption" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PaperSize" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CollorCorrection" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PrintMode" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Attention" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PostCode" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PageSize" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TrackingNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PartNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Carrier" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ChannelPartnerPhone" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Document1" Relationship="XeroxCCModel.FK_Document_DocumentID" FromRole="Document" ToRole="Document1" />
+          <NavigationProperty Name="Document2" Relationship="XeroxCCModel.FK_Document_DocumentID" FromRole="Document1" ToRole="Document" />
+          <NavigationProperty Name="Document11" Relationship="XeroxCCModel.FK_Document_DocumentState_DocumentID" FromRole="Document" ToRole="Document1" />
+          <NavigationProperty Name="Document3" Relationship="XeroxCCModel.FK_Document_DocumentState_DocumentID" FromRole="Document1" ToRole="Document" />
+          <NavigationProperty Name="DocumentState" Relationship="XeroxCCModel.FK_Document_DocumentState_DocumentStateID" FromRole="Document" ToRole="DocumentState" />
+          <NavigationProperty Name="Template" Relationship="XeroxCCModel.FK_Document_TemplateID" FromRole="Document" ToRole="Template" />
+          <NavigationProperty Name="Document12" Relationship="XeroxCCModel.FK_DocumentStateHistory_DocumentID" FromRole="Document" ToRole="Document1" />
+          <NavigationProperty Name="Document4" Relationship="XeroxCCModel.FK_DocumentStateHistory_DocumentID" FromRole="Document1" ToRole="Document" />
+          <NavigationProperty Name="DocumentState1" Relationship="XeroxCCModel.FK_DocumentStateHistory_DocumentStateID" FromRole="Document" ToRole="DocumentState" />
+          <NavigationProperty Name="Pages" Relationship="XeroxCCModel.FK_Page_DocumentID" FromRole="Document" ToRole="Page" />
+          <Property Type="String" Name="CompanyID" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DocumentCarrier">
+          <Key>
+            <PropertyRef Name="DocumentCarrierID" />
+          </Key>
+          <Property Name="DocumentCarrierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="TrackingUrl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DocumentState">
+          <Key>
+            <PropertyRef Name="DocumentStateID" />
+          </Key>
+          <Property Name="DocumentStateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="XeroxCCModel.FK_Document_DocumentState_DocumentStateID" FromRole="DocumentState" ToRole="Document" />
+          <NavigationProperty Name="Documents1" Relationship="XeroxCCModel.FK_DocumentStateHistory_DocumentStateID" FromRole="DocumentState" ToRole="Document" />
+        </EntityType>
+        <EntityType Name="DocumentStateHistory">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="DocumentStateID" />
+          </Key>
+          <Property Name="DocumentID" Type="Int32" Nullable="false" />
+          <Property Name="DocumentStateID" Type="Int32" Nullable="false" />
+          <Property Name="datestamp" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DownloadLog">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="datestamp" />
+          </Key>
+          <Property Name="DocumentID" Type="Int32" Nullable="false" />
+          <Property Name="datestamp" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ExternalCollateral">
+          <Key>
+            <PropertyRef Name="ExCollateralID" />
+          </Key>
+          <Property Name="ExCollateralID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="TemplateID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Template" Relationship="XeroxCCModel.FK_ExternalCollateral_Template" FromRole="ExternalCollateral" ToRole="Template" />
+        </EntityType>
+        <EntityType Name="Font">
+          <Key>
+            <PropertyRef Name="FontID" />
+          </Key>
+          <Property Name="FontID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FontTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Double" Nullable="false" />
+          <Property Name="Bold" Type="Boolean" Nullable="false" />
+          <Property Name="Italic" Type="Boolean" Nullable="false" />
+          <Property Name="Underline" Type="Boolean" Nullable="false" />
+          <Property Name="Strikethrough" Type="Boolean" Nullable="false" />
+          <Property Name="Color" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="FontType" Relationship="XeroxCCModel.FK_Font_FontTypeID" FromRole="Font" ToRole="FontType" />
+          <NavigationProperty Name="FontUsage" Relationship="XeroxCCModel.FK_FontUsage_FontID" FromRole="Font" ToRole="FontUsage" />
+        </EntityType>
+        <EntityType Name="FontType">
+          <Key>
+            <PropertyRef Name="FontTypeID" />
+          </Key>
+          <Property Name="FontTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Fonts" Relationship="XeroxCCModel.FK_Font_FontTypeID" FromRole="FontType" ToRole="Font" />
+        </EntityType>
+        <EntityType Name="FontUsage">
+          <Key>
+            <PropertyRef Name="FontID" />
+          </Key>
+          <Property Name="FontID" Type="Int32" Nullable="false" />
+          <Property Name="TemplateID" Type="Int32" />
+          <Property Name="PartnerBranded" Type="Boolean" />
+          <Property Name="DocumentID" Type="Int32" />
+          <Property Name="PageID" Type="Int32" />
+          <Property Name="TextAreaID" Type="Int32" />
+          <NavigationProperty Name="Font" Relationship="XeroxCCModel.FK_FontUsage_FontID" FromRole="FontUsage" ToRole="Font" />
+        </EntityType>
+        <EntityType Name="GeneralEnglishText">
+          <Key>
+            <PropertyRef Name="TranslationID" />
+          </Key>
+          <Property Name="TranslationID" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="EnglishText" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GeneralForeignText">
+          <Key>
+            <PropertyRef Name="TranslationID" />
+            <PropertyRef Name="LanguageID" />
+            <PropertyRef Name="ForeignText" />
+          </Key>
+          <Property Name="TranslationID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="ForeignText" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ImageArea">
+          <Key>
+            <PropertyRef Name="ImageAreaID" />
+          </Key>
+          <Property Name="ImageAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Height" Type="Double" Nullable="false" />
+          <Property Name="Width" Type="Double" Nullable="false" />
+          <Property Name="PartnerBranded" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CustomizableArea" Relationship="XeroxCCModel.FK_ImageArea_AreaID" FromRole="ImageArea" ToRole="CustomizableArea" />
+        </EntityType>
+        <EntityType Name="LanguageCountry">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <Property Name="Locale" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LocaleID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="LanguageName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="Int32" />
+          <Property Name="FamilyCodePage" Type="Int32" />
+          <Property Name="InUse" Type="Boolean" />
+          <NavigationProperty Name="Templates" Relationship="XeroxCCModel.FK_Template_Languages" FromRole="Language" ToRole="Template" />
+          <NavigationProperty Name="MenuNodeDatas" Relationship="XeroxCCModel.FK_MenuNodeData_Languages" FromRole="Language" ToRole="MenuNodeData" />
+          <NavigationProperty Name="MenuNodeDatas1" Relationship="XeroxCCModel.FK_MenuText_Languages" FromRole="Language" ToRole="MenuNodeData" />
+        </EntityType>
+        <EntityType Name="MenuTree">
+          <Key>
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="NodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentNodeID" Type="Int32" />
+          <Property Name="TranslationKey" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MenuTreeRecursives" Relationship="XeroxCCModel.FK_MenuTreeRecursive_NodeID" FromRole="MenuTree" ToRole="MenuTreeRecursive" />
+          <NavigationProperty Name="MenuTreeRecursives1" Relationship="XeroxCCModel.FK_MenuTreeRecursive_ParentNodeID" FromRole="MenuTree" ToRole="MenuTreeRecursive" />
+          <NavigationProperty Name="Templates" Relationship="XeroxCCModel.MenuTreeTemplate" FromRole="MenuTree" ToRole="Template" />
+          <NavigationProperty Name="Product_MenuTree" Relationship="XeroxCCModel.FK_Product_MenuTree_MenuTree" FromRole="MenuTree" ToRole="Product_MenuTree" />
+          <Property Type="Boolean" Name="Visible" />
+        </EntityType>
+        <EntityType Name="MenuTreeRecursive">
+          <Key>
+            <PropertyRef Name="ParentNodeID" />
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="ParentNodeID" Type="Int32" Nullable="false" />
+          <Property Name="NodeID" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MenuTree" Relationship="XeroxCCModel.FK_MenuTreeRecursive_NodeID" FromRole="MenuTreeRecursive" ToRole="MenuTree" />
+          <NavigationProperty Name="MenuTree1" Relationship="XeroxCCModel.FK_MenuTreeRecursive_ParentNodeID" FromRole="MenuTreeRecursive" ToRole="MenuTree" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="PageID" />
+          </Key>
+          <Property Name="PageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageNumber" Type="Int32" Nullable="false" />
+          <Property Name="TemplateID" Type="Int32" />
+          <Property Name="PartnerBranded" Type="Boolean" />
+          <Property Name="DocumentID" Type="Int32" />
+          <Property Name="Height" Type="Double" Nullable="false" />
+          <Property Name="Width" Type="Double" Nullable="false" />
+          <Property Name="Rotation" Type="Double" Nullable="false" />
+          <NavigationProperty Name="CustomizableAreas" Relationship="XeroxCCModel.FK_CustomizableArea_PageID" FromRole="Page" ToRole="CustomizableArea" />
+          <NavigationProperty Name="Document" Relationship="XeroxCCModel.FK_Page_DocumentID" FromRole="Page" ToRole="Document" />
+          <NavigationProperty Name="Template" Relationship="XeroxCCModel.FK_Page_TemplateID" FromRole="Page" ToRole="Template" />
+        </EntityType>
+        <EntityType Name="Product_Family">
+          <Key>
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="FamilyCode" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="FamilyCode" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Product_MenuTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Name="NodeID" Type="Int32" Nullable="false" />
+          <Property Name="FamilyCode" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MenuTree" Relationship="XeroxCCModel.FK_Product_MenuTree_MenuTree" FromRole="Product_MenuTree" ToRole="MenuTree" />
+        </EntityType>
+        <EntityType Name="SmartCentreLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QueryString" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DateStamp" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="TemplateID" />
+          </Key>
+          <Property Name="TemplateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="RecycledPaper" Type="Boolean" />
+          <Property Name="Duplex" Type="Boolean" />
+          <Property Name="PaperOption" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PaperSize" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CollorCorrection" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PrintMode" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PageSize" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="XeroxCCModel.FK_Document_TemplateID" FromRole="Template" ToRole="Document" />
+          <NavigationProperty Name="ExternalCollaterals" Relationship="XeroxCCModel.FK_ExternalCollateral_Template" FromRole="Template" ToRole="ExternalCollateral" />
+          <NavigationProperty Name="Pages" Relationship="XeroxCCModel.FK_Page_TemplateID" FromRole="Template" ToRole="Page" />
+          <NavigationProperty Name="TemplatePartnerBrandeds" Relationship="XeroxCCModel.FK_TemplatePartnerBranded_TemplateID" FromRole="Template" ToRole="TemplatePartnerBranded" />
+          <NavigationProperty Name="MenuTrees" Relationship="XeroxCCModel.MenuTreeTemplate" FromRole="Template" ToRole="MenuTree" />
+          <NavigationProperty Name="Language" Relationship="XeroxCCModel.FK_Template_Languages" FromRole="Template" ToRole="Language" />
+          <NavigationProperty Name="MenuNodeDatas" Relationship="XeroxCCModel.FK_MenuNodeData_Template" FromRole="Template" ToRole="MenuNodeData" />
+        </EntityType>
+        <EntityType Name="TemplateButton">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateID" Type="Int32" />
+          <Property Name="ChannelPartnerLoginID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DateCustomized" Type="DateTime" Precision="3" />
+          <Property Name="IsCustomized" Type="Boolean" />
+          <Property Name="IsPartnerBrand" Type="Boolean" />
+          <Property Name="NodeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TemplatePartnerBranded">
+          <Key>
+            <PropertyRef Name="TemplateID" />
+            <PropertyRef Name="PartnerBranded" />
+          </Key>
+          <Property Name="TemplateID" Type="Int32" Nullable="false" />
+          <Property Name="PartnerBranded" Type="Boolean" Nullable="false" />
+          <Property Name="PartNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Template" Relationship="XeroxCCModel.FK_TemplatePartnerBranded_TemplateID" FromRole="TemplatePartnerBranded" ToRole="Template" />
+        </EntityType>
+        <EntityType Name="TextArea">
+          <Key>
+            <PropertyRef Name="TextAreaID" />
+          </Key>
+          <Property Name="TextAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FullyEditable" Type="Boolean" Nullable="false" />
+          <Property Name="CharsPerLine" Type="Int32" Nullable="false" />
+          <Property Name="Lines" Type="Int32" Nullable="false" />
+          <Property Name="Align" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LineSpacing" Type="Double" />
+          <NavigationProperty Name="CustomizableArea" Relationship="XeroxCCModel.FK_TextArea_AreaID" FromRole="TextArea" ToRole="CustomizableArea" />
+        </EntityType>
+        <EntityType Name="TranslationGroup">
+          <Key>
+            <PropertyRef Name="TranslationGroupID" />
+          </Key>
+          <Property Name="TranslationGroupID" Type="Int32" Nullable="false" />
+          <Property Name="TranslationName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TranslationIDNameSpace">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RangeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StartID" Type="Int32" Nullable="false" />
+          <Property Name="EndID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TranslationsInTranslationGroup">
+          <Key>
+            <PropertyRef Name="TranslationGroupID" />
+            <PropertyRef Name="TranslationID" />
+          </Key>
+          <Property Name="TranslationGroupID" Type="Int32" Nullable="false" />
+          <Property Name="TranslationID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CustomizableArea_PageID">
+          <End Role="Page" Type="XeroxCCModel.Page" Multiplicity="1" />
+          <End Role="CustomizableArea" Type="XeroxCCModel.CustomizableArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Page">
+              <PropertyRef Name="PageID" />
+            </Principal>
+            <Dependent Role="CustomizableArea">
+              <PropertyRef Name="PageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageArea_AreaID">
+          <End Role="CustomizableArea" Type="XeroxCCModel.CustomizableArea" Multiplicity="1" />
+          <End Role="ImageArea" Type="XeroxCCModel.ImageArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomizableArea">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="ImageArea">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TextArea_AreaID">
+          <End Role="CustomizableArea" Type="XeroxCCModel.CustomizableArea" Multiplicity="1" />
+          <End Role="TextArea" Type="XeroxCCModel.TextArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomizableArea">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="TextArea">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="1" />
+          <End Role="Document1" Type="XeroxCCModel.Document" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Document1">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentState_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="1" />
+          <End Role="Document1" Type="XeroxCCModel.Document" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Document1">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentState_DocumentStateID">
+          <End Role="DocumentState" Type="XeroxCCModel.DocumentState" Multiplicity="1" />
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentState">
+              <PropertyRef Name="DocumentStateID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Template" Multiplicity="1" />
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentStateHistory_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="1" />
+          <End Role="Document1" Type="XeroxCCModel.Document" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Document1">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentStateHistory_DocumentStateID">
+          <End Role="DocumentState" Type="XeroxCCModel.DocumentState" Multiplicity="1" />
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentState">
+              <PropertyRef Name="DocumentStateID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_DocumentID">
+          <End Role="Document" Type="XeroxCCModel.Document" Multiplicity="0..1" />
+          <End Role="Page" Type="XeroxCCModel.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentID" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExternalCollateral_Template">
+          <End Role="Template" Type="XeroxCCModel.Template" Multiplicity="1" />
+          <End Role="ExternalCollateral" Type="XeroxCCModel.ExternalCollateral" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="ExternalCollateral">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Font_FontTypeID">
+          <End Role="FontType" Type="XeroxCCModel.FontType" Multiplicity="1" />
+          <End Role="Font" Type="XeroxCCModel.Font" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FontType">
+              <PropertyRef Name="FontTypeID" />
+            </Principal>
+            <Dependent Role="Font">
+              <PropertyRef Name="FontTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FontUsage_FontID">
+          <End Role="Font" Type="XeroxCCModel.Font" Multiplicity="1" />
+          <End Role="FontUsage" Type="XeroxCCModel.FontUsage" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Font">
+              <PropertyRef Name="FontID" />
+            </Principal>
+            <Dependent Role="FontUsage">
+              <PropertyRef Name="FontID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuTreeRecursive_NodeID">
+          <End Role="MenuTree" Type="XeroxCCModel.MenuTree" Multiplicity="1" />
+          <End Role="MenuTreeRecursive" Type="XeroxCCModel.MenuTreeRecursive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuTreeRecursive">
+              <PropertyRef Name="NodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuTreeRecursive_ParentNodeID">
+          <End Role="MenuTree" Type="XeroxCCModel.MenuTree" Multiplicity="1" />
+          <End Role="MenuTreeRecursive" Type="XeroxCCModel.MenuTreeRecursive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuTreeRecursive">
+              <PropertyRef Name="ParentNodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Template" Multiplicity="0..1" />
+          <End Role="Page" Type="XeroxCCModel.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TemplatePartnerBranded_TemplateID">
+          <End Role="Template" Type="XeroxCCModel.Template" Multiplicity="1" />
+          <End Role="TemplatePartnerBranded" Type="XeroxCCModel.TemplatePartnerBranded" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="TemplatePartnerBranded">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MenuTreeTemplate">
+          <End Role="MenuTree" Type="XeroxCCModel.MenuTree" Multiplicity="*" />
+          <End Role="Template" Type="XeroxCCModel.Template" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Product_MenuTree_MenuTree">
+          <End Type="XeroxCCModel.MenuTree" Role="MenuTree" Multiplicity="1" />
+          <End Type="XeroxCCModel.Product_MenuTree" Role="Product_MenuTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="Product_MenuTree">
+              <PropertyRef Name="NodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Template_Languages">
+          <End Type="XeroxCCModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="XeroxCCModel.Template" Role="Template" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="Template">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Type="Int32" Name="NodeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ParentNodeID" Nullable="false" />
+          <Property Type="String" Name="NodeName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsRoot" Nullable="false" />
+          <Property Type="Boolean" Name="Visible" Nullable="false" />
+          <NavigationProperty Name="MenuNodeDatas" Relationship="XeroxCCModel.FK_MenuText_Menu" FromRole="Menu" ToRole="MenuNodeData" />
+        </EntityType>
+        <EntityType Name="MenuNodeData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="NodeID" Nullable="false" />
+          <Property Type="String" Name="MenuText" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TemplateID" />
+          <Property Type="Int32" Name="LanguageID" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="XeroxCCModel.FK_MenuNodeData_Languages" FromRole="MenuNodeData" ToRole="Language" />
+          <NavigationProperty Name="Language1" Relationship="XeroxCCModel.FK_MenuText_Languages" FromRole="MenuNodeData" ToRole="Language" />
+          <NavigationProperty Name="Menu" Relationship="XeroxCCModel.FK_MenuText_Menu" FromRole="MenuNodeData" ToRole="Menu" />
+          <NavigationProperty Name="Template" Relationship="XeroxCCModel.FK_MenuNodeData_Template" FromRole="MenuNodeData" ToRole="Template" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Surname" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tel" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Locked" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UserType" Nullable="false" />
+          <NavigationProperty Name="UserType1" Relationship="XeroxCCModel.FK_Users_UserType" FromRole="User" ToRole="UserType" />
+        </EntityType>
+        <Association Name="FK_MenuNodeData_Languages">
+          <End Type="XeroxCCModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="XeroxCCModel.MenuNodeData" Role="MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuText_Languages">
+          <End Type="XeroxCCModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="XeroxCCModel.MenuNodeData" Role="MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuText_Menu">
+          <End Type="XeroxCCModel.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="XeroxCCModel.MenuNodeData" Role="MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="NodeID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="NodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuNodeData_Template">
+          <End Type="XeroxCCModel.Template" Role="Template" Multiplicity="0..1" />
+          <End Type="XeroxCCModel.MenuNodeData" Role="MenuNodeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="TemplateID" />
+            </Principal>
+            <Dependent Role="MenuNodeData">
+              <PropertyRef Name="TemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="XeroxCCModel.FK_Users_UserType" FromRole="UserType" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Users_UserType">
+          <End Type="XeroxCCModel.UserType" Role="UserType" Multiplicity="1" />
+          <End Type="XeroxCCModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XeroxCCModelStoreContainer" CdmEntityContainer="XeroxCCToolEntities">
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="XeroxCCModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Country1" ColumnName="Country" />
+                <ScalarProperty Name="ISOCountryCode" ColumnName="ISOCountryCode" />
+                <ScalarProperty Name="HideInCampaignManager" ColumnName="HideInCampaignManager" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="GeographicRegion" ColumnName="GeographicRegion" />
+                <ScalarProperty Name="TimeZoneOffset" ColumnName="TimeZoneOffset" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomizableAreas">
+            <EntityTypeMapping TypeName="XeroxCCModel.CustomizableArea">
+              <MappingFragment StoreEntitySet="CustomizableArea">
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="XPos" ColumnName="XPos" />
+                <ScalarProperty Name="YPos" ColumnName="YPos" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Rotation" ColumnName="Rotation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="XeroxCCModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="PartnerBranded" ColumnName="PartnerBranded" />
+                <ScalarProperty Name="ChannelPartnerID" ColumnName="ChannelPartnerID" />
+                <ScalarProperty Name="ChannelPartnerLoginID" ColumnName="ChannelPartnerLoginID" />
+                <ScalarProperty Name="ChannelPartnerEmail" ColumnName="ChannelPartnerEmail" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DocumentStateID" ColumnName="DocumentStateID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RecycledPaper" ColumnName="RecycledPaper" />
+                <ScalarProperty Name="Duplex" ColumnName="Duplex" />
+                <ScalarProperty Name="PaperOption" ColumnName="PaperOption" />
+                <ScalarProperty Name="PaperSize" ColumnName="PaperSize" />
+                <ScalarProperty Name="CollorCorrection" ColumnName="CollorCorrection" />
+                <ScalarProperty Name="PrintMode" ColumnName="PrintMode" />
+                <ScalarProperty Name="Attention" ColumnName="Attention" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PageSize" ColumnName="PageSize" />
+                <ScalarProperty Name="TrackingNumber" ColumnName="TrackingNumber" />
+                <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+                <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ChannelPartnerPhone" ColumnName="ChannelPartnerPhone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentCarriers">
+            <EntityTypeMapping TypeName="XeroxCCModel.DocumentCarrier">
+              <MappingFragment StoreEntitySet="DocumentCarrier">
+                <ScalarProperty Name="DocumentCarrierID" ColumnName="DocumentCarrierID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TrackingUrl" ColumnName="TrackingUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentStates">
+            <EntityTypeMapping TypeName="XeroxCCModel.DocumentState">
+              <MappingFragment StoreEntitySet="DocumentState">
+                <ScalarProperty Name="DocumentStateID" ColumnName="DocumentStateID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentStateHistories">
+            <EntityTypeMapping TypeName="XeroxCCModel.DocumentStateHistory">
+              <MappingFragment StoreEntitySet="DocumentStateHistory">
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="DocumentStateID" ColumnName="DocumentStateID" />
+                <ScalarProperty Name="datestamp" ColumnName="datestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DownloadLogs">
+            <EntityTypeMapping TypeName="XeroxCCModel.DownloadLog">
+              <MappingFragment StoreEntitySet="DownloadLog">
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="datestamp" ColumnName="datestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExternalCollaterals">
+            <EntityTypeMapping TypeName="XeroxCCModel.ExternalCollateral">
+              <MappingFragment StoreEntitySet="ExternalCollateral">
+                <ScalarProperty Name="ExCollateralID" ColumnName="ExCollateralID" />
+                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fonts">
+            <EntityTypeMapping TypeName="XeroxCCModel.Font">
+              <MappingFragment StoreEntitySet="Font">
+                <ScalarProperty Name="FontID" ColumnName="FontID" />
+                <ScalarProperty Name="FontTypeID" ColumnName="FontTypeID" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Bold" ColumnName="Bold" />
+                <ScalarProperty Name="Italic" ColumnName="Italic" />
+                <ScalarProperty Name="Underline" ColumnName="Underline" />
+                <ScalarProperty Name="Strikethrough" ColumnName="Strikethrough" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FontTypes">
+            <EntityTypeMapping TypeName="XeroxCCModel.FontType">
+              <MappingFragment StoreEntitySet="FontType">
+                <ScalarProperty Name="FontTypeID" ColumnName="FontTypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FontUsages">
+            <EntityTypeMapping TypeName="XeroxCCModel.FontUsage">
+              <MappingFragment StoreEntitySet="FontUsage">
+                <ScalarProperty Name="FontID" ColumnName="FontID" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="PartnerBranded" ColumnName="PartnerBranded" />
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="TextAreaID" ColumnName="TextAreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneralEnglishTexts">
+            <EntityTypeMapping TypeName="XeroxCCModel.GeneralEnglishText">
+              <MappingFragment StoreEntitySet="GeneralEnglishText">
+                <ScalarProperty Name="TranslationID" ColumnName="TranslationID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="EnglishText" ColumnName="EnglishText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneralForeignTexts">
+            <EntityTypeMapping TypeName="XeroxCCModel.GeneralForeignText">
+              <MappingFragment StoreEntitySet="GeneralForeignText">
+                <ScalarProperty Name="TranslationID" ColumnName="TranslationID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="ForeignText" ColumnName="ForeignText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageAreas">
+            <EntityTypeMapping TypeName="XeroxCCModel.ImageArea">
+              <MappingFragment StoreEntitySet="ImageArea">
+                <ScalarProperty Name="ImageAreaID" ColumnName="ImageAreaID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="PartnerBranded" ColumnName="PartnerBranded" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LanguageCountries">
+            <EntityTypeMapping TypeName="XeroxCCModel.LanguageCountry">
+              <MappingFragment StoreEntitySet="LanguageCountry">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="Locale" ColumnName="Locale" />
+                <ScalarProperty Name="LocaleID" ColumnName="LocaleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="XeroxCCModel.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="FamilyCodePage" ColumnName="FamilyCodePage" />
+                <ScalarProperty Name="InUse" ColumnName="InUse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuTrees">
+            <EntityTypeMapping TypeName="XeroxCCModel.MenuTree">
+              <MappingFragment StoreEntitySet="MenuTree">
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="ParentNodeID" ColumnName="ParentNodeID" />
+                <ScalarProperty Name="TranslationKey" ColumnName="TranslationKey" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuTreeRecursives">
+            <EntityTypeMapping TypeName="XeroxCCModel.MenuTreeRecursive">
+              <MappingFragment StoreEntitySet="MenuTreeRecursive">
+                <ScalarProperty Name="ParentNodeID" ColumnName="ParentNodeID" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="XeroxCCModel.Page">
+              <MappingFragment StoreEntitySet="Page">
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="PageNumber" ColumnName="PageNumber" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="PartnerBranded" ColumnName="PartnerBranded" />
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Rotation" ColumnName="Rotation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Family">
+            <EntityTypeMapping TypeName="XeroxCCModel.Product_Family">
+              <MappingFragment StoreEntitySet="Product_Family">
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_MenuTree">
+            <EntityTypeMapping TypeName="XeroxCCModel.Product_MenuTree">
+              <MappingFragment StoreEntitySet="Product_MenuTree">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmartCentreLogs">
+            <EntityTypeMapping TypeName="XeroxCCModel.SmartCentreLog">
+              <MappingFragment StoreEntitySet="SmartCentreLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="QueryString" ColumnName="QueryString" />
+                <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="XeroxCCModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Templates">
+            <EntityTypeMapping TypeName="XeroxCCModel.Template">
+              <MappingFragment StoreEntitySet="Template">
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RecycledPaper" ColumnName="RecycledPaper" />
+                <ScalarProperty Name="Duplex" ColumnName="Duplex" />
+                <ScalarProperty Name="PaperOption" ColumnName="PaperOption" />
+                <ScalarProperty Name="PaperSize" ColumnName="PaperSize" />
+                <ScalarProperty Name="CollorCorrection" ColumnName="CollorCorrection" />
+                <ScalarProperty Name="PrintMode" ColumnName="PrintMode" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PageSize" ColumnName="PageSize" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemplateButtons">
+            <EntityTypeMapping TypeName="XeroxCCModel.TemplateButton">
+              <MappingFragment StoreEntitySet="TemplateButton">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="ChannelPartnerLoginID" ColumnName="ChannelPartnerLoginID" />
+                <ScalarProperty Name="DateCustomized" ColumnName="DateCustomized" />
+                <ScalarProperty Name="IsCustomized" ColumnName="IsCustomized" />
+                <ScalarProperty Name="IsPartnerBrand" ColumnName="IsPartnerBrand" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemplatePartnerBrandeds">
+            <EntityTypeMapping TypeName="XeroxCCModel.TemplatePartnerBranded">
+              <MappingFragment StoreEntitySet="TemplatePartnerBranded">
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="PartnerBranded" ColumnName="PartnerBranded" />
+                <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TextAreas">
+            <EntityTypeMapping TypeName="XeroxCCModel.TextArea">
+              <MappingFragment StoreEntitySet="TextArea">
+                <ScalarProperty Name="TextAreaID" ColumnName="TextAreaID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="FullyEditable" ColumnName="FullyEditable" />
+                <ScalarProperty Name="CharsPerLine" ColumnName="CharsPerLine" />
+                <ScalarProperty Name="Lines" ColumnName="Lines" />
+                <ScalarProperty Name="Align" ColumnName="Align" />
+                <ScalarProperty Name="LineSpacing" ColumnName="LineSpacing" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TranslationGroups">
+            <EntityTypeMapping TypeName="XeroxCCModel.TranslationGroup">
+              <MappingFragment StoreEntitySet="TranslationGroups">
+                <ScalarProperty Name="TranslationGroupID" ColumnName="TranslationGroupID" />
+                <ScalarProperty Name="TranslationName" ColumnName="TranslationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TranslationIDNameSpaces">
+            <EntityTypeMapping TypeName="XeroxCCModel.TranslationIDNameSpace">
+              <MappingFragment StoreEntitySet="TranslationIDNameSpace">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RangeName" ColumnName="RangeName" />
+                <ScalarProperty Name="StartID" ColumnName="StartID" />
+                <ScalarProperty Name="EndID" ColumnName="EndID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TranslationsInTranslationGroups">
+            <EntityTypeMapping TypeName="XeroxCCModel.TranslationsInTranslationGroup">
+              <MappingFragment StoreEntitySet="TranslationsInTranslationGroup">
+                <ScalarProperty Name="TranslationGroupID" ColumnName="TranslationGroupID" />
+                <ScalarProperty Name="TranslationID" ColumnName="TranslationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="MenuTreeTemplate" TypeName="XeroxCCModel.MenuTreeTemplate" StoreEntitySet="MenuTreeTemplate">
+            <EndProperty Name="MenuTree">
+              <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+            </EndProperty>
+            <EndProperty Name="Template">
+              <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="XeroxCCModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="IsRoot" ColumnName="IsRoot" />
+                <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+                <ScalarProperty Name="ParentNodeID" ColumnName="ParentNodeID" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuNodeDatas">
+            <EntityTypeMapping TypeName="XeroxCCModel.MenuNodeData">
+              <MappingFragment StoreEntitySet="MenuNodeData">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+                <ScalarProperty Name="MenuText" ColumnName="MenuText" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="XeroxCCModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Locked" ColumnName="Locked" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="XeroxCCModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

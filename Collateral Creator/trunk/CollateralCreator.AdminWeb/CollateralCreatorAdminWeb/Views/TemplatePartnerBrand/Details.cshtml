@@ -1,0 +1,36 @@
+﻿@model CollateralCreatorAdminWeb.Models.TemplatePartnerBranded
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TemplatePartnerBranded</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Template.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Template.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PartnerBranded)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartnerBranded)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PartNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartNumber)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

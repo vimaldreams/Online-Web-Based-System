@@ -1,0 +1,142 @@
+﻿@model CollateralCreatorAdminWeb.Models.Template
+
+@{
+    ViewBag.Title = "Template - edit";
+}
+
+@section AddToHead{
+  
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+}
+<h2>Template edit</h2>
+
+
+@using (Html.BeginForm(new { searchString = ViewBag.currentFilter }))
+{
+    @Html.ValidationSummary(true)
+   
+    <fieldset>
+        <legend>Template</legend>
+
+        @Html.HiddenFor(model => model.TemplateID)
+        @Html.HiddenFor(model => model.DateCreated)
+        @Html.HiddenFor(model => model.DateModified)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LanguageID, "Language ID" )
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.LanguageID, new SelectList(ViewBag.Languages as System.Collections.IEnumerable, "Value", "Text"), "Please select")
+           
+            @Html.ValidationMessageFor(model => model.LanguageID)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDeleted, "Is Deleted")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name, "Name")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name, new { style = "Width:300px; height:20px" })
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity, "Quantity")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RecycledPaper, "Recycled paper")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RecycledPaper)
+            @Html.ValidationMessageFor(model => model.RecycledPaper)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Duplex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Duplex)
+            @Html.ValidationMessageFor(model => model.Duplex)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PaperOption, "Paper option")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PaperOption)
+            @Html.ValidationMessageFor(model => model.PaperOption)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PaperSize, "Paper size")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PaperSize)
+            @Html.ValidationMessageFor(model => model.PaperSize)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CollorCorrection, "Colour correction")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CollorCorrection)
+            @Html.ValidationMessageFor(model => model.CollorCorrection)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrintMode, "Print mode")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PrintMode)
+            @Html.ValidationMessageFor(model => model.PrintMode)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description, new { style = "Width:300px; height:50px" })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PageSize, "Page size")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PageSize)
+            @Html.ValidationMessageFor(model => model.PageSize)
+        </div>
+         <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Detail)
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Detail, new { style = "Width:300px; height:50px" })
+            @Html.ValidationMessageFor(model => model.Detail)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>
+
+

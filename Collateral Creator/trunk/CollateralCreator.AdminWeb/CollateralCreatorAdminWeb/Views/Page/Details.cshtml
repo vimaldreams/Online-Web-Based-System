@@ -1,0 +1,64 @@
+﻿@model CollateralCreatorAdminWeb.Models.Page
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Page</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PageNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Template.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Template.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PartnerBranded)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartnerBranded)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Document.ChannelPartnerLoginID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Document.ChannelPartnerLoginID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rotation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rotation)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,2949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{224ACF75-03C0-4721-BE8A-CFA272EF7ACA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CollateralCreator.Web</RootNamespace>
+    <AssemblyName>CollateralCreator.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <PublishDatabases>false</PublishDatabases>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Signals.Translations">
+      <HintPath>..\libs\Signals.Translations.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\SqlHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="Xerox.Portal.Models">
+      <HintPath>..\libs\Xerox.Portal.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Xerox.Portal.Mvc">
+      <HintPath>..\libs\Xerox.Portal.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Xerox.SSOComponents, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Xerox.SSOComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="Xerox.SSOComponents.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Xerox.SSOComponents.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xerox.SSOComponents.Data.SqlServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Xerox.SSOComponents.Data.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Xerox.SSOComponents.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Xerox.SSOComponents.Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\testpost_USenglish.htm" />
+    <Content Include="admin\testpost_canadianfrench.htm" />
+    <Content Include="admin\testpost_fr-ca.htm" />
+    <Content Include="admin\testpost_SC2integration.htm" />
+    <Content Include="css\portal.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Error.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="FileNotFound.html" />
+    <Content Include="images\logos\Blank.jpg" />
+    <Content Include="images\logos\Box_logo_keyline.jpg" />
+    <Content Include="images\portal\icons\0.png" />
+    <Content Include="images\portal\icons\0b.png" />
+    <Content Include="images\portal\icons\1.png" />
+    <Content Include="images\portal\icons\1b.png" />
+    <Content Include="images\portal\icons\2.png" />
+    <Content Include="images\portal\icons\2b.png" />
+    <Content Include="images\portal\icons\add-row.gif" />
+    <Content Include="images\portal\icons\calendar.gif" />
+    <Content Include="images\portal\icons\choose-file.gif" />
+    <Content Include="images\portal\icons\document.gif" />
+    <Content Include="images\portal\icons\folder-closed.gif" />
+    <Content Include="images\portal\icons\folder-open.gif" />
+    <Content Include="images\portal\icons\pause.png" />
+    <Content Include="images\portal\icons\pauseb.png" />
+    <Content Include="images\templates\partnerbrand\thumbnail_1.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_10.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_11.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_12.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_13.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_14.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_15.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_16.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_17.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_18.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_19.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_2.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_20.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_21.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_22.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_23.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_24.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_25.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_26.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_27.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_28.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_284.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_285.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_29.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_3.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_30.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_31.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_32.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_33.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_34.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_35.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_36.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_37.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_38.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_39.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_4.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_40.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_41.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_42.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_427.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_428.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_43.jpg" />
+    <Content Include="images\templates\partnerbrand\Thumbnail_438.jpg" />
+    <Content Include="images\templates\partnerbrand\Thumbnail_439.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_44.jpg" />
+    <Content Include="images\templates\partnerbrand\Thumbnail_440.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_441.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_442.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_443.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_444.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_445.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_446.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_45.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_46.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_5.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_509.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_511.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_512.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_513.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_514.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_515.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_516.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_52.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_53.jpg" />
+    <Content Include="images\templates\partnerbrand\Thumbnail_535.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_54.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_6.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_7.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_74.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_75.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_76.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_8.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_9.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_92.jpg" />
+    <Content Include="images\templates\partnerbrand\thumbnail_93.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_1.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_10.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_11.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_12.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_13.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_14.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_15.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_16.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_17.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_18.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_19.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_2.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_20.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_21.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_22.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_23.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_24.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_25.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_26.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_27.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_28.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_29.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_3.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_30.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_31.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_32.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_33.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_34.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_35.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_36.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_37.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_38.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_39.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_4.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_40.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_409.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_41.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_410.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_411.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_412.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_413.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_414.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_415.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_416.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_417.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_418.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_419.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_42.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_420.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_421.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_422.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_423.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_424.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_425.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_426.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_427.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_428.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_429.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_43.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_430.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_431.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_432.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_433.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_434.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_435.jpg" />
+    <Content Include="images\templates\xeroxbrand\Thumbnail_438.jpg" />
+    <Content Include="images\templates\xeroxbrand\Thumbnail_439.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_44.jpg" />
+    <Content Include="images\templates\xeroxbrand\Thumbnail_440.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_441.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_442.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_443.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_444.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_445.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_446.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_447.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_45.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_46.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_47.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_48.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_49.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_5.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_50.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_509.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_51.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_511.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_512.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_513.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_514.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_515.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_516.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_52.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_53.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_54.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_55.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_56.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_57.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_58.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_59.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_6.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_60.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_61.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_62.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_63.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_64.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_65.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_66.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_67.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_68.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_69.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_7.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_70.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_71.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_72.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_73.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_74.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_75.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_76.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_8.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_84.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_85.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_86.jpg" />
+    <Content Include="images\templates\xeroxbrand\thumbnail_9.jpg" />
+    <Content Include="images\videos\growyourbusiness.jpg" />
+    <Content Include="images\videos\howtogrow.jpg" />
+    <Content Include="images\videos\ImpactMarketplace.jpg" />
+    <Content Include="images\videos\withcontacts.jpg" />
+    <Content Include="js\jqueryfileupload\ajaxfileupload.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jqueryfileupload\ajaxfileupload.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jqueryfileupload\jquery.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jqueryfileupload\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.4.3\jquery-1.4.3.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\jquery-ui-full.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\jquery.query-1.2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\jsort\jquery.jsort.0.4.js" />
+    <Content Include="js\jquery\jsort\jquery.jsort.0.4.min.js" />
+    <Content Include="js\keepalive.js" />
+    <Content Include="NotAuthorised.html" />
+    <Content Include="Portal\AdminOrderScreen.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AutoLogin.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BuiltDocument.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\corp_740px_bundle.embed.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\logos\Signals_tagline.jpg" />
+    <Content Include="images\logos\XCT_YourLogo.jpg" />
+    <Content Include="images\navigation\indicator.gif" />
+    <Content Include="images\navigation\loadingAnimation.gif" />
+    <Content Include="js\editpage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\fgmenu\fg.menu.css" />
+    <Content Include="js\fgmenu\fg.menu.js" />
+    <Content Include="js\jquery\1.8\1.8.6\jquery-ui-full.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\jquery-ui.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-icons_222222_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-icons_2e83ff_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-icons_454545_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-icons_888888_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\images\ui-icons_cd0a0a_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\smoothness\jquery-ui.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-icons_222222_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-icons_228ef1_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\images\ui-icons_ffffff_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\1.8.6\themes\ui-lightness\jquery-ui.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\previewpage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\recentpage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\updatedefault.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\uploadlogopage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrderSummary.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SCEdit.aspx" />
+    <Content Include="Templates\Header.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PortalHeader.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="usercontrol\AddressControl.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="admin\testpost_en-us.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="admin\testpost_admin.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="admin\testpost_canadianenglish.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\site.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Edit.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Home.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\navigation\background_740x31.gif" />
+    <Content Include="images\navigation\link_pointer_10pt.gif" />
+    <Content Include="images\navigation\link_pointer_13px.gif" />
+    <Content Include="images\portal\backgrounds\bg_drop.png" />
+    <Content Include="images\portal\backgrounds\bg_nodrop.gif" />
+    <Content Include="images\portal\backgrounds\bottom_cap_drop.png" />
+    <Content Include="images\portal\backgrounds\bottom_cap_nodrop.gif" />
+    <Content Include="images\portal\backgrounds\gradient_bg.jpg" />
+    <Content Include="images\portal\backgrounds\top_cap_drop.png" />
+    <Content Include="images\portal\backgrounds\top_cap_nodrop.gif" />
+    <Content Include="images\portal\components\btn_remove_x.gif" />
+    <Content Include="images\portal\components\carat-pointer-img.gif" />
+    <Content Include="images\portal\components\carat-pointer-img_dwn.gif" />
+    <Content Include="images\portal\components\carat-pointer-txt_11px.gif" />
+    <Content Include="images\portal\components\carat-pointer-txt_11px_b2.gif" />
+    <Content Include="images\portal\components\carat-pointer-txt_11px_fff.gif" />
+    <Content Include="images\portal\components\cat_bottom_border.gif" />
+    <Content Include="images\portal\components\collapse_off.gif" />
+    <Content Include="images\portal\components\collapse_on.gif" />
+    <Content Include="images\portal\components\featured_header_bg.gif" />
+    <Content Include="images\portal\components\featured_links_bg_catpage.gif" />
+    <Content Include="images\portal\components\glassheader_bg.gif" />
+    <Content Include="images\portal\components\link_pointer.gif" />
+    <Content Include="images\portal\components\link_pointer_13px.gif" />
+    <Content Include="images\portal\components\module_bottom_373x5.gif" />
+    <Content Include="images\portal\components\module_bottom_555x400.gif" />
+    <Content Include="images\portal\components\module_top_373x5.gif" />
+    <Content Include="images\portal\components\module_top_555x5.gif" />
+    <Content Include="images\portal\components\nav_hd_bg.gif" />
+    <Content Include="images\portal\components\rn_bg.gif" />
+    <Content Include="images\portal\components\rn_bg2.gif" />
+    <Content Include="images\portal\components\square-bullet.gif" />
+    <Content Include="images\portal\icons\ajax-loader.gif" />
+    <Content Include="images\portal\icons\minus.gif" />
+    <Content Include="images\portal\icons\neither.gif" />
+    <Content Include="images\portal\icons\plus.gif" />
+    <Content Include="images\portal\menus\footer_740x31.gif" />
+    <Content Include="images\portal\readme.txt" />
+    <Content Include="images\portal\sidebars\carat-pointer-txt_11px.gif" />
+    <Content Include="images\portal\sidebars\sidebar_content_175.gif" />
+    <Content Include="images\portal\sidebars\sidebar_content_185.gif" />
+    <Content Include="images\portal\sidebars\sidebar_content_240.gif" />
+    <Content Include="images\portal\sidebars\sidebar_hd_175.gif" />
+    <Content Include="images\portal\sidebars\sidebar_hd_185.gif" />
+    <Content Include="images\portal\sidebars\sidebar_hd_240.gif" />
+    <Content Include="images\portal\sidebars\square-bullet.gif" />
+    <Content Include="images\portal\xerox-logo-small.gif" />
+    <Content Include="images\portal\xerox-logo.gif" />
+    <Content Include="js\homepage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.5\jquery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\jquery-1.8-ui.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.8\jquery-ui.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LoginForm.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.4.1\jquery-1.4.1-vsdoc.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.4.1\jquery-1.4.1.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery\1.4.1\jquery-1.4.1.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="usercontrol\LogoControl.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrderDocument.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecentActivity.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="services\CollateralHome.asmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="shared\FileNotFound.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="shared\NotAuthenticated.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="shared\ServerError.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="shared\updating.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="usercontrol\PreviewDocument.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\MainText.el-GR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.da-DK.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.de-DE.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.en-ca1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.en-ca.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.es-ES1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.fi-FI.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.fi-FI.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.fr-ca.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.fr-FR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.it-IT.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.nl-NL.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.no.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.pt-PT.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainText.sv-SE.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainText.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.da-DK.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.de-DE.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.el-GR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.en-ca1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.en-ca.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.es-ES.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.fi-FI.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.fi-FI.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.fr-ca.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.fr-FR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.it-IT.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.nl-NL.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.no.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.pt-PT.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.sv-SE.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.en-CA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.en-CA.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.fi-FI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.fi-FI.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.da-DK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.fr-ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.no.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\BuiltDocument.aspx.sv-SE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuiltDocument.aspx.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.fi-Fl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.fi-Fl.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.da-DK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.fr-ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.no.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Edit.aspx.sv-SE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.aspx.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx..fi-Fl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx..fi-Fl.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.da-DK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.fr-ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.no.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\Home.aspx.sv-SE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.aspx.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.da-DK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.fi-FI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.fi-FI.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.fr-ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.no.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderDocument.aspx.sv-SE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDocument.aspx.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.da-DK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.fi-FI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.fi-FI.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.fr-ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.no.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\OrderSummary.aspx.sv-SE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSummary.aspx.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.da-DK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.da-DK.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.de-DE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.el-GR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.en-us.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.es-ES.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.fi-FI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.fi-FI.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.fr-ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.fr-ca.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.fr-FR.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.it-IT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.nl-NL.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.no.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.no.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.pt-PT.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_LocalResources\RecentActivity.aspx.sv-SE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecentActivity.aspx.sv-SE.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Code\Main.cs" />
+    <Compile Include="Handlers\FileUploadHandler.ashx.cs">
+      <DependentUpon>FileUploadHandler.ashx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Handlers\WebImageHandler.ashx.cs">
+      <DependentUpon>WebImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\AdminOrderScreen.aspx.cs">
+      <DependentUpon>AdminOrderScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Portal\AdminOrderScreen.aspx.designer.cs">
+      <DependentUpon>AdminOrderScreen.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AutoLogin.aspx.cs">
+      <DependentUpon>AutoLogin.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoLogin.aspx.designer.cs">
+      <DependentUpon>AutoLogin.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="BuiltDocument.aspx.cs">
+      <DependentUpon>BuiltDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="BuiltDocument.aspx.designer.cs">
+      <DependentUpon>BuiltDocument.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Code\CreateDocument.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="OrderSummary.aspx.cs">
+      <DependentUpon>OrderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="OrderSummary.aspx.designer.cs">
+      <DependentUpon>OrderSummary.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Code\PdfManager.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Handlers\ScImageHandler.ashx.cs">
+      <DependentUpon>ScImageHandler.ashx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Handlers\SrcBlankImageHandler.ashx.cs">
+      <DependentUpon>SrcBlankImageHandler.ashx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SCEdit.aspx.cs">
+      <DependentUpon>SCEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SCEdit.aspx.designer.cs">
+      <DependentUpon>SCEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\Portal.Master.cs">
+      <DependentUpon>Portal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\Portal.Master.designer.cs">
+      <DependentUpon>Portal.Master</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\PortalHeader.ascx.cs">
+      <DependentUpon>PortalHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\PortalHeader.ascx.designer.cs">
+      <DependentUpon>PortalHeader.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\XeroxPage.Master.cs">
+      <DependentUpon>XeroxPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Templates\XeroxPage.Master.designer.cs">
+      <DependentUpon>XeroxPage.Master</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="usercontrol\AddressControl.ascx.cs">
+      <DependentUpon>AddressControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="usercontrol\AddressControl.ascx.designer.cs">
+      <DependentUpon>AddressControl.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Handlers\ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="usercontrol\LogoControl.ascx.cs">
+      <DependentUpon>LogoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="usercontrol\LogoControl.ascx.designer.cs">
+      <DependentUpon>LogoControl.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="OrderDocument.aspx.cs">
+      <DependentUpon>OrderDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="OrderDocument.aspx.designer.cs">
+      <DependentUpon>OrderDocument.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecentActivity.aspx.cs">
+      <DependentUpon>RecentActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="RecentActivity.aspx.designer.cs">
+      <DependentUpon>RecentActivity.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Handlers\ReportHandler.ashx.cs">
+      <DependentUpon>ReportHandler.ashx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="services\CollateralHome.asmx.cs">
+      <DependentUpon>CollateralHome.asmx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="shared\FileNotFound.aspx.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="shared\FileNotFound.aspx.designer.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="shared\NotAuthenticated.aspx.cs">
+      <DependentUpon>NotAuthenticated.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="shared\NotAuthenticated.aspx.designer.cs">
+      <DependentUpon>NotAuthenticated.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="shared\ServerError.aspx.cs">
+      <DependentUpon>ServerError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="shared\ServerError.aspx.designer.cs">
+      <DependentUpon>ServerError.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="usercontrol\PreviewDocument.ascx.cs">
+      <DependentUpon>PreviewDocument.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="usercontrol\PreviewDocument.ascx.designer.cs">
+      <DependentUpon>PreviewDocument.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Code\XeroxControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Code\XeroxWebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ColateralCreator.Business\CollateralCreator.Business.csproj">
+      <Project>{141e0847-392a-49e6-8756-b68c5beaad32}</Project>
+      <Name>CollateralCreator.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CollateralCreator.Data\CollateralCreator.Data.csproj">
+      <Project>{FAE9A875-0BB2-4B84-859F-E718E3D462F9}</Project>
+      <Name>CollateralCreator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CollateralCreator.SQLProvider\CollateralCreator.SQLProvider.csproj">
+      <Project>{59f11fc7-2dd3-4bde-b8a4-06bc821139b3}</Project>
+      <Name>CollateralCreator.SQLProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\appSettings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\connectionStrings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handlers\ImageHandler.ashx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handlers\ReportHandler.ashx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="images\fonts\Xerox Sans Expert-Bold.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-BoldItalic.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-ExtraBold.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-Italic.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-Light.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-LightItalic.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-Thin.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert-ThinItalic.otf" />
+    <Content Include="images\fonts\Xerox Sans Expert.otf" />
+    <Content Include="images\fonts\XeroxSans-Bold.otf" />
+    <Content Include="images\fonts\XeroxSans-BoldItalic.otf" />
+    <Content Include="images\fonts\XeroxSans-ExtraBold.otf" />
+    <Content Include="images\fonts\XeroxSans-Italic.otf" />
+    <Content Include="images\fonts\XeroxSans-Light.otf" />
+    <Content Include="images\fonts\XeroxSans-LightItalic.otf" />
+    <Content Include="images\fonts\XeroxSans-Thin.otf" />
+    <Content Include="images\fonts\XeroxSans-Thin.ttf" />
+    <Content Include="images\fonts\XeroxSans-ThinItalic.otf" />
+    <Content Include="images\fonts\XeroxSans.otf" />
+    <Content Include="images\fonts\XeroxSans.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\Template_1.PDF" />
+    <None Include="documents\Template_10.PDF" />
+    <None Include="documents\template_100.pdf" />
+    <None Include="documents\template_101.pdf" />
+    <None Include="documents\template_102.pdf" />
+    <None Include="documents\template_1021.pdf" />
+    <None Include="documents\template_103.pdf" />
+    <None Include="documents\template_104.pdf" />
+    <None Include="documents\template_105.pdf" />
+    <None Include="documents\template_106.pdf" />
+    <None Include="documents\template_107.pdf" />
+    <None Include="documents\template_1071.pdf" />
+    <None Include="documents\template_108.pdf" />
+    <None Include="documents\template_109.pdf" />
+    <None Include="documents\Template_10_pb.PDF" />
+    <None Include="documents\Template_11.PDF" />
+    <None Include="documents\template_110.pdf" />
+    <None Include="documents\template_111.pdf" />
+    <None Include="documents\template_112.pdf" />
+    <None Include="documents\template_1121.pdf" />
+    <None Include="documents\template_113.pdf" />
+    <None Include="documents\template_114.pdf" />
+    <None Include="documents\template_115.pdf" />
+    <None Include="documents\template_116.pdf" />
+    <None Include="documents\template_117.pdf" />
+    <None Include="documents\template_1171.pdf" />
+    <None Include="documents\template_118.pdf" />
+    <None Include="documents\template_119.pdf" />
+    <None Include="documents\Template_11_pb.PDF" />
+    <None Include="documents\Template_12.PDF" />
+    <None Include="documents\template_120.pdf" />
+    <None Include="documents\template_121.pdf" />
+    <None Include="documents\template_122.pdf" />
+    <None Include="documents\template_1221.pdf" />
+    <None Include="documents\template_123.pdf" />
+    <None Include="documents\template_124.pdf" />
+    <None Include="documents\template_125.pdf" />
+    <None Include="documents\template_126.pdf" />
+    <None Include="documents\template_127.pdf" />
+    <None Include="documents\template_1271.pdf" />
+    <None Include="documents\template_128.pdf" />
+    <None Include="documents\template_129.pdf" />
+    <None Include="documents\Template_12_pb.PDF" />
+    <None Include="documents\Template_13.PDF" />
+    <None Include="documents\template_130.pdf" />
+    <None Include="documents\template_131.pdf" />
+    <None Include="documents\template_132.pdf" />
+    <None Include="documents\template_1321.pdf" />
+    <None Include="documents\template_133.pdf" />
+    <None Include="documents\template_134.pdf" />
+    <None Include="documents\template_135.pdf" />
+    <None Include="documents\template_136.pdf" />
+    <None Include="documents\template_137.pdf" />
+    <None Include="documents\template_1371.pdf" />
+    <None Include="documents\template_138.pdf" />
+    <None Include="documents\template_139.pdf" />
+    <None Include="documents\Template_13_pb.PDF" />
+    <None Include="documents\Template_14.PDF" />
+    <None Include="documents\template_140.pdf" />
+    <None Include="documents\template_141.pdf" />
+    <None Include="documents\template_142.pdf" />
+    <None Include="documents\template_143.pdf" />
+    <None Include="documents\template_144.pdf" />
+    <None Include="documents\template_145.pdf" />
+    <None Include="documents\template_146.pdf" />
+    <None Include="documents\template_147.pdf" />
+    <None Include="documents\template_148.pdf" />
+    <None Include="documents\template_149.pdf" />
+    <None Include="documents\Template_14_pb.PDF" />
+    <None Include="documents\Template_15.PDF" />
+    <None Include="documents\template_150.pdf" />
+    <None Include="documents\template_151.pdf" />
+    <None Include="documents\template_152.pdf" />
+    <None Include="documents\template_153.pdf" />
+    <None Include="documents\template_154.pdf" />
+    <None Include="documents\template_155.pdf" />
+    <None Include="documents\template_156.pdf" />
+    <None Include="documents\template_157.pdf" />
+    <None Include="documents\template_158.pdf" />
+    <None Include="documents\template_159.pdf" />
+    <None Include="documents\Template_15_pb.PDF" />
+    <None Include="documents\Template_16.pdf" />
+    <None Include="documents\template_160.pdf" />
+    <None Include="documents\template_161.pdf" />
+    <None Include="documents\template_162.pdf" />
+    <None Include="documents\template_163.pdf" />
+    <None Include="documents\template_164.pdf" />
+    <None Include="documents\template_165.pdf" />
+    <None Include="documents\template_166.pdf" />
+    <None Include="documents\template_167.pdf" />
+    <None Include="documents\template_1671.pdf" />
+    <None Include="documents\template_168.pdf" />
+    <None Include="documents\template_169.pdf" />
+    <None Include="documents\Template_16_pb.pdf" />
+    <None Include="documents\Template_17.pdf" />
+    <None Include="documents\template_170.pdf" />
+    <None Include="documents\template_171.pdf" />
+    <None Include="documents\template_172.pdf" />
+    <None Include="documents\template_173.pdf" />
+    <None Include="documents\template_174.pdf" />
+    <None Include="documents\template_175.pdf" />
+    <None Include="documents\template_178.pdf" />
+    <None Include="documents\template_179.pdf" />
+    <None Include="documents\Template_17_pb.pdf" />
+    <None Include="documents\Template_18.pdf" />
+    <None Include="documents\template_180.pdf" />
+    <None Include="documents\template_181.pdf" />
+    <None Include="documents\template_182.pdf" />
+    <None Include="documents\template_183.pdf" />
+    <None Include="documents\template_184.pdf" />
+    <None Include="documents\template_185.pdf" />
+    <None Include="documents\template_186.pdf" />
+    <None Include="documents\template_187.pdf" />
+    <None Include="documents\template_189.pdf" />
+    <None Include="documents\Template_18_pb.pdf" />
+    <None Include="documents\Template_19.pdf" />
+    <None Include="documents\template_190.pdf" />
+    <None Include="documents\template_191.pdf" />
+    <None Include="documents\template_192.pdf" />
+    <None Include="documents\template_193.pdf" />
+    <None Include="documents\template_194.pdf" />
+    <None Include="documents\template_195.pdf" />
+    <None Include="documents\template_196.pdf" />
+    <None Include="documents\template_197.pdf" />
+    <None Include="documents\template_198.pdf" />
+    <None Include="documents\template_199.pdf" />
+    <None Include="documents\Template_19_pb.pdf" />
+    <None Include="documents\Template_1_pb.PDF" />
+    <None Include="documents\Template_2.PDF" />
+    <None Include="documents\Template_20.pdf" />
+    <None Include="documents\template_200.pdf" />
+    <None Include="documents\template_201.pdf" />
+    <None Include="documents\template_202.pdf" />
+    <None Include="documents\template_203.pdf" />
+    <None Include="documents\template_204.pdf" />
+    <None Include="documents\template_205.pdf" />
+    <None Include="documents\template_206.pdf" />
+    <None Include="documents\template_207.pdf" />
+    <None Include="documents\template_208.pdf" />
+    <None Include="documents\template_209.pdf" />
+    <None Include="documents\Template_20_pb.pdf" />
+    <None Include="documents\Template_21.pdf" />
+    <None Include="documents\template_210.pdf" />
+    <None Include="documents\template_211.pdf" />
+    <None Include="documents\template_212.pdf" />
+    <None Include="documents\template_213.pdf" />
+    <None Include="documents\template_214.pdf" />
+    <None Include="documents\template_215.pdf" />
+    <None Include="documents\template_216.pdf" />
+    <None Include="documents\template_217.pdf" />
+    <None Include="documents\template_218.pdf" />
+    <None Include="documents\template_219.pdf" />
+    <None Include="documents\Template_21_pb.pdf" />
+    <None Include="documents\Template_22.pdf" />
+    <None Include="documents\template_220.pdf" />
+    <None Include="documents\template_221.pdf" />
+    <None Include="documents\template_222.pdf" />
+    <None Include="documents\template_223.pdf" />
+    <None Include="documents\template_224.pdf" />
+    <None Include="documents\template_225.pdf" />
+    <None Include="documents\template_226.pdf" />
+    <None Include="documents\template_227.pdf" />
+    <None Include="documents\template_228.pdf" />
+    <None Include="documents\template_229.pdf" />
+    <None Include="documents\Template_22_pb.pdf" />
+    <None Include="documents\Template_23.pdf" />
+    <None Include="documents\template_230.pdf" />
+    <None Include="documents\template_231.pdf" />
+    <None Include="documents\template_232.pdf" />
+    <None Include="documents\template_233.pdf" />
+    <None Include="documents\template_234.pdf" />
+    <None Include="documents\template_235.pdf" />
+    <None Include="documents\template_236.pdf" />
+    <None Include="documents\template_237.pdf" />
+    <None Include="documents\template_238.pdf" />
+    <None Include="documents\template_239.pdf" />
+    <None Include="documents\Template_23_pb.pdf" />
+    <None Include="documents\Template_24.pdf" />
+    <None Include="documents\template_240.pdf" />
+    <None Include="documents\template_241.pdf" />
+    <None Include="documents\template_242.pdf" />
+    <None Include="documents\template_243.pdf" />
+    <None Include="documents\template_244.pdf" />
+    <None Include="documents\template_245.pdf" />
+    <None Include="documents\template_246.pdf" />
+    <None Include="documents\template_247.pdf" />
+    <None Include="documents\template_248.pdf" />
+    <None Include="documents\template_249.pdf" />
+    <None Include="documents\Template_24_pb.pdf" />
+    <None Include="documents\Template_25.pdf" />
+    <None Include="documents\template_250.pdf" />
+    <None Include="documents\template_251.pdf" />
+    <None Include="documents\template_252.pdf" />
+    <None Include="documents\template_253.pdf" />
+    <None Include="documents\template_254.pdf" />
+    <None Include="documents\template_255.pdf" />
+    <None Include="documents\template_256.pdf" />
+    <None Include="documents\template_257.pdf" />
+    <None Include="documents\template_258.pdf" />
+    <None Include="documents\template_259.pdf" />
+    <None Include="documents\Template_25_pb.pdf" />
+    <None Include="documents\Template_26.pdf" />
+    <None Include="documents\template_260.pdf" />
+    <None Include="documents\template_261.pdf" />
+    <None Include="documents\template_262.pdf" />
+    <None Include="documents\template_263.pdf" />
+    <None Include="documents\template_264.pdf" />
+    <None Include="documents\template_265.pdf" />
+    <None Include="documents\template_266.pdf" />
+    <None Include="documents\template_267.pdf" />
+    <None Include="documents\template_268.pdf" />
+    <None Include="documents\template_269.pdf" />
+    <None Include="documents\Template_26_pb.pdf" />
+    <None Include="documents\Template_27.pdf" />
+    <None Include="documents\template_270.pdf" />
+    <None Include="documents\template_271.pdf" />
+    <None Include="documents\template_272.pdf" />
+    <None Include="documents\template_273.pdf" />
+    <None Include="documents\template_274.pdf" />
+    <None Include="documents\template_275.pdf" />
+    <None Include="documents\template_276.pdf" />
+    <None Include="documents\template_277.pdf" />
+    <None Include="documents\template_278.pdf" />
+    <None Include="documents\template_279.pdf" />
+    <None Include="documents\Template_27_pb.pdf" />
+    <None Include="documents\Template_28.pdf" />
+    <None Include="documents\template_280.pdf" />
+    <None Include="documents\template_281.pdf" />
+    <None Include="documents\Template_284_pb.pdf" />
+    <None Include="documents\Template_285_pb.pdf" />
+    <None Include="documents\template_287.pdf" />
+    <None Include="documents\template_288.pdf" />
+    <None Include="documents\template_289.pdf" />
+    <None Include="documents\Template_28_pb.pdf" />
+    <None Include="documents\Template_29.pdf" />
+    <None Include="documents\template_290.pdf" />
+    <None Include="documents\template_291.pdf" />
+    <None Include="documents\template_292.pdf" />
+    <None Include="documents\template_293.pdf" />
+    <None Include="documents\template_294.pdf" />
+    <None Include="documents\template_295.pdf" />
+    <None Include="documents\template_296.pdf" />
+    <None Include="documents\template_297.pdf" />
+    <None Include="documents\template_298.pdf" />
+    <None Include="documents\Template_29_pb.pdf" />
+    <None Include="documents\Template_2_pb.PDF" />
+    <None Include="documents\Template_3.PDF" />
+    <None Include="documents\Template_30.pdf" />
+    <None Include="documents\template_300.pdf" />
+    <None Include="documents\template_301.pdf" />
+    <None Include="documents\template_302.pdf" />
+    <None Include="documents\template_303.pdf" />
+    <None Include="documents\template_304.pdf" />
+    <None Include="documents\template_305.pdf" />
+    <None Include="documents\template_306.pdf" />
+    <None Include="documents\template_307.pdf" />
+    <None Include="documents\template_308.pdf" />
+    <None Include="documents\template_309.pdf" />
+    <None Include="documents\Template_30_pb.pdf" />
+    <None Include="documents\Template_31.pdf" />
+    <None Include="documents\template_310.pdf" />
+    <None Include="documents\template_311.pdf" />
+    <None Include="documents\template_312.pdf" />
+    <None Include="documents\template_313.pdf" />
+    <None Include="documents\template_314.pdf" />
+    <None Include="documents\template_315.pdf" />
+    <None Include="documents\template_316.pdf" />
+    <None Include="documents\template_317.pdf" />
+    <None Include="documents\template_318.pdf" />
+    <None Include="documents\template_319.pdf" />
+    <None Include="documents\Template_31_pb.pdf" />
+    <None Include="documents\Template_32.pdf" />
+    <None Include="documents\template_320.pdf" />
+    <None Include="documents\template_321.pdf" />
+    <None Include="documents\template_322.pdf" />
+    <None Include="documents\template_323.pdf" />
+    <None Include="documents\template_324.pdf" />
+    <None Include="documents\template_325.pdf" />
+    <None Include="documents\template_326.pdf" />
+    <None Include="documents\template_327.pdf" />
+    <None Include="documents\template_328.pdf" />
+    <None Include="documents\template_329.pdf" />
+    <None Include="documents\Template_32_pb.pdf" />
+    <None Include="documents\Template_33.pdf" />
+    <None Include="documents\template_330.pdf" />
+    <None Include="documents\template_331.pdf" />
+    <None Include="documents\template_332.pdf" />
+    <None Include="documents\template_333.pdf" />
+    <None Include="documents\template_334.pdf" />
+    <None Include="documents\template_335.pdf" />
+    <None Include="documents\template_336.pdf" />
+    <None Include="documents\template_337.pdf" />
+    <None Include="documents\template_338.pdf" />
+    <None Include="documents\template_339.pdf" />
+    <None Include="documents\Template_33_pb.pdf" />
+    <None Include="documents\Template_34.pdf" />
+    <None Include="documents\template_340.pdf" />
+    <None Include="documents\template_341.pdf" />
+    <None Include="documents\template_342.pdf" />
+    <None Include="documents\template_343.pdf" />
+    <None Include="documents\template_344.pdf" />
+    <None Include="documents\template_345.pdf" />
+    <None Include="documents\template_346.pdf" />
+    <None Include="documents\template_347.pdf" />
+    <None Include="documents\template_348.pdf" />
+    <None Include="documents\template_349.pdf" />
+    <None Include="documents\Template_34_pb.pdf" />
+    <None Include="documents\Template_35.pdf" />
+    <None Include="documents\template_350.pdf" />
+    <None Include="documents\template_351.pdf" />
+    <None Include="documents\template_352.pdf" />
+    <None Include="documents\template_353.pdf" />
+    <None Include="documents\template_354.pdf" />
+    <None Include="documents\template_355.pdf" />
+    <None Include="documents\template_356.pdf" />
+    <None Include="documents\template_357.pdf" />
+    <None Include="documents\template_358.pdf" />
+    <None Include="documents\template_359.pdf" />
+    <None Include="documents\Template_35_pb.pdf" />
+    <None Include="documents\Template_36.pdf" />
+    <None Include="documents\template_360.pdf" />
+    <None Include="documents\template_361.pdf" />
+    <None Include="documents\template_362.pdf" />
+    <None Include="documents\template_363.pdf" />
+    <None Include="documents\template_364.pdf" />
+    <None Include="documents\template_365.pdf" />
+    <None Include="documents\template_366.pdf" />
+    <None Include="documents\template_367.pdf" />
+    <None Include="documents\template_368.pdf" />
+    <None Include="documents\template_369.pdf" />
+    <None Include="documents\Template_36_pb.pdf" />
+    <None Include="documents\Template_37.pdf" />
+    <None Include="documents\template_370.pdf" />
+    <None Include="documents\template_371.pdf" />
+    <None Include="documents\template_372.pdf" />
+    <None Include="documents\template_373.pdf" />
+    <None Include="documents\template_374.pdf" />
+    <None Include="documents\template_375.pdf" />
+    <None Include="documents\template_376.pdf" />
+    <None Include="documents\template_377.pdf" />
+    <None Include="documents\template_378.pdf" />
+    <None Include="documents\template_379.pdf" />
+    <None Include="documents\Template_37_pb.pdf" />
+    <None Include="documents\Template_38.pdf" />
+    <None Include="documents\template_381.pdf" />
+    <None Include="documents\template_382.pdf" />
+    <None Include="documents\template_383.pdf" />
+    <None Include="documents\template_384.pdf" />
+    <None Include="documents\template_385.pdf" />
+    <None Include="documents\template_387.pdf" />
+    <None Include="documents\template_388.pdf" />
+    <None Include="documents\template_389.pdf" />
+    <None Include="documents\Template_38_pb.pdf" />
+    <None Include="documents\Template_39.pdf" />
+    <None Include="documents\template_390.pdf" />
+    <Content Include="documents\template_391.pdf" />
+    <None Include="documents\template_392.pdf" />
+    <None Include="documents\template_393.pdf" />
+    <None Include="documents\template_394.pdf" />
+    <None Include="documents\template_395.pdf" />
+    <None Include="documents\template_396.pdf" />
+    <None Include="documents\template_397.pdf" />
+    <None Include="documents\template_398.pdf" />
+    <None Include="documents\template_399.pdf" />
+    <None Include="documents\Template_39_pb.pdf" />
+    <None Include="documents\Template_3_pb.PDF" />
+    <None Include="documents\Template_4.PDF" />
+    <None Include="documents\Template_40.pdf" />
+    <None Include="documents\template_400.pdf" />
+    <None Include="documents\template_401.pdf" />
+    <None Include="documents\template_402.pdf" />
+    <None Include="documents\template_403.pdf" />
+    <None Include="documents\template_404.pdf" />
+    <None Include="documents\template_405.pdf" />
+    <None Include="documents\template_406.pdf" />
+    <None Include="documents\template_407.pdf" />
+    <None Include="documents\template_408.pdf" />
+    <None Include="documents\Template_409.PDF" />
+    <None Include="documents\Template_40_pb.pdf" />
+    <None Include="documents\Template_41.pdf" />
+    <None Include="documents\Template_410.PDF" />
+    <None Include="documents\Template_411.PDF" />
+    <None Include="documents\Template_412.pdf" />
+    <None Include="documents\Template_413.PDF" />
+    <None Include="documents\Template_414.PDF" />
+    <None Include="documents\Template_415.PDF" />
+    <None Include="documents\Template_416.PDF" />
+    <None Include="documents\Template_417.PDF" />
+    <None Include="documents\Template_418.PDF" />
+    <None Include="documents\Template_419.PDF" />
+    <None Include="documents\Template_41_pb.pdf" />
+    <None Include="documents\Template_42.pdf" />
+    <None Include="documents\Template_420.pdf" />
+    <None Include="documents\Template_421.pdf" />
+    <None Include="documents\Template_422.pdf" />
+    <None Include="documents\Template_423.pdf" />
+    <None Include="documents\Template_424.pdf" />
+    <None Include="documents\Template_425.pdf" />
+    <None Include="documents\Template_426.pdf" />
+    <None Include="documents\Template_427.pdf" />
+    <None Include="documents\Template_428.pdf" />
+    <None Include="documents\Template_429.pdf" />
+    <None Include="documents\Template_42_pb.pdf" />
+    <None Include="documents\Template_43.pdf" />
+    <None Include="documents\Template_430.pdf" />
+    <None Include="documents\Template_431.pdf" />
+    <None Include="documents\Template_432.pdf" />
+    <None Include="documents\Template_433.PDF" />
+    <None Include="documents\Template_434.PDF" />
+    <None Include="documents\Template_435.PDF" />
+    <Content Include="documents\Template_437.pdf" />
+    <None Include="documents\Template_438.pdf" />
+    <None Include="documents\Template_438_pb.pdf" />
+    <None Include="documents\Template_439.pdf" />
+    <None Include="documents\Template_439_pb.pdf" />
+    <None Include="documents\Template_43_pb.pdf" />
+    <None Include="documents\Template_44.pdf" />
+    <None Include="documents\Template_440.pdf" />
+    <None Include="documents\Template_440_pb.pdf" />
+    <Content Include="documents\Template_441.pdf" />
+    <Content Include="documents\Template_441_pb.pdf" />
+    <Content Include="documents\Template_442.pdf" />
+    <Content Include="documents\Template_442_pb.pdf" />
+    <Content Include="documents\Template_443.pdf" />
+    <Content Include="documents\Template_443_pb.pdf" />
+    <Content Include="documents\Template_444.pdf" />
+    <Content Include="documents\Template_444_pb.pdf" />
+    <Content Include="documents\Template_445.pdf" />
+    <Content Include="documents\Template_445_pb.pdf" />
+    <Content Include="documents\Template_446.pdf" />
+    <Content Include="documents\Template_446_pb.pdf" />
+    <Content Include="documents\Template_447.pdf" />
+    <Content Include="documents\Template_448.pdf" />
+    <Content Include="documents\template_449.pdf" />
+    <None Include="documents\Template_44_pb.pdf" />
+    <None Include="documents\Template_45.pdf" />
+    <Content Include="documents\Template_450.pdf" />
+    <Content Include="documents\Template_451.pdf" />
+    <Content Include="documents\Template_452.pdf" />
+    <Content Include="documents\Template_453.pdf" />
+    <Content Include="documents\Template_455.pdf" />
+    <Content Include="documents\Template_456.pdf" />
+    <Content Include="documents\Template_457.pdf" />
+    <None Include="documents\Template_45_pb.pdf" />
+    <Content Include="documents\Template_461.pdf" />
+    <Content Include="documents\Template_462.pdf" />
+    <Content Include="documents\Template_46_pb.PDF" />
+    <Content Include="documents\Template_463.pdf" />
+    <Content Include="documents\Template_464.pdf" />
+    <Content Include="documents\Template_465.pdf" />
+    <Content Include="documents\Template_466.pdf" />
+    <Content Include="documents\Template_467.pdf" />
+    <Content Include="documents\Template_468.pdf" />
+    <Content Include="documents\Template_469.pdf" />
+    <None Include="documents\Template_47.pdf" />
+    <Content Include="documents\Template_473.pdf" />
+    <Content Include="documents\Template_474.pdf" />
+    <Content Include="documents\Template_475.pdf" />
+    <Content Include="documents\Template_476.pdf" />
+    <Content Include="documents\Template_477.pdf" />
+    <Content Include="documents\Template_478.pdf" />
+    <Content Include="documents\Template_479.pdf" />
+    <Content Include="documents\Template_470.pdf" />
+    <Content Include="documents\Template_472.pdf" />
+    <None Include="documents\Template_48.pdf" />
+    <Content Include="documents\Template_480.pdf" />
+    <Content Include="documents\Template_481.pdf" />
+    <Content Include="documents\Template_482.pdf" />
+    <Content Include="documents\Template_483.pdf" />
+    <Content Include="documents\Template_484.pdf" />
+    <Content Include="documents\Template_485.pdf" />
+    <Content Include="documents\Template_486.pdf" />
+    <Content Include="documents\Template_487.pdf" />
+    <Content Include="documents\Template_488.pdf" />
+    <Content Include="documents\Template_489.pdf" />
+    <None Include="documents\Template_49.pdf" />
+    <None Include="documents\Template_46.pdf" />
+    <None Include="documents\template_471.pdf" />
+    <Content Include="documents\Template_490.pdf" />
+    <Content Include="documents\Template_491.pdf" />
+    <Content Include="documents\Template_492.pdf" />
+    <Content Include="documents\Template_493.pdf" />
+    <Content Include="documents\Template_494.pdf" />
+    <Content Include="documents\Template_495.pdf" />
+    <Content Include="documents\Template_496.pdf" />
+    <Content Include="documents\Template_497.pdf" />
+    <Content Include="documents\Template_498.pdf" />
+    <Content Include="documents\Template_499.pdf" />
+    <None Include="documents\Template_4_pb.PDF" />
+    <None Include="documents\Template_5.PDF" />
+    <None Include="documents\Template_50.pdf" />
+    <Content Include="documents\Template_500.pdf" />
+    <Content Include="documents\Template_501.pdf" />
+    <Content Include="documents\Template_502.pdf" />
+    <Content Include="documents\Template_503.pdf" />
+    <Content Include="documents\Template_504.pdf" />
+    <Content Include="documents\Template_505.pdf" />
+    <Content Include="documents\Template_506.pdf" />
+    <Content Include="documents\Template_507.pdf" />
+    <Content Include="documents\Template_508.pdf" />
+    <Content Include="documents\Template_509.pdf" />
+    <Content Include="documents\Template_509_pb.pdf" />
+    <None Include="documents\Template_51.pdf" />
+    <Content Include="documents\Template_510.pdf" />
+    <Content Include="documents\Template_511.pdf" />
+    <Content Include="documents\Template_511_pb.pdf" />
+    <Content Include="documents\Template_512.pdf" />
+    <Content Include="documents\Template_512_pb.pdf" />
+    <Content Include="documents\Template_513.pdf" />
+    <Content Include="documents\Template_513_pb.pdf" />
+    <Content Include="documents\Template_514.pdf" />
+    <Content Include="documents\Template_514_pb.pdf" />
+    <Content Include="documents\Template_515.pdf" />
+    <Content Include="documents\Template_515_pb.pdf" />
+    <Content Include="documents\Template_516.pdf" />
+    <Content Include="documents\Template_516_pb.pdf" />
+    <Content Include="documents\Template_517.pdf" />
+    <Content Include="documents\Template_518.pdf" />
+    <Content Include="documents\Template_519.pdf" />
+    <None Include="documents\Template_52.pdf" />
+    <Content Include="documents\Template_520.pdf" />
+    <Content Include="documents\Template_522.pdf" />
+    <Content Include="documents\Template_523.pdf" />
+    <Content Include="documents\Template_524.pdf" />
+    <Content Include="documents\Template_525.pdf" />
+    <Content Include="documents\Template_526.pdf" />
+    <Content Include="documents\Template_527.pdf" />
+    <Content Include="documents\Template_528.pdf" />
+    <Content Include="documents\Template_529.pdf" />
+    <None Include="documents\Template_53.pdf" />
+    <Content Include="documents\Template_530.pdf" />
+    <Content Include="documents\Template_534.pdf" />
+    <Content Include="documents\Template_534_pb.pdf" />
+    <Content Include="documents\Template_535.pdf" />
+    <Content Include="documents\Template_535_pb.pdf" />
+    <Content Include="documents\Template_536.pdf" />
+    <Content Include="documents\Template_536_pb.pdf" />
+    <Content Include="documents\Template_537.pdf" />
+    <Content Include="documents\Template_538.pdf" />
+    <Content Include="documents\Template_539.pdf" />
+    <None Include="documents\Template_54.pdf" />
+    <Content Include="documents\Template_540.pdf" />
+    <Content Include="documents\Template_541.pdf" />
+    <Content Include="documents\Template_542.pdf" />
+    <Content Include="documents\Template_543.pdf" />
+    <Content Include="documents\Template_544.pdf" />
+    <Content Include="documents\Template_545.pdf" />
+    <Content Include="documents\Template_546.pdf" />
+    <Content Include="documents\Template_547.pdf" />
+    <Content Include="documents\Template_548.pdf" />
+    <Content Include="documents\Template_549.pdf" />
+    <Content Include="documents\Template_549_pb.pdf" />
+    <None Include="documents\Template_55.pdf" />
+    <Content Include="documents\Template_550.pdf" />
+    <Content Include="documents\Template_550_pb.pdf" />
+    <Content Include="documents\Template_551.pdf" />
+    <Content Include="documents\Template_551_pb.pdf" />
+    <Content Include="documents\Template_552.pdf" />
+    <Content Include="documents\Template_552_pb.pdf" />
+    <Content Include="documents\Template_553.pdf" />
+    <Content Include="documents\Template_553_pb.pdf" />
+    <Content Include="documents\Template_554.pdf" />
+    <Content Include="documents\Template_554_pb.pdf" />
+    <None Include="documents\Template_56.pdf" />
+    <None Include="documents\Template_57.pdf" />
+    <None Include="documents\Template_58.pdf" />
+    <None Include="documents\Template_59.pdf" />
+    <None Include="documents\template_521.pdf" />
+    <None Include="documents\Template_52_pb.pdf" />
+    <None Include="documents\Template_53_pb.pdf" />
+    <None Include="documents\Template_54_pb.pdf" />
+    <None Include="documents\template_571.pdf" />
+    <None Include="documents\Template_5_pb.PDF" />
+    <None Include="documents\Template_6.PDF" />
+    <None Include="documents\Template_60.pdf" />
+    <None Include="documents\Template_61.pdf" />
+    <None Include="documents\Template_62.pdf" />
+    <None Include="documents\Template_63.pdf" />
+    <None Include="documents\Template_64.pdf" />
+    <None Include="documents\Template_65.pdf" />
+    <None Include="documents\Template_66.pdf" />
+    <None Include="documents\Template_67.pdf" />
+    <None Include="documents\Template_68.pdf" />
+    <None Include="documents\Template_69.pdf" />
+    <None Include="documents\template_621.pdf" />
+    <None Include="documents\template_671.pdf" />
+    <None Include="documents\Template_6_pb.PDF" />
+    <None Include="documents\Template_7.PDF" />
+    <None Include="documents\Template_70.pdf" />
+    <None Include="documents\Template_71.pdf" />
+    <None Include="documents\Template_72.pdf" />
+    <None Include="documents\Template_73.pdf" />
+    <None Include="documents\Template_74.pdf" />
+    <None Include="documents\Template_74_pb.pdf" />
+    <None Include="documents\Template_75.pdf" />
+    <None Include="documents\Template_75_pb.pdf" />
+    <None Include="documents\Template_76.pdf" />
+    <None Include="documents\Template_76_pb.pdf" />
+    <None Include="documents\template_721.pdf" />
+    <None Include="documents\template_77.pdf" />
+    <None Include="documents\template_78.pdf" />
+    <None Include="documents\template_79.pdf" />
+    <None Include="documents\Template_7_pb.PDF" />
+    <None Include="documents\Template_8.PDF" />
+    <None Include="documents\Template_84.PDF" />
+    <None Include="documents\Template_85.PDF" />
+    <None Include="documents\Template_86.PDF" />
+    <None Include="documents\template_80.pdf" />
+    <None Include="documents\template_81.pdf" />
+    <None Include="documents\template_82.pdf" />
+    <None Include="documents\template_821.pdf" />
+    <None Include="documents\template_83.pdf" />
+    <None Include="documents\template_87.pdf" />
+    <None Include="documents\template_871.pdf" />
+    <None Include="documents\template_88.pdf" />
+    <None Include="documents\template_89.pdf" />
+    <None Include="documents\Template_8_pb.PDF" />
+    <None Include="documents\Template_9.PDF" />
+    <None Include="documents\template_90.pdf" />
+    <None Include="documents\template_91.pdf" />
+    <None Include="documents\template_92.pdf" />
+    <None Include="documents\template_921.pdf" />
+    <Content Include="documents\Template_92_pb.pdf" />
+    <None Include="documents\template_93.pdf" />
+    <Content Include="documents\Template_93_pb.pdf" />
+    <None Include="documents\template_94.pdf" />
+    <None Include="documents\template_95.pdf" />
+    <None Include="documents\template_96.pdf" />
+    <None Include="documents\template_97.pdf" />
+    <None Include="documents\template_971.pdf" />
+    <None Include="documents\template_98.pdf" />
+    <None Include="documents\template_99.pdf" />
+    <Content Include="documents\template_99_noimage.pdf" />
+    <None Include="documents\Template_9_pb.PDF" />
+    <Content Include="Handlers\FileUploadHandler.ashx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\fonts\Arial-Bold.ttf" />
+    <Content Include="images\fonts\Arial.ttf" />
+    <Content Include="Handlers\WebImageHandler.ashx" />
+    <None Include="images\fonts\ArialMT.otf" />
+    <None Include="images\fonts\ArialMT.ttf" />
+    <None Include="images\fonts\HelveticaNeue-Bold.otf" />
+    <None Include="images\fonts\HelveticaNeue-Bold.ttf" />
+    <None Include="images\fonts\HelveticaNeue-Light.otf" />
+    <None Include="images\fonts\HelveticaNeue-Light.ttf" />
+    <None Include="images\fonts\HelveticaNeue.otf" />
+    <None Include="images\fonts\HelveticaNeue.ttf" />
+    <None Include="images\fonts\HV_____.PFB" />
+    <None Include="images\fonts\HV_____.PFM" />
+    <None Include="images\fonts\LTe50263.ttf" />
+    <None Include="images\fonts\LTe50265.ttf" />
+    <Content Include="Templates\Portal.Master">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\XeroxPage.Master">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="images\fonts\XeroxSans-Bold.ttf" />
+    <None Include="images\fonts\XeroxSans-Light.ttf" />
+    <None Include="Properties\PublishProfiles\AdminTool.pubxml" />
+    <None Include="Properties\PublishProfiles\XeroxCollateralCreatorPublishPreProd.pubxml" />
+    <None Include="Properties\PublishProfiles\XeroxCollateralCreatorWebProfile.pubxml" />
+    <Content Include="Handlers\ScImageHandler.ashx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Handlers\SrcBlankImageHandler.ashx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu1.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.en-us.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Menu.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.en-us.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.fr-ca.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.fr-ca.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Menu.fr-ca.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.fr-ca.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.fr-FR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.fr-FR.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Menu.fr-FR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.fr-FR.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.da-DK.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.da-DK.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Menu.da-DK.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.da-DK.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.de-DE.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.de-DE.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Menu.de-DE.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.de-DE.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.el-GR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.el-GR.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Menu.el-GR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.el-GR.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.es-ES.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.es-ES1.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\MainText.it-IT.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.it-IT.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\MainText.nl-NL.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.nl-NL.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\MainText.sv-SE.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.sv-SE.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.es-ES.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.es-ES.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.it-IT.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.it-IT.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.nl-NL.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.nl-NL.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.sv-SE.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.sv-SE.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainText.fi-FI.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.fi-FI.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\MainText.no.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.no.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\MainText.pt-PT.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.pt-PT.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.fi-FI.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.fi-FI.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.no.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.no.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.pt-PT.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.pt-PT.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.da-DK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.da-DK.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.de-DE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.el-GR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.en-us.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.es-ES.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.fi-FI.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.fi-FI.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.fr-ca.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.fr-ca.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.fr-FR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.it-IT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.nl-NL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.nl-NL.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.pt-PT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.sv-SE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.sv-SE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.da-DK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.da-DK.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.de-DE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.el-GR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.en-us.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.es-ES.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.fi-Fl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.fi-Fl.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.fr-ca.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.fr-ca.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.fr-FR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.it-IT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.nl-NL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.nl-NL.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.pt-PT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.sv-SE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.sv-SE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.da-DK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.da-DK.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.de-DE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.el-GR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.en-us.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.es-ES.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx..fi-Fl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx..fi-Fl.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.fr-ca.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.fr-ca.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.fr-FR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.it-IT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.nl-NL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.nl-NL.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.pt-PT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.sv-SE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.sv-SE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.da-DK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.da-DK.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.de-DE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.el-GR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.en-us.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.es-ES.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.fi-FI.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.fi-FI.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.fr-ca.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.fr-ca.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.nl-NL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.nl-NL.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.no.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.no.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.pt-PT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.sv-SE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.sv-SE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.da-DK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.da-DK.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.de-DE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.el-GR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.en-us.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.es-ES.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.fi-FI.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.fi-FI.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.fr-ca.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.fr-ca.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_GlobalResources\Menu.en-ca.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Menu.en-ca1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\MainText.en-ca.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainText.en-ca1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.en-CA.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.en-CA.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>GlobalStr</CustomToolNamespace>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Edit.aspx.en-ca.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\Home.aspx.en-ca.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.en-ca.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.en-ca.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.en-ca.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.fr-FR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.it-IT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.nl-NL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.nl-NL.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.no.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.no.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.pt-PT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\RecentActivity.aspx.sv-SE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecentActivity.aspx.sv-SE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\BuiltDocument.aspx.no.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuiltDocument.aspx.no.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Edit.aspx.no.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.aspx.no.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Home.aspx.no.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.aspx.no.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\OrderDocument.aspx.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.fr-FR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.it-IT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.nl-NL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.nl-NL.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.no.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.no.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderDocument.aspx.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.pt-PT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\OrderDocument.aspx.sv-SE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDocument.aspx.sv-SE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\OrderSummary.aspx.da-DK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.da-DK.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.de-DE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.el-GR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.en-us.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.es-ES.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.fi-FI.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.fi-FI.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.fr-ca.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.fr-ca.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.fr-FR.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_LocalResources\OrderSummary.aspx.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderSummary.aspx.it-IT.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SCEdit.aspx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

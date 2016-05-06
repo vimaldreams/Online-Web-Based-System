@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MenuTree" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MenuTreeBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeColorQube8700" xml:space="preserve">
+    <value>ColorQube 8700</value>
+  </data>
+  <data name="MenuTreeColorQube8700Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeColorQube8700DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeColorQube8700Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeColorQube8900" xml:space="preserve">
+    <value>ColorQube 8900</value>
+  </data>
+  <data name="MenuTreeColorQube8900Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeColorQube8900DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeColorQube8900Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeColorQube9301-03" xml:space="preserve">
+    <value>ColorQube 9301/9303</value>
+  </data>
+  <data name="MenuTreeColorQube9301-03Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeColorQube9301-03DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeColorQube9301-03Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeConnectKey" xml:space="preserve">
+    <value>ConnectKey</value>
+  </data>
+  <data name="MenuTreeConnectKeyBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeConnectKeyDM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeConnectKeyFlyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeDM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeeConcierge" xml:space="preserve">
+    <value>eConcierge</value>
+  </data>
+  <data name="MenuTreeeConciergeBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeeConciergeDM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeeConciergeFlyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeFlyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeManagedPrintServices" xml:space="preserve">
+    <value>Managed Print Services</value>
+  </data>
+  <data name="MenuTreeManagedPrintServicesBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeManagedPrintServicesDM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeManagedPrintServicesFlyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeMultifunctionPrinter" xml:space="preserve">
+    <value>Multifunction Printer</value>
+  </data>
+  <data name="MenuTreeMultifunctionPrinterBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeMultifunctionPrinterDM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeMultifunctionPrinterFlyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser4600-20" xml:space="preserve">
+    <value>Phaser 4600/4620</value>
+  </data>
+  <data name="MenuTreePhaser4600-20Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser4600-20DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser4600-20Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser6010WC6015" xml:space="preserve">
+    <value>Phaser 6010 WC 6015</value>
+  </data>
+  <data name="MenuTreePhaser6010WC6015Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser6010WC6015DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser6010WC6015Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser6500WC6505" xml:space="preserve">
+    <value>Phaser 6500 WC 6505</value>
+  </data>
+  <data name="MenuTreePhaser6500WC6505Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser6500WC6505DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser6500WC6505Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser6600WC6605" xml:space="preserve">
+    <value>Phaser 6600 WC 6605</value>
+  </data>
+  <data name="MenuTreePhaser6600WC6605Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser6600WC6605DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser6600WC6605Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser6700" xml:space="preserve">
+    <value>Phaser 6700</value>
+  </data>
+  <data name="MenuTreePhaser6700Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser6700DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser6700Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser7100" xml:space="preserve">
+    <value>Phaser 7100</value>
+  </data>
+  <data name="MenuTreePhaser7100Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser7100DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser7100Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser7800" xml:space="preserve">
+    <value>Phaser 7800</value>
+  </data>
+  <data name="MenuTreePhaser7800Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser7800DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser7800Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeSolidInk" xml:space="preserve">
+    <value>SolidInk</value>
+  </data>
+  <data name="MenuTreeSolidInkBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeSolidInkDM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeSolidInkFlyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="NoDataText" xml:space="preserve">
+    <value>No data exists in DB</value>
+  </data>
+  <data name="MenuTreeCleanUpCashIneConcierge" xml:space="preserve">
+    <value>Massive savings </value>
+  </data>
+  <data name="MenuTreeCleanUpCashInMPS" xml:space="preserve">
+    <value>Best -ever savings</value>
+  </data>
+  <data name="MenuTreeCleanUpCashInProduct" xml:space="preserve">
+    <value>Time flies</value>
+  </data>
+  <data name="MenuTreeCleanUpCashIn" xml:space="preserve">
+    <value>Clean Up &amp; Cash In</value>
+  </data>
+  <data name="MenuTreeConnectKeyWC5800" xml:space="preserve">
+    <value>WorkCentre 5865/5875/5890</value>
+  </data>
+  <data name="MenuTreeConnectKeyWC5800Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeConnectKeyWC5800DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeConnectKeyWC5800Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreePhaser3610WC3615" xml:space="preserve">
+    <value>Phaser 3610 WC 3615</value>
+  </data>
+  <data name="MenuTreePhaser3610WC3615Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreePhaser3610WC3615DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreePhaser3610WC3615Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeMulti5845WC5855" xml:space="preserve">
+    <value>WorkCentre 5845/5855</value>
+  </data>
+  <data name="MenuTreeMulti5845WC5855DM" xml:space="preserve">
+    <value>DirectMail</value>
+  </data>
+  <data name="MenuTreeMulti5845WC5855DMBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeMulti5845WC5855Flyer" xml:space="preserve">
+    <value>Flyer</value>
+  </data>
+  <data name="MenuTreeD136Copier" xml:space="preserve">
+    <value>D136</value>
+  </data>
+  <data name="MenuTreeD136CopierBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeD95Series" xml:space="preserve">
+    <value>D Series</value>
+  </data>
+  <data name="MenuTreeD95SeriesBrochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+  <data name="MenuTreeWorkCentre7775" xml:space="preserve">
+    <value>WorkCentre 7775</value>
+  </data>
+  <data name="MenuTreeWorkCentre7775Brochure" xml:space="preserve">
+    <value>Brochure</value>
+  </data>
+</root>

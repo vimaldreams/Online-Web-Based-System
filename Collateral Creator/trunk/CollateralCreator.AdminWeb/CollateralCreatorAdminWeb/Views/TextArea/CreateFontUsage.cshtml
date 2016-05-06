@@ -1,0 +1,59 @@
+﻿@model CollateralCreatorAdminWeb.Models.FontUsage
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FontUsage</legend>
+       
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FontID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FontID", "Select FontID")        
+            @Html.ValidationMessageFor(model => model.FontID)
+        </div>
+
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemplateID)
+        </div>
+        <div class="editor-field">
+            @*@Html.DropDownList("Templates", "Select Template")*@ 
+            @Html.DropDownListFor(model => model.TemplateID, new SelectList(ViewBag.Templates as System.Collections.IEnumerable, "Value", "Text"), "Select Template")
+            @Html.ValidationMessageFor(model => model.TemplateID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerBranded)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerBranded)
+            @Html.ValidationMessageFor(model => model.PartnerBranded)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TextAreaID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TextAreaID", "Select TextAreaID")    
+            @Html.ValidationMessageFor(model => model.TextAreaID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { currentFilter = ViewBag.currentFilter })
+</div>
